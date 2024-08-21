@@ -28,7 +28,7 @@ public class BaseClass {
 	public  static Properties p;
 	public  static Logger logger;
 	
-	@BeforeMethod
+	//@BeforeMethod
 	public static ThreadLocal<WebDriver> initializeBrowser() throws IOException
 	{
 		  
