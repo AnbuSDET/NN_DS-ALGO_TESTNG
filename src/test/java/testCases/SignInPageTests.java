@@ -1,6 +1,7 @@
 package testCases;
 
 import org.apache.logging.log4j.Logger;
+
 import org.testng.annotations.Test;
 
 import factory.BaseClass;
@@ -12,7 +13,7 @@ public class SignInPageTests {
 	SignInPage sp = new SignInPage(BaseClass.getDriver());		
 	
 	@Test
-	public void checkValidAndInvalidLoginTest(String user, String ) {
+	public void checkValidAndInvalidLoginTest(String user, String pwd ) {
 		logger.info("Enter the username at login page.............");
 		 sp.enterUsername(user);
 		 sp.enterpassword(pwd);
