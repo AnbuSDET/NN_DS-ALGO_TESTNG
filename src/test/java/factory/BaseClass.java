@@ -1,9 +1,12 @@
-package Factory;
+package factory;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -16,7 +19,9 @@ import org.testng.annotations.Parameters;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -25,11 +30,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BaseClass {
 
 	public static final ThreadLocal<WebDriver> driver = new ThreadLocal();
-	public  static Properties p;
+	public static  Properties p;
 	public  static Logger logger;
 	
 	@BeforeMethod
-	public static ThreadLocal<WebDriver> initializeBrowser() throws IOException
+	public static void initializeBrowser() throws IOException
 	{
 	   //---comment	  
 		
@@ -86,9 +91,12 @@ public class BaseClass {
 		
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		getDriver().get(p.getProperty("appURL"));
+		getDriver().manage().window().maximize();
 		
-		return driver;
+	//	return driver;
 	}
+	
 	
 	@AfterMethod
 	public void tearDown()
@@ -115,6 +123,21 @@ public class BaseClass {
 		return logger;
 	}
 	
+	
+	public String captureScreen(String tname) throws IOException {
+
+		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+				
+		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
+		
+		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
+		File targetFile=new File(targetFilePath);
+		
+		sourceFile.renameTo(targetFile);
+			
+		return targetFilePath;
+	}
 	
 	public static String randomeString()
 	{

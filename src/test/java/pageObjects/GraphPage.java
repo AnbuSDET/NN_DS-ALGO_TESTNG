@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import Factory.BaseClass;
+import factory.BaseClass;
 
 public class GraphPage extends BasePage {
 	
