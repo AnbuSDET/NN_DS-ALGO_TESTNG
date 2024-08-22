@@ -14,8 +14,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-import Factory.BaseClass;
-import Utilities.DataReader;
+import factory.BaseClass;
+import utilities.DataReader;
 
 public class ArrayPage extends BasePage{
 
