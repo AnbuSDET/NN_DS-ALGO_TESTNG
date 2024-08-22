@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import Factory.BaseClass;
+import factory.BaseClass;
 import io.cucumber.messages.types.Duration;
 
 public class DataStructurePage extends BasePage{
