@@ -1,6 +1,9 @@
 package pageObjects;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -8,13 +11,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class HomePage extends BasePage{
+import factory.BaseClass;
 
+public class HomePage extends BasePage{
+   
+	public static  Properties p;
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
 	
+	
 	//-----------WebElements-----------------
+	
 	@FindBy (xpath="//a[normalize-space()='NumpyNinja']")
 	private WebElement NumpyNinjaLink;
 	
@@ -72,7 +81,7 @@ public class HomePage extends BasePage{
 	@FindBy (xpath="//a[@href='graph']")
 	private WebElement GraphGetStartedBtn;
 	
-	@FindBy(xpath="//div[@role='alert']")
+	@FindBy(xpath="//div[contains(text(),'You are logged in')]")
 	private WebElement YouAreLoggedInMsg;  //-----Message after SignIn with Valid credentials
 		
 	@FindBy (xpath ="//div[contains(text(),'You are not logged in')]")
@@ -103,7 +112,20 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//h4[normalize-space()='Graph']")
 	private WebElement GraphPage;
 	
-	//------------------Methods---------------
+	//------------------Methods---------------	
+	
+		
+	
+	public void Login_HomePage() throws IOException
+	{
+		SignInPage sp = new SignInPage(BaseClass.getDriver());	
+		GetStartedPage Gp = new GetStartedPage(BaseClass.getDriver());
+		Gp.clickGetStartedSP();
+		clickSigIn();
+		sp.enterUsername(BaseClass.getProperties().getProperty("username"));
+		sp.enterpassword(BaseClass.getProperties().getProperty("password"));		
+		 sp.clickLogin();		 
+	}
 	
 	public boolean NumpyNinjaLinkDisplay() {
 		boolean display = NumpyNinjaLink.isDisplayed();

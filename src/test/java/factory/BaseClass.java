@@ -1,5 +1,7 @@
 package factory;
 
+import java.util.Properties;
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -26,6 +28,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import org.openqa.selenium.WebDriver;
 
 public class BaseClass {
 
@@ -98,17 +102,21 @@ public class BaseClass {
 	}
 	
 	
+	
 	@AfterMethod
 	public void tearDown()
 	{
 		 driver.get().quit();
 	}
 	
+	
 	public static WebDriver getDriver()
 	{
 		return driver.get();
 	}
 		
+	
+	
 	public synchronized static Properties getProperties() throws IOException
 	{
 		FileReader file = new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties");
@@ -162,3 +170,5 @@ public class BaseClass {
 	
 	
 }
+
+
