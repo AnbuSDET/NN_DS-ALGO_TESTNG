@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.GetStartedPageTests">
+      <class name="testCases.LinkedListPageTests">
         <methods>
-          <include name="TestGetStartedButton"/>
           <include name="initializeBrowser"/>
+          <include name="check_PythonEditorValidInput"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- testCases.GetStartedPageTests -->
+      </class> <!-- testCases.LinkedListPageTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,6 +1,7 @@
 package pageObjects;
 
 import java.util.HashMap;
+
 import java.util.List;
 
 import org.apache.logging.log4j.Logger;
@@ -15,7 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import factory.BaseClass;
-import utilities.DataReader;
+//import utilities.DataReader;
 
 public class ArrayPage extends BasePage{
 
@@ -173,7 +174,7 @@ public class ArrayPage extends BasePage{
 	{
 		int index = Integer.parseInt(rownumber)-1;
 		
-		datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");		
+		//datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");		
 		
 		String ValidCode = datamap.get(index).get("PythonCode");
 		
@@ -220,7 +221,7 @@ public class ArrayPage extends BasePage{
 		
          int index = Integer.parseInt(rowNum)-1;
        
-		datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");			
+		//datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");			
 		
 		String Output = datamap.get(index).get("Result");
 		
@@ -237,7 +238,7 @@ public class ArrayPage extends BasePage{
 		 Alert alert ;
 		 int index = Integer.parseInt(rowNum)-1;
 	       
-		datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");			
+		//datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");			
 		
 		 String ExcelOutput = datamap.get(index).get("Result");	
 		 
@@ -258,7 +259,7 @@ public class ArrayPage extends BasePage{
 		
         int index = Integer.parseInt(Rownumber)-1;
 		
-		datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
+		//datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
 		
 		String ValidCode = datamap.get(index).get("PythonCode");
 		
