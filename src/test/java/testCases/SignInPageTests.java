@@ -2,6 +2,8 @@ package testCases;
 
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
+
+
 import org.testng.annotations.Test;
 
 import factory.BaseClass;
@@ -12,9 +14,7 @@ import utilities.DataProviders;
 
 public class SignInPageTests extends BaseClass {
 	
-	Logger logger = BaseClass.getLogger();
-	
-		
+	Logger logger = BaseClass.getLogger();		
 	@Test (dataProvider="LoginData", dataProviderClass=DataProviders.class)
 	public void checkValidAndInvalidLoginTest(String user, String pwd, String result ) throws InterruptedException {
 		logger.info("Enter the login details and click Login at login page using DDT.............");
@@ -55,10 +55,9 @@ public class SignInPageTests extends BaseClass {
 					   }
 		     	}
 		
-			}
-	
-	
-	
-	
 			
+	
+		 
 	}
+}
+

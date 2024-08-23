@@ -102,17 +102,21 @@ public class BaseClass {
 	}
 	
 	
+	
 	@AfterMethod
 	public void tearDown()
 	{
 		 driver.get().quit();
 	}
 	
+	
 	public static WebDriver getDriver()
 	{
 		return driver.get();
 	}
 		
+	
+	
 	public synchronized static Properties getProperties() throws IOException
 	{
 		FileReader file = new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties");
