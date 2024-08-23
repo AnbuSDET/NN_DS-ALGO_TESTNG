@@ -14,13 +14,16 @@ import org.openqa.selenium.support.ui.Select;
 import factory.BaseClass;
 
 public class HomePage extends BasePage{
-
+   
+	public static  Properties p;
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
-	public static  Properties p;
+	
 	
 	//-----------WebElements-----------------
+	
 	@FindBy (xpath="//a[normalize-space()='NumpyNinja']")
 	private WebElement NumpyNinjaLink;
 	
