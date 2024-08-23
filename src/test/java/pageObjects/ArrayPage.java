@@ -2,6 +2,7 @@ package pageObjects;
 
 
 import java.util.HashMap;
+
 import java.util.List;
 
 import org.apache.logging.log4j.Logger;
@@ -16,7 +17,6 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import factory.BaseClass;
-
 
 public class ArrayPage extends BasePage{
 
@@ -169,8 +169,7 @@ public class ArrayPage extends BasePage{
 	{
 		sortedSquaresarray__Btn.click();
 	}
-	
-	
+
 	  public void ExcelData_PythonEditor(String rownumber) { int index =
 	  Integer.parseInt(rownumber)-1;
 	  
