@@ -196,7 +196,19 @@ public class LinkedListPageTests extends BaseClass {
 		
 		 }
 		 
-		 
+		 @Test
+		 public void check_LLPracticeQns()
+		 {
+			 Login_HomePage();
+			 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
+			 lp.click_Introduction();
+			lp.click_PracticeQns();
+			boolean status=lp.check_LLPracticeQns();
+			Assert.assertEquals(status, true);
+			logger.info("redirected to practice qn page............");
+				
+			 
+		 }
 		
 		
 }

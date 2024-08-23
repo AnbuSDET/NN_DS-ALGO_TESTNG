@@ -94,6 +94,16 @@ public class StackPage extends BasePage {
 			 return Check_URL;
 	}
 	
+	public void click_StPracticeQns() {
+		StackPracticeQnsBtn.click();
+	}
+	
+	public boolean check_StPracticeQnsPage()
+	{
+		String Current_URL=BaseClass.getDriver().getCurrentUrl();
+			 boolean Check_URL = Stack_PracticeQns_URL.equals(Current_URL);	
+			 return Check_URL;
+	}
 	
 	
 	}
