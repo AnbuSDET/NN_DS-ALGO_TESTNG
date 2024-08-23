@@ -27,8 +27,7 @@ public class LinkedListPageTests extends BaseClass {
 		 sp.enterpassword("Password@143");
 		 sp.clickLogin();
 		 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
-			
-		 lp.click_LLGetStarted();
+		lp.click_LLGetStarted();
 	}
 		 @Test
 		 public void check_LinkedListHomePage()
