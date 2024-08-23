@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import factory.BaseClass;
-// <class name="testCases.GetStartedPageTests"/>
+
 
 public class DataStructurePage extends BasePage{
 
