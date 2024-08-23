@@ -1,5 +1,7 @@
 package testCases;
 
+import java.io.IOException;
+
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,9 +14,8 @@ import utilities.DataProviders;
 
 public class SignInPageTests extends BaseClass {
 	
-	Logger logger = BaseClass.getLogger();
-	
-		
+	Logger logger = BaseClass.getLogger();		
+
 	@Test (dataProvider="LoginData", dataProviderClass=DataProviders.class)
 	public void checkValidAndInvalidLoginTest(String user, String pwd, String result ) {
 		logger.info("Enter the login details and click Login at login page using DDT.............");
@@ -26,7 +27,7 @@ public class SignInPageTests extends BaseClass {
 		 sp.enterUsername(user);
 		 sp.enterpassword(pwd);
 		 sp.clickLogin();
-	
+		 
 	  	 if (result.equalsIgnoreCase("Valid")){
 			 System.out.println("Valid");
 			      boolean display = hp.YouAreLoggedInMsg();
@@ -52,8 +53,8 @@ public class SignInPageTests extends BaseClass {
 						logger.error("Test Failed");
 					   }
 		        	}
+	   }
 		
-			}
 	
 	
 	
@@ -85,28 +86,21 @@ public class SignInPageTests extends BaseClass {
 	
 	
 	@Test 
-	public void checkUsernameDisplayAfterLogin() {
+	public void checkUsernameDisplayAfterLogin() throws IOException {
 		logger.info("Check username display at home pafe after login...........");
 		
-		GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());
-	      gsp.clickGetStartedSP();
-	    HomePage hp = new HomePage(BaseClass.getDriver());
-		 hp.clickSigIn();
-		SignInPage sp = new SignInPage(BaseClass.getDriver());	
-		 sp.enterUsername(p.getProperty("username"));
-		 System.out.println("Username is: "+p.getProperty("username"));
-		 sp.enterpassword(p.getProperty("password"));
-		 sp.clickLogin();
+		 HomePage hp = new HomePage(BaseClass.getDriver());
+		 hp.Login_HomePage();
 		 
 		  String NameDisplayed = hp.getUsernameAtLinkHomepage();
-		  if(NameDisplayed.equalsIgnoreCase(p.getProperty("username"))) {
-				  Assert.assertTrue(true);
-				  System.out.println("Username displayed");
-			  }
-		  else {
-			  Assert.assertTrue(false);
-			  System.out.println("Username NOT displayed");
-		   }		 
+			  if(NameDisplayed.equalsIgnoreCase(p.getProperty("username"))) {
+					  Assert.assertTrue(true);
+					  System.out.println("Username displayed");
+				  }
+			  else {
+				  Assert.assertTrue(false);
+				  System.out.println("Username NOT displayed");
+			   }		 
 		 
 	    }
 	
@@ -126,6 +120,8 @@ public class SignInPageTests extends BaseClass {
 	    }
 	
 	
-			
-	}
+		 
+	
+}
+
 

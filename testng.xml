@@ -10,6 +10,7 @@
       <classes>
           <class name="testCases.GetStartedPageTests"/>  
           <class name="testCases.SignInPageTests"></class> 
+
        </classes>
     </test> <!-- Test -->
     
