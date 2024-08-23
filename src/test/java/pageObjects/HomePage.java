@@ -72,7 +72,7 @@ public class HomePage extends BasePage{
 	@FindBy (xpath="//a[@href='graph']")
 	private WebElement GraphGetStartedBtn;
 	
-	@FindBy(xpath="//div[@role='alert']")
+	@FindBy(xpath="//div[contains(text(),'You are logged in')]")
 	private WebElement YouAreLoggedInMsg;  //-----Message after SignIn with Valid credentials
 		
 	@FindBy (xpath ="//div[contains(text(),'You are not logged in')]")

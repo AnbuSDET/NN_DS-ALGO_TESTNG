@@ -1,6 +1,7 @@
 package testCases;
 
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -9,14 +10,14 @@ import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 
 public class GetStartedPageTests extends BaseClass {
-	
 	Logger logger = BaseClass.getLogger();
-	GetStartedPage sp = new GetStartedPage(BaseClass.getDriver());
-	HomePage hp = new HomePage(BaseClass.getDriver());
+	
 		
 	@Test (priority=1)
 	public void TestGetStartedButton()  {
 		logger.info("Clicking the GetStarted Button.............");
+		GetStartedPage sp = new GetStartedPage(BaseClass.getDriver());
+		HomePage hp = new HomePage(BaseClass.getDriver());
 		sp.clickGetStartedSP();
 		boolean status = hp.NumpyNinjaLinkDisplay();
 		Assert.assertEquals(status, true ,"Home page is not displayed");	
@@ -26,6 +27,7 @@ public class GetStartedPageTests extends BaseClass {
 	
 	@Test(priority=2)
 	public void CopyrightNumpyNinja2021Display(){
+		GetStartedPage sp = new GetStartedPage(BaseClass.getDriver());
 		logger.info("Check the display of Copyright@NumpyNinja2021............");
 		sp = new GetStartedPage(BaseClass.getDriver());
 		boolean status = sp.copyrightDisplay();
