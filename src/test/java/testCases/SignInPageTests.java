@@ -3,10 +3,10 @@ package testCases;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import factory.BaseClass;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
+import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 import utilities.DataProviders;
 
@@ -16,14 +16,12 @@ public class SignInPageTests extends BaseClass {
 	
 		
 	@Test (dataProvider="LoginData", dataProviderClass=DataProviders.class)
-	public void checkValidAndInvalidLoginTest(String user, String pwd, String result ) throws InterruptedException {
+	public void checkValidAndInvalidLoginTest(String user, String pwd, String result ) {
 		logger.info("Enter the login details and click Login at login page using DDT.............");
-		GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());
+	    GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());
 		 gsp.clickGetStartedSP();
-		
-		HomePage hp = new HomePage(BaseClass.getDriver());
+	    HomePage hp = new HomePage(BaseClass.getDriver());
 		 hp.clickSigIn();
-		
 		SignInPage sp = new SignInPage(BaseClass.getDriver());	
 		 sp.enterUsername(user);
 		 sp.enterpassword(pwd);
@@ -53,12 +51,81 @@ public class SignInPageTests extends BaseClass {
 						Assert.assertTrue(false);
 						logger.error("Test Failed");
 					   }
-		     	}
+		        	}
 		
 			}
 	
 	
 	
+	@Test(dataProvider="EmptyUserOrPwdLoginData", dataProviderClass=DataProviders.class)
+	public void testLoginWithoutUsername(String user, String pwd) {
+		logger.info("Check display of warning message when we login without username or Password........");
+		
+		GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());
+		 gsp.clickGetStartedSP();
+	    HomePage hp = new HomePage(BaseClass.getDriver());
+		 hp.clickSigIn();
+		SignInPage sp = new SignInPage(BaseClass.getDriver());	
+		 sp.enterUsername(user);
+		 sp.enterpassword(pwd);
+		 sp.clickLogin();
+		 
+		  String ExpValidationMsg = "Please fill out this field.";
+		  String ActValidationMsg = sp.checkValidationMsgRegisterPg(user, pwd);
+		   if (ActValidationMsg.equalsIgnoreCase(ExpValidationMsg))
+			  {
+				  Assert.assertTrue(true);
+			  }
+		   else
+		     {
+			  Assert.assertTrue(false);
+			  System.out.println("The Validation message is not displayed..");
+		     }
+    	}
+	
+	
+	@Test 
+	public void checkUsernameDisplayAfterLogin() {
+		logger.info("Check username display at home pafe after login...........");
+		
+		GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());
+	      gsp.clickGetStartedSP();
+	    HomePage hp = new HomePage(BaseClass.getDriver());
+		 hp.clickSigIn();
+		SignInPage sp = new SignInPage(BaseClass.getDriver());	
+		 sp.enterUsername(p.getProperty("username"));
+		 System.out.println("Username is: "+p.getProperty("username"));
+		 sp.enterpassword(p.getProperty("password"));
+		 sp.clickLogin();
+		 
+		  String NameDisplayed = hp.getUsernameAtLinkHomepage();
+		  if(NameDisplayed.equalsIgnoreCase(p.getProperty("username"))) {
+				  Assert.assertTrue(true);
+				  System.out.println("Username displayed");
+			  }
+		  else {
+			  Assert.assertTrue(false);
+			  System.out.println("Username NOT displayed");
+		   }		 
+		 
+	    }
+	
+	
+	@Test 
+	public void checkMovingToRegisterPageFromLoginPage() throws InterruptedException {
+	logger.info("Check moving to Register Page from Login Page........");
+		GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());
+		 gsp.clickGetStartedSP();
+	    HomePage hp = new HomePage(BaseClass.getDriver());
+		 hp.clickSigIn();
+		SignInPage sp = new SignInPage(BaseClass.getDriver());	
+		 sp.clickRegister();
+		RegisterPage rp = new RegisterPage(BaseClass.getDriver());
+		    boolean display = rp.RegisterBtnDisplay();
+		    Assert.assertTrue(display);		
+	    }
+	
 	
 			
 	}
+
