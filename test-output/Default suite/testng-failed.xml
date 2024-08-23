@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.GetStartedPageTests">
+      <class name="testCases.DS_IntroductionTests">
         <methods>
-          <include name="TestGetStartedButton"/>
           <include name="initializeBrowser"/>
-          <include name="tearDown"/>
+          <include name="Test_DS_TimeComplexity_Practice_Questions_link"/>
         </methods>
-      </class> <!-- testCases.GetStartedPageTests -->
+      </class> <!-- testCases.DS_IntroductionTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
