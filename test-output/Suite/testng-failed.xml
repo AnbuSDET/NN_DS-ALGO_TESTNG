@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="testCases.DS_IntroductionTests">
+        <methods>
+          <include name="initializeBrowser"/>
+          <include name="Testing"/>
+          <include name="Test_DS_TimeComplexity_Practice_Questions_link"/>
+          <include name="Test_DS_TryHere"/>
+          <include name="Test_LeftPanel_TimeComplexity"/>
+          <include name="Test_DS_TimeComplexityLink"/>
+          <include name="DS_PythonEditor_InValidCodes"/>
+          <include name="DS_PythonEditor_ValidCodes"/>
+          <include name="DS_PythonEditor_WithoutCodes"/>
+          <include name="DS_TimeComplexity_SignOutBtn"/>
+        </methods>
+      </class> <!-- testCases.DS_IntroductionTests -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

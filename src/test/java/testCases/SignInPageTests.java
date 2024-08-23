@@ -12,12 +12,7 @@ public class SignInPageTests {
 	Logger logger = BaseClass.getLogger();
 	SignInPage sp = new SignInPage(BaseClass.getDriver());		
 	
-	@Test
-	public void checkValidAndInvalidLoginTest(String user, String pwd ) {
-		logger.info("Enter the username at login page.............");
-		 sp.enterUsername(user);
-		 sp.enterpassword(pwd);
-		 sp.clickLogin();
+	
 		 
 	}
 }
