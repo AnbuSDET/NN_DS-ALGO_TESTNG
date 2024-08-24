@@ -6,10 +6,10 @@
 		<listener class-name="utilities.ExtentReportManager"></listener>
 	</listeners>
 
-    <test name="SDET Warrior Test">   
-      <classes>
-        
-          <class name="testCases.GetStartedPageTests"/>
+    <test name="SDET Warrior Test" >   
+      <classes>       
+          
+          <class name="testCases.QueuePageTests"/>
        </classes>
     </test> <!-- Test -->
     

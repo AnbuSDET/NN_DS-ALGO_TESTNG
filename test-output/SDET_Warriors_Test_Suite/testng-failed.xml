@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [SDET_Warriors_Test_Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="utilities.ExtentReportManager"/>
+  </listeners>
   <test thread-count="5" name="SDET Warrior Test(failed)">
     <classes>
-      <class name="testCases.GetStartedPageTests">
+      <class name="testCases.QueuePageTests">
         <methods>
-          <include name="TestGetStartedButton"/>
-          <include name="initializeBrowser"/>
+          <include name="Test_PythonEditor_ImplementationUsing_Array_ValidCodes"/>
+          <include name="Test_PythonEditor_ImplementationOf_Queue_InPython_InValidCodes"/>
+          <include name="Test_TryHere_Implementation_UsingCollections_Queue"/>
+          <include name="Test_LEFTPanel_ImplementationOf_Queue_InPython"/>
+          <include name="Test_TryHere_QueueOperations"/>
           <include name="tearDown"/>
+          <include name="Test_PythonEditor_ImplementationOf_Queue_InPython_withOutCodes"/>
+          <include name="Test_QueueOperations"/>
+          <include name="Test_LEFTPanel_PracticeQuestions"/>
+          <include name="Test_LEFTPanel_ImplementaionUsing_Array"/>
+          <include name="Test_PythonEditor_Implementation_UsingCollections_Queue_WithOutCodes"/>
+          <include name="Test_PythonEditor_QueueOperations_InValidCodes"/>
+          <include name="Test_PythonEditor_QueueOperations_ValidCodes"/>
+          <include name="Test_Queue_GetStarted"/>
+          <include name="Test_PythonEditor_ImplementationUsing_Array_WithOutCodes"/>
+          <include name="Test_PythonEditor_ImplementationUsing_Array_InValidCodes"/>
+          <include name="Test_TryHere_ImplementationOf_Queue_InPython"/>
+          <include name="initializeBrowser"/>
+          <include name="Test_PythonEditor_Implementation_UsingCollections_Queue_InValidCodes"/>
+          <include name="Test_LEFTPanel_Implementation_UsingCollections_Queue"/>
+          <include name="Test_PythonEditor_Implementation_UsingCollections_Queue_ValidCodes"/>
+          <include name="Test_LEFTPanel_QueueOperations"/>
+          <include name="Test_PythonEditor_ImplementationOf_Queue_InPython_ValidCodes"/>
+          <include name="Test_Implementation_UsingCollections_Queue"/>
+          <include name="Test_PythonEditor_QueueOperations_WithOutCodes"/>
+          <include name="Test_TryHere_Test_ImplementationUsing_Array"/>
         </methods>
-      </class> <!-- testCases.GetStartedPageTests -->
+      </class> <!-- testCases.QueuePageTests -->
     </classes>
   </test> <!-- SDET Warrior Test(failed) -->
 </suite> <!-- Failed suite [SDET_Warriors_Test_Suite] -->

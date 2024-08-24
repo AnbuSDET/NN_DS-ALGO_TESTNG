@@ -20,20 +20,12 @@ public class DS_IntroductionTests extends BaseClass{
 	Logger logger = BaseClass.getLogger();		
 	
 	
-	public void checkValidAndInvalidLoginTest(String user, String pwd) {
-		SignInPage sp= new SignInPage(BaseClass.getDriver());
-		logger.info("Enter the username at login page.............");
-		 sp.enterUsername(user);
-		 sp.enterpassword(pwd);
-		 sp.clickLogin();
-		 
-	}
 	
-	
-	
-	@Test
-	void Test_DS_TimeComplexityLink()
+	@Test 
+	void Test_DS_TimeComplexityLink()throws IOException
 	{
+		HomePage Hp = new HomePage(BaseClass.getDriver());		
+	    Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
 		Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();
@@ -64,16 +56,17 @@ public class DS_IntroductionTests extends BaseClass{
 	@Test
 	void Test_LeftPanel_TimeComplexity()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());
-		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-		try {
+		HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     try {
 			Hp.Login_HomePage();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Dp.click_TimeComplexityBtn();
-		Dp.click_TimeComplexityBtn();
+		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
+		Dp.click_GetStartedBtn_DSIroduction();
+		Dp.click_TimeComplexityBtn();	
+		Dp.click_DS_TimeComplexity_LeftPanel();
 		String CurrentURL =BaseClass.getDriver().getCurrentUrl();
 		Assert.assertEquals(true, CurrentURL.contains("time"));
 	}	
@@ -84,13 +77,14 @@ public class DS_IntroductionTests extends BaseClass{
 	void Test_DS_TryHere()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-		try {
+				try {
 			Hp.Login_HomePage();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
+       Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();
 		Dp.click_DS_TimeComplexity_TryhereBtn();
         String CurURL= BaseClass.getDriver().getCurrentUrl();	    
@@ -102,9 +96,16 @@ public class DS_IntroductionTests extends BaseClass{
 	@Test
 	void DS_PythonEditor_ValidCodes()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());
+		HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-		//Hp.Login_HomePage();
+		
 		logger.info("Clicking the Try Editor Page   ");
 		Dp.DS_Pyhton_Editor_Page();
 		 logger.info("Entering valid python code..........");
@@ -113,9 +114,9 @@ public class DS_IntroductionTests extends BaseClass{
 		 Dp.click_DS_PythonEditor_RunBtn();  
 		 Dp.validate_Console_Output();        
 	       
-	        logger.info("Console output.......     " +Dp.ConsoleOutput + Dp.PYEditor_Code);
+	        logger.info("Console output.......     " +Dp.ConsoleOutput_text + Dp.PYEditor_Code);
 	        
-	        Assert.assertEquals(true,Dp.PYEditor_Code.contains(Dp.ConsoleOutput) );
+	        Assert.assertEquals(true,Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text) );
 	}
 	
 	
@@ -123,9 +124,14 @@ public class DS_IntroductionTests extends BaseClass{
 	@Test
 	void DS_PythonEditor_InValidCodes()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());
-		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-		//Hp.Login_HomePage();
+		HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
 		Dp.DS_Pyhton_Editor_Page();
 		Dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
 		Dp.Validate_OutputConsole_InvalidCodes();
@@ -138,10 +144,14 @@ public class DS_IntroductionTests extends BaseClass{
 	@Test
 	void DS_TimeComplexity_SignOutBtn()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());
-		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-		//Hp.Login_HomePage();
-		
+		HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());				
 		Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_Signout_Btn();		
 		boolean status = Dp.SignOutErrorMessgae();
@@ -153,9 +163,15 @@ public class DS_IntroductionTests extends BaseClass{
 	@Test
 	void DS_PythonEditor_WithoutCodes()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());
+		HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-	//	Hp.Login_HomePage();
+	
 		  Dp.DS_Pyhton_Editor_Page();
 		  Dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
 		  String crntURL = BaseClass.getDriver().getCurrentUrl();
