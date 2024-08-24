@@ -13,7 +13,7 @@ import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 import utilities.DataProviders;
 
-public class SignInPageTests extends Hooks {
+public class SignInPageTests extends BaseClass {
 	
 	Logger logger = BaseClass.getLogger();		
 

@@ -37,11 +37,10 @@ public class BaseClass {
 	public static  Properties p;
 	public  static Logger logger;
 	
-	
-	public static ThreadLocal<WebDriver> initializeBrowser() throws IOException
+	@BeforeMethod
+	public static void initializeBrowser() throws IOException
 	{
-	  
-		
+	   		
 		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote"))
 		{
 			DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -80,7 +79,6 @@ public class BaseClass {
 		else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local"))
 		{
 			switch (getProperties().getProperty("browser").toLowerCase())
-		
 			{
 			case "chrome":
 				driver.set(ThreadGuard.protect(new ChromeDriver())); break;
@@ -91,16 +89,23 @@ public class BaseClass {
 			default:
 				System.out.println("No matching Browser found.......");
 			}
-			
 		}
 		
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-					
-		return driver;
+		getDriver().get(p.getProperty("appURL"));
+		getDriver().manage().window().maximize();
 		
+	//	return driver;
 	}
 	
+	
+	
+	@AfterMethod
+	public void tearDown()
+	{
+		 driver.get().quit();
+	}
 	
 	
 	public static WebDriver getDriver()
@@ -138,7 +143,6 @@ public class BaseClass {
 		sourceFile.renameTo(targetFile);
 			
 		return targetFilePath;
-
 	}
 	
 	public static String randomeString()

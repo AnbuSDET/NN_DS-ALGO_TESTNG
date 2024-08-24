@@ -10,7 +10,7 @@ import factory.BaseClass;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 
-public class GetStartedPageTests extends Hooks {
+public class GetStartedPageTests extends BaseClass {
 	Logger logger = BaseClass.getLogger();
 	
 		
