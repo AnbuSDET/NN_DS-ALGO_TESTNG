@@ -14,13 +14,16 @@ import org.openqa.selenium.support.ui.Select;
 import factory.BaseClass;
 
 public class HomePage extends BasePage{
-
+   
+	public static  Properties p;
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
-	public static  Properties p;
+	
 	
 	//-----------WebElements-----------------
+	
 	@FindBy (xpath="//a[normalize-space()='NumpyNinja']")
 	private WebElement NumpyNinjaLink;
 	
@@ -78,7 +81,7 @@ public class HomePage extends BasePage{
 	@FindBy (xpath="//a[@href='graph']")
 	private WebElement GraphGetStartedBtn;
 	
-	@FindBy(xpath="//div[@role='alert']")
+	@FindBy(xpath="//div[contains(text(),'You are logged in')]")
 	private WebElement YouAreLoggedInMsg;  //-----Message after SignIn with Valid credentials
 		
 	@FindBy (xpath ="//div[contains(text(),'You are not logged in')]")

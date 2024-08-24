@@ -2,5 +2,7 @@
 /target/
 /.metadata/
 /logs/
+/allure-results/
 /test-output/
 /reports/
+

@@ -85,12 +85,10 @@ public class SignInPage extends BasePage {
 			
 		if(user.isEmpty())
 			{
-			  System.out.println("Case: When username is not given during Login");
 			  validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", username);
 			 }
 		else if (pwd.isEmpty())
 			{
-			  System.out.println("Case: When password is not given during Login");
 			  validationMessage = (String) js.executeScript("return arguments[0].validationMessage;", password);
 			 }
 		
