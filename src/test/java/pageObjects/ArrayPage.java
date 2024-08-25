@@ -17,6 +17,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import factory.BaseClass;
+import utilities.DataReader;
 
 public class ArrayPage extends BasePage{
 
@@ -91,7 +92,6 @@ public class ArrayPage extends BasePage{
 	
 	@FindBy(css="button")
 	WebElement Textarea_button3;
-	
 	
 	
 	
@@ -174,105 +174,6 @@ public class ArrayPage extends BasePage{
 	}
 
 	
-	/*
-	 * public void ExcelData_PythonEditor(String rownumber) { int index =
-	 * Integer.parseInt(rownumber)-1;
-	 * 
-	 * datamap=DataReader.data(System.getProperty("user.dir")+
-	 * "\\testData\\Python_Editor_Data.xlsx","Sheet1");
-	 * 
-	 * String ValidCode = datamap.get(index).get("PythonCode");
-	 * 
-	 * String Output = datamap.get(index).get("Result");
-	 * 
-	 * TextareaScroll_1.click();
-	 * 
-	 * JavascriptExecutor js=(JavascriptExecutor) BaseClass.getDriver();
-	 * 
-	 * js.executeScript("window.scrollTo(0,0)");
-	 * 
-	 * enterCodePractice(ValidCode,Textarea_Type2);
-	 * 
-	 * 
-	 * Textarea_button3.click();
-	 * 
-	 * }
-	 * 
-	 * 
-	 * 
-	 * 
-	 * public void enterCodePractice(String code, WebElement element) {
-	 * 
-	 * new
-	 * Actions(driver).keyDown(Keys.CONTROL).sendKeys("a").sendKeys(Keys.DELETE).
-	 * keyUp(Keys.CONTROL).perform();
-	 * 
-	 * String[] str1 = code.split("\n"); for (int i = 0; i < str1.length; i++) { if
-	 * (str1[i].equalsIgnoreCase("\\b")) { element.sendKeys(Keys.BACK_SPACE); } else
-	 * { element.sendKeys(str1[i]); element.sendKeys(Keys.RETURN); } } }
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * 
-	 * public void ExcelData_PythonEditor_OutPutConsole_Validation(String rowNum) {
-	 * 
-	 * int index = Integer.parseInt(rowNum)-1;
-	 * 
-	 * datamap=DataReader.data(System.getProperty("user.dir")+
-	 * "\\testData\\Python_Editor_Data.xlsx","Sheet1");
-	 * 
-	 * String Output = datamap.get(index).get("Result");
-	 * 
-	 * String ConsoleResult = ConsoleOutput.getText();
-	 * logger.info("Sheet Result..> " + Output+",Console Output:"+ConsoleResult);
-	 * 
-	 * Assert.assertEquals(true,ConsoleResult.contains(Output) );
-	 * 
-	 * }
-	 * 
-	 * 
-	 * public void ExcelData_PythonEditor_AlertValidation(String rowNum) { Alert
-	 * alert ; int index = Integer.parseInt(rowNum)-1;
-	 * 
-	 * datamap=DataReader.data(System.getProperty("user.dir")+
-	 * "\\testData\\Python_Editor_Data.xlsx","Sheet1");
-	 * 
-	 * String ExcelOutput = datamap.get(index).get("Result");
-	 * 
-	 * alert=BaseClass.getDriver().switchTo().alert();
-	 * 
-	 * String AlertMessage = alert.getText();
-	 * 
-	 * Assert.assertEquals(true, AlertMessage.contains(ExcelOutput));
-	 * 
-	 * logger.info("Alert Message ... > " + AlertMessage); }
-	 * 
-	 * 
-	 * 
-	 * 
-	 * public void Click_Submit_Btn_ExcelData_ValidCodes(String Rownumber) {
-	 * 
-	 * int index = Integer.parseInt(Rownumber)-1;
-	 * 
-	 * datamap=DataReader.data(System.getProperty("user.dir")+
-	 * "\\testData\\Python_Editor_Data.xlsx","Sheet1");
-	 * 
-	 * String ValidCode = datamap.get(index).get("PythonCode");
-	 * 
-	 * String Output = datamap.get(index).get("Result");
-	 * 
-	 * TextareaScroll_1.click(); enterCodePractice(ValidCode,Textarea_Type2);
-	 * 
-	 * 
-	 * PythonEditor_submit_Btn.click();
-	 * 
-	 * 
-	 * }
-	 * 
-	 */
-
 
 	  public void ExcelData_PythonEditor(String rownumber) { int index =
 	  Integer.parseInt(rownumber)-1;
@@ -334,7 +235,7 @@ public class ArrayPage extends BasePage{
 	  public void ExcelData_PythonEditor_AlertValidation(String rowNum) { Alert
 	  alert ; int index = Integer.parseInt(rowNum)-1;
 	  
-	 // datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
+	 datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
 	  
 	  String ExcelOutput = datamap.get(index).get("Result");
 	  
@@ -353,7 +254,7 @@ public class ArrayPage extends BasePage{
 	  
 	  int index = Integer.parseInt(Rownumber)-1;
 	  
-	 // datamap=DataReader.data(System.getProperty("user.dir")+ "\\testData\\Python_Editor_Data.xlsx","Sheet1");
+	  datamap=DataReader.data(System.getProperty("user.dir")+ "\\testData\\Python_Editor_Data.xlsx","Sheet1");
 	  
 	  String ValidCode = datamap.get(index).get("PythonCode");
 	  
