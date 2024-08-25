@@ -40,8 +40,7 @@ public class BaseClass {
 	@BeforeMethod
 	public static void initializeBrowser() throws IOException
 	{
-	   //---comment	  
-		
+	   		
 		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote"))
 		{
 			DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -80,7 +79,6 @@ public class BaseClass {
 		else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local"))
 		{
 			switch (getProperties().getProperty("browser").toLowerCase())
-		//	switch(browser)
 			{
 			case "chrome":
 				driver.set(ThreadGuard.protect(new ChromeDriver())); break;
@@ -135,15 +133,13 @@ public class BaseClass {
 	public String captureScreen(String tname) throws IOException {
 
 		String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-				
-		TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+		TakesScreenshot takesScreenshot=(TakesScreenshot) BaseClass.getDriver();		
 		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 		
 		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
 		File targetFile=new File(targetFilePath);
 		
 		sourceFile.renameTo(targetFile);
-			
 		return targetFilePath;
 	}
 	

@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -19,15 +20,21 @@ import factory.BaseClass;
 
 public class DataStructurePage extends BasePage{
 
-	public String PYEditor_Code = "'Numpy Ninja'";	
-	
-	public String ConsoleOutput="";
-	public String Alertmesg ="";
-	
 	public DataStructurePage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		
 	}
+
+	WebDriver driver;
+	
+	
+	public String PYEditor_Code = "'Numpy Ninja'";	
+	
+	public String ConsoleOutput_text="";
+	public String Alertmesg ="";
+	
+	 
+		
 	
 	
 	//-------------WebElements--------------
@@ -58,8 +65,24 @@ public class DataStructurePage extends BasePage{
 	
 	
 	@FindBy (xpath="//div[@role='alert']")
-	public WebElement DS_LogoutMessage;
+	public WebElement DS_LogoutMessage;	
 	
+	
+	@FindBy(xpath="//*[@value='Submit']")
+	public WebElement PythonEditor_submit_Btn;
+	
+	
+	@FindBy(css=".CodeMirror-scroll")
+	WebElement TextareaScroll_1;
+	
+	@FindBy(css="div:nth-child(1) > textarea")
+	WebElement Textarea_Type2;
+	
+	@FindBy(css="button")
+	WebElement Textarea_button3;
+	
+	@FindBy (id = "output")
+	WebElement ConsoleOutPut;
 	
 	//-----------Methods---------
 		
@@ -85,7 +108,7 @@ public class DataStructurePage extends BasePage{
 	public void click_DS_TimeComplexity_TryhereBtn()
 	{
 		JavascriptExecutor jse = (JavascriptExecutor)BaseClass.getDriver();
-		jse.executeScript("window.scrollBy(0,1000)"); 
+		jse.executeScript("window.scrollBy(0,700)"); 		
 		TryHereBtn.click();		
 	}
 		
@@ -101,11 +124,12 @@ public class DataStructurePage extends BasePage{
 	// Python Editor ->  Without Codes
 	public void Click_DS_PythonEditor_Runbtn_WithoutCodes()
 	{
-		BaseClass.getDriver().findElement(By.cssSelector(".CodeMirror-scroll")).click();
-        JavascriptExecutor js=(JavascriptExecutor) BaseClass.getDriver();
-        js.executeScript("window.scrollTo(0,0)");	       
-        BaseClass.getDriver().findElement(By.cssSelector("div:nth-child(1) > textarea")).sendKeys("");
-        BaseClass.getDriver().findElement(By.cssSelector("button")).click();   
+		
+		   TextareaScroll_1.click();			
+	        JavascriptExecutor js=(JavascriptExecutor) BaseClass.getDriver();
+	        js.executeScript("window.scrollTo(0,0)");	    
+	        Textarea_Type2.sendKeys("");	        
+	        Textarea_button3.click();  
 	}
 	
 	
@@ -113,42 +137,43 @@ public class DataStructurePage extends BasePage{
 	public void Click_DS_PythonEditor_Runbtn_ValidCodes()		
 	
 	{	  		
-		
-			BaseClass.getDriver().findElement(By.cssSelector(".CodeMirror-scroll")).click();
+		     TextareaScroll_1.click();			
 	        JavascriptExecutor js=(JavascriptExecutor) BaseClass.getDriver();
-	        js.executeScript("window.scrollTo(0,0)");	       
-	        BaseClass.getDriver().findElement(By.cssSelector("div:nth-child(1) > textarea")).sendKeys("print "+PYEditor_Code);
-	        BaseClass.getDriver().findElement(By.cssSelector("button")).click();   
-		
+	        js.executeScript("window.scrollTo(0,0)");	    
+	        Textarea_Type2.sendKeys("print "+PYEditor_Code);	        
+	        Textarea_button3.click(); 	
 	        
 	}
+	
 	
 	
 	 // Python Editor -> Entering In-Valid Codes 
 	public void Click_DS_PythonEditor_Runbtn_InValidCodes()
 	{
-		BaseClass.getDriver().findElement(By.cssSelector(".CodeMirror-scroll")).click();
-        JavascriptExecutor js=(JavascriptExecutor) BaseClass.getDriver();
-        js.executeScript("window.scrollTo(0,0)");	       
-        BaseClass.getDriver().findElement(By.cssSelector("div:nth-child(1) > textarea")).sendKeys("Print "+PYEditor_Code);
-        BaseClass.getDriver().findElement(By.cssSelector("button")).click();  
+		
+		 TextareaScroll_1.click();			
+	        JavascriptExecutor js=(JavascriptExecutor) BaseClass.getDriver();
+	        js.executeScript("window.scrollTo(0,0)");	    
+	        Textarea_Type2.sendKeys("Print "+PYEditor_Code);	        
+	        Textarea_button3.click(); 			 
 		
 	}
 	
 	
 	// Python Editor -> Console OUTPUT -> For Valid Codes
+	
 	public void validate_Console_Output()
 	{				
-		WebElement result=BaseClass.getDriver().findElement(By.xpath("//*[@id='output']"));		
+		//WebElement result=BaseClass.getDriver().findElement(By.xpath("//*[@id='output']"));		
 		
-         ConsoleOutput=result.getText();  
+         ConsoleOutput_text=ConsoleOutPut.getText();  
         
 	}
 	
 	// Python Editor -> Invalid Codes Validation (Alert Message)
 	public void Validate_OutputConsole_InvalidCodes()
 	{
-		Alert alert = driver.switchTo().alert();		
+		Alert alert = BaseClass.getDriver().switchTo().alert();		
 		Alertmesg = alert.getText();
 			
 	}
