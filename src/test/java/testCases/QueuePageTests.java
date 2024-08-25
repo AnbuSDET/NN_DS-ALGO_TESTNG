@@ -158,13 +158,17 @@ public class QueuePageTests extends BaseClass{
 	 
 	@Test 
 	 void Test_PythonEditor_ImplementationOf_Queue_InPython_ValidCodes()
-	 {
-		 
+	 {		
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplementaionOfQueue();
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_ValidCodes_Validation_All();
+		 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		 	  		  
+		 Dp.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		 Dp.click_DS_PythonEditor_RunBtn();  
+		 Dp.validate_Console_Output();     
+	     logger.info("Console output.......     " +Dp.ConsoleOutput_text + Dp.PYEditor_Code);	        
+	     Assert.assertEquals(true,Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text) );
 		
 	 }
 	 
@@ -174,11 +178,14 @@ public class QueuePageTests extends BaseClass{
 		 
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
-		 Qp.Click_ImplementaionOfQueue();
-		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+		 Qp.Click_ImplementaionOfQueue();		 
 		 Qp.Click_Tryhere();
+		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
 		 logger.info("User Entering invalid pythod code on the editor ..... ");			
-		 Qp.PythonEditor_InValidCodes_Validation_All(); 
+		 dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 dp.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + dp.Alertmesg);		
+	     Assert.assertEquals(true, dp.Alertmesg.contains("bad input on line 1"));
 		 
 	 }
 	 
@@ -188,11 +195,12 @@ public class QueuePageTests extends BaseClass{
 		 
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
-		 Qp.Click_ImplementaionOfQueue();
-		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+		 Qp.Click_ImplementaionOfQueue();		 
 		 Qp.Click_Tryhere();
-		 logger.info("Without Codes in Python Editor ..... ");	
-		Qp.PythonEditor_WithOutCodes_Validation_All();
+		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+		 dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String crntURL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, crntURL.contains("tryEditor"));
 		
 	 }
 	 
@@ -219,7 +227,12 @@ public class QueuePageTests extends BaseClass{
 		 Qp.Click_ImplemenUsingCollectionOfQueue();
 		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_ValidCodes_Validation_All();
+		 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		 	  		  
+		 Dp.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		 Dp.click_DS_PythonEditor_RunBtn();  
+		 Dp.validate_Console_Output();     
+	     logger.info("Console output.......     " +Dp.ConsoleOutput_text + Dp.PYEditor_Code);	        
+	     Assert.assertEquals(true,Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text) );
 	 }
 	 
 	 
@@ -231,7 +244,12 @@ public class QueuePageTests extends BaseClass{
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingCollectionOfQueue();		
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_InValidCodes_Validation_All();
+		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+		 logger.info("User Entering invalid pythod code on the editor ..... ");			
+		 dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 dp.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + dp.Alertmesg);		
+	     Assert.assertEquals(true, dp.Alertmesg.contains("bad input on line 1"));
 		
 	 }
 	 
@@ -242,7 +260,10 @@ public class QueuePageTests extends BaseClass{
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingCollectionOfQueue();		
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_WithOutCodes_Validation_All();	 
+		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+		 dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String crntURL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, crntURL.contains("tryEditor")); 
 		 
 	 }
 	 
@@ -266,7 +287,12 @@ public class QueuePageTests extends BaseClass{
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingArry();		
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_ValidCodes_Validation_All();
+		 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		 	  		  
+		 Dp.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		 Dp.click_DS_PythonEditor_RunBtn();  
+		 Dp.validate_Console_Output();     
+	     logger.info("Console output.......     " +Dp.ConsoleOutput_text + Dp.PYEditor_Code);	        
+	     Assert.assertEquals(true,Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text) );
 		 
 	 }
 	 
@@ -277,7 +303,12 @@ public class QueuePageTests extends BaseClass{
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingArry();		
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_InValidCodes_Validation_All();
+		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+		 logger.info("User Entering invalid pythod code on the editor ..... ");			
+		 dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 dp.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + dp.Alertmesg);		
+	     Assert.assertEquals(true, dp.Alertmesg.contains("bad input on line 1"));		 
 	 }
 	 
 	 
@@ -288,7 +319,10 @@ public class QueuePageTests extends BaseClass{
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingArry();		
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_WithOutCodes_Validation_All();
+		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+		 dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String crntURL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, crntURL.contains("tryEditor"));
 	 }
 	 
 	 @Test
@@ -311,7 +345,12 @@ public class QueuePageTests extends BaseClass{
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_QueueOperation();		
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_ValidCodes_Validation_All();
+		 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		 	  		  
+		 Dp.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		 Dp.click_DS_PythonEditor_RunBtn();  
+		 Dp.validate_Console_Output();     
+	     logger.info("Console output.......     " +Dp.ConsoleOutput_text + Dp.PYEditor_Code);	        
+	     Assert.assertEquals(true,Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text) );
 	 }
 	 
 	 @Test
@@ -321,7 +360,13 @@ public class QueuePageTests extends BaseClass{
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_QueueOperation();		
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_InValidCodes_Validation_All();
+		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+		 logger.info("User Entering invalid pythod code on the editor ..... ");			
+		 dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 dp.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + dp.Alertmesg);		
+	     Assert.assertEquals(true, dp.Alertmesg.contains("bad input on line 1"));
+		
 	 }
 	 
 	 @Test
@@ -331,7 +376,10 @@ public class QueuePageTests extends BaseClass{
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_QueueOperation();		
 		 Qp.Click_Tryhere();
-		 Qp.PythonEditor_WithOutCodes_Validation_All();
+		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+		 dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String crntURL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, crntURL.contains("tryEditor"));
 	 }
 	 
 	 

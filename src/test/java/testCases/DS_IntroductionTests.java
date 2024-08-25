@@ -3,6 +3,7 @@ package testCases;
 import java.io.IOException;
 
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -14,23 +15,26 @@ import pageObjects.HomePage;
 import pageObjects.SignInPage;
 
 
-public class DS_IntroductionTests extends BaseClass{
+
+
+public class DS_IntroductionTests extends BaseClass {
 	
 	
-	Logger logger = BaseClass.getLogger();		
+	Logger logger = BaseClass.getLogger();	
 	
 	
 	
 	@Test 
 	void Test_DS_TimeComplexityLink()throws IOException
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	    Hp.Login_HomePage();
-		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
-		Dp.click_GetStartedBtn_DSIroduction();
-		Dp.click_TimeComplexityBtn();
-		String CurrentURL =BaseClass.getDriver().getCurrentUrl();
-		Assert.assertEquals(true, CurrentURL.contains("time"));
+		HomePage Hp = new HomePage(BaseClass.getDriver());			
+	    Hp.Login_HomePage();		
+		 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
+		 Dp.click_GetStartedBtn_DSIroduction(); 
+		 Dp.click_TimeComplexityBtn();
+		  String CurrentURL =BaseClass.getDriver().getCurrentUrl();
+		  Assert.assertEquals(true, CurrentURL.contains("time"));
+		 
 	}
 
 	
@@ -114,9 +118,9 @@ public class DS_IntroductionTests extends BaseClass{
 		 Dp.click_DS_PythonEditor_RunBtn();  
 		 Dp.validate_Console_Output();        
 	       
-	        logger.info("Console output.......     " +Dp.ConsoleOutput_text + Dp.PYEditor_Code);
+	     logger.info("Console output.......     " +Dp.ConsoleOutput_text + Dp.PYEditor_Code);
 	        
-	        Assert.assertEquals(true,Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text) );
+	     Assert.assertEquals(true,Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text) );
 	}
 	
 	
@@ -153,6 +157,7 @@ public class DS_IntroductionTests extends BaseClass{
 		}
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());				
 		Dp.click_GetStartedBtn_DSIroduction();
+		Dp.click_TimeComplexityBtn();
 		Dp.click_Signout_Btn();		
 		boolean status = Dp.SignOutErrorMessgae();
 		Assert.assertTrue(status);

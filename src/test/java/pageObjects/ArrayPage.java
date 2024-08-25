@@ -22,8 +22,11 @@ public class ArrayPage extends BasePage{
 
 	public ArrayPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		
 	}
+	
+	public String AlertMessage="";
+	public String ValidCode="";
 	
 	Logger logger = BaseClass.getLogger();	
 	
@@ -169,7 +172,7 @@ public class ArrayPage extends BasePage{
 	{
 		sortedSquaresarray__Btn.click();
 	}
-<<<<<<< HEAD
+
 	
 	/*
 	 * public void ExcelData_PythonEditor(String rownumber) { int index =
@@ -269,7 +272,7 @@ public class ArrayPage extends BasePage{
 	 * }
 	 * 
 	 */
-=======
+
 
 	  public void ExcelData_PythonEditor(String rownumber) { int index =
 	  Integer.parseInt(rownumber)-1;
@@ -320,6 +323,7 @@ public class ArrayPage extends BasePage{
 	  String Output = datamap.get(index).get("Result");
 	  
 	  String ConsoleResult = ConsoleOutput.getText();
+	  
 	  logger.info("Sheet Result..> " + Output+",Console Output:"+ConsoleResult);
 	  
 	  Assert.assertEquals(true,ConsoleResult.contains(Output) );
@@ -336,7 +340,7 @@ public class ArrayPage extends BasePage{
 	  
 	  alert=BaseClass.getDriver().switchTo().alert();
 	  
-	  String AlertMessage = alert.getText();
+	   AlertMessage = alert.getText();
 	  
 	  Assert.assertEquals(true, AlertMessage.contains(ExcelOutput));
 	  
@@ -355,8 +359,9 @@ public class ArrayPage extends BasePage{
 	  
 	  String Output = datamap.get(index).get("Result");
 	  
-	  TextareaScroll_1.click(); enterCodePractice(ValidCode,Textarea_Type2);
+	  TextareaScroll_1.click(); 
 	  
+	  enterCodePractice(ValidCode,Textarea_Type2);	  
 	  
 	  PythonEditor_submit_Btn.click();
 	  
@@ -364,6 +369,6 @@ public class ArrayPage extends BasePage{
 	  }
 	 
 	
->>>>>>> main
+
 	
 }

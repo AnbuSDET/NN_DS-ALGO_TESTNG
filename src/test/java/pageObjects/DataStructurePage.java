@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -19,15 +20,21 @@ import factory.BaseClass;
 
 public class DataStructurePage extends BasePage{
 
+	public DataStructurePage(WebDriver driver) {
+		super(driver);
+		
+	}
+
+	WebDriver driver;
+	
+	
 	public String PYEditor_Code = "'Numpy Ninja'";	
 	
 	public String ConsoleOutput_text="";
 	public String Alertmesg ="";
 	
-	public DataStructurePage(WebDriver driver) {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
+	 
+		
 	
 	
 	//-------------WebElements--------------
@@ -166,7 +173,7 @@ public class DataStructurePage extends BasePage{
 	// Python Editor -> Invalid Codes Validation (Alert Message)
 	public void Validate_OutputConsole_InvalidCodes()
 	{
-		Alert alert = driver.switchTo().alert();		
+		Alert alert = BaseClass.getDriver().switchTo().alert();		
 		Alertmesg = alert.getText();
 			
 	}

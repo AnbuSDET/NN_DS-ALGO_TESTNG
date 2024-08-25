@@ -98,38 +98,7 @@ public class QueuePage extends BasePage{
 			e.printStackTrace();
 		}
 	    Hp.clickQueueGetStarted();
-	}
-	
-	
-	public void PythonEditor_ValidCodes_Validation_All()
-	{
-		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
-		 
-		 logger.info("Entering valid python code..........");
-		 dp.Click_DS_PythonEditor_Runbtn_ValidCodes();
-		 dp.validate_Console_Output();        
-	       
-	        logger.info("Console output.......     " +dp.ConsoleOutput_text + dp.PYEditor_Code);
-	        
-	        Assert.assertEquals(true,dp.PYEditor_Code.contains(dp.ConsoleOutput_text) );
-	}
-	
-	
-	public void PythonEditor_InValidCodes_Validation_All()
-	{
-		 logger.info("User Entering invalid pythod code on the editor ..... ");			
-		 dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
-		 dp.Validate_OutputConsole_InvalidCodes();
-		 logger.info("Alert Message in Python Editor " + dp.Alertmesg);		
-	     Assert.assertEquals(true, dp.Alertmesg.contains("bad input on line 1"));	 
-	}
-	
-	public void PythonEditor_WithOutCodes_Validation_All()
-	{
-		 dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
-		 String crntURL = BaseClass.getDriver().getCurrentUrl();
-		 Assert.assertEquals(true, crntURL.contains("tryEditor"));
-	}
+	}	
 	
 	
 	

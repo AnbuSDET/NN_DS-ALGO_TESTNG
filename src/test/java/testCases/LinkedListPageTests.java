@@ -76,10 +76,11 @@ public class LinkedListPageTests extends BaseClass {
 				  logger.info("Entering valid python code..........");
 				  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
 				  ds.click_DS_PythonEditor_RunBtn();  
-				  ds.validate_Console_Output();        
-				  logger.info("Console output.......     " +ds.ConsoleOutput + ds.PYEditor_Code);
-				  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput) );
-		
+				  ds.validate_Console_Output();     
+				
+				  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+				  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+				  
 		 }
 		 
 		 @Test
