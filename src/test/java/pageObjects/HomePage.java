@@ -16,11 +16,11 @@ import factory.BaseClass;
 public class HomePage extends BasePage{
    
 	public static  Properties p;
+
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
-	}
-	
+	}		
 	
 	//-----------WebElements-----------------
 	
@@ -112,8 +112,7 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//h4[normalize-space()='Graph']")
 	private WebElement GraphPage;
 	
-	//------------------Methods---------------	
-	
+	//------------------Methods---------------		
 		
 	
 	public void Login_HomePage() throws IOException

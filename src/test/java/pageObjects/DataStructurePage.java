@@ -19,7 +19,8 @@ import factory.BaseClass;
 
 
 public class DataStructurePage extends BasePage{
-
+	
+	
 	public DataStructurePage(WebDriver driver) {
 		super(driver);
 		
