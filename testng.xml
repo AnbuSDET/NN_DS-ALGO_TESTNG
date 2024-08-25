@@ -4,10 +4,13 @@
 
 	<listeners>
 		<listener class-name="utilities.ExtentReportManager"></listener>
-	</listeners>
-
+	</listeners>  
+          
+   
     <test name="SDET Warrior Test">   
       <classes>
+		
+		
           <class name="testCases.GetStartedPageTests"/>  
           <class name="testCases.SignInPageTests"></class> 
          <class name="testCases.LinkedListPageTests"/>

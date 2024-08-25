@@ -17,13 +17,17 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import factory.BaseClass;
+import utilities.DataReader;
 
 public class ArrayPage extends BasePage{
 
 	public ArrayPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
+		
 	}
+	
+	public String AlertMessage="";
+	public String ValidCode="";
 	
 	Logger logger = BaseClass.getLogger();	
 	
@@ -88,7 +92,6 @@ public class ArrayPage extends BasePage{
 	
 	@FindBy(css="button")
 	WebElement Textarea_button3;
-	
 	
 	
 	
@@ -170,6 +173,8 @@ public class ArrayPage extends BasePage{
 		sortedSquaresarray__Btn.click();
 	}
 
+	
+
 	  public void ExcelData_PythonEditor(String rownumber) { int index =
 	  Integer.parseInt(rownumber)-1;
 	  
@@ -219,6 +224,7 @@ public class ArrayPage extends BasePage{
 	  String Output = datamap.get(index).get("Result");
 	  
 	  String ConsoleResult = ConsoleOutput.getText();
+	  
 	  logger.info("Sheet Result..> " + Output+",Console Output:"+ConsoleResult);
 	  
 	  Assert.assertEquals(true,ConsoleResult.contains(Output) );
@@ -229,13 +235,13 @@ public class ArrayPage extends BasePage{
 	  public void ExcelData_PythonEditor_AlertValidation(String rowNum) { Alert
 	  alert ; int index = Integer.parseInt(rowNum)-1;
 	  
-	 // datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
+	 datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
 	  
 	  String ExcelOutput = datamap.get(index).get("Result");
 	  
 	  alert=BaseClass.getDriver().switchTo().alert();
 	  
-	  String AlertMessage = alert.getText();
+	   AlertMessage = alert.getText();
 	  
 	  Assert.assertEquals(true, AlertMessage.contains(ExcelOutput));
 	  
@@ -248,14 +254,15 @@ public class ArrayPage extends BasePage{
 	  
 	  int index = Integer.parseInt(Rownumber)-1;
 	  
-	 // datamap=DataReader.data(System.getProperty("user.dir")+ "\\testData\\Python_Editor_Data.xlsx","Sheet1");
+	  datamap=DataReader.data(System.getProperty("user.dir")+ "\\testData\\Python_Editor_Data.xlsx","Sheet1");
 	  
 	  String ValidCode = datamap.get(index).get("PythonCode");
 	  
 	  String Output = datamap.get(index).get("Result");
 	  
-	  TextareaScroll_1.click(); enterCodePractice(ValidCode,Textarea_Type2);
+	  TextareaScroll_1.click(); 
 	  
+	  enterCodePractice(ValidCode,Textarea_Type2);	  
 	  
 	  PythonEditor_submit_Btn.click();
 	  
@@ -263,5 +270,6 @@ public class ArrayPage extends BasePage{
 	  }
 	 
 	
+
 	
 }
