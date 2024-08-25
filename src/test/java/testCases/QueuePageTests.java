@@ -31,7 +31,7 @@ public class QueuePageTests extends BaseClass{
 	}
 	
 	
-	@Test(priority=0)
+	@Test
 	void Test_ImplementationOf_Queue_InPython() throws IOException
 	{		
 		
