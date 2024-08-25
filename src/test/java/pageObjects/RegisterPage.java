@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import factory.BaseClass;
+
 public class RegisterPage extends BasePage {
 	
 	public RegisterPage(WebDriver driver) {
@@ -60,6 +62,21 @@ public class RegisterPage extends BasePage {
 	public boolean RegisterBtnDisplay() {
 		boolean display = RegisterButton.isDisplayed();
 		return display;
+	}
+	
+	public String registerValidNewUser() {
+		GetStartedPage sp = new GetStartedPage(BaseClass.getDriver());
+		sp.clickGetStartedSP();
+		HomePage hp = new HomePage(BaseClass.getDriver());
+		hp.clickRegisterLink();
+		RegisterPage rp = new RegisterPage(BaseClass.getDriver());
+	   String user = BaseClass.randomeString();
+	   rp.enterUsername(user);
+	   String pwd = BaseClass.randomAlphaNumeric();
+	   rp.enterPassword(pwd);
+	   rp.enterPasswordConfirm(pwd);
+	   rp.clickRegister();
+	   return user;
 	}
 	
 

@@ -40,8 +40,7 @@ public class BaseClass {
 	@BeforeMethod
 	public static void initializeBrowser() throws IOException
 	{
-	   //---comment	  
-		
+	   		
 		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote"))
 		{
 			DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -80,7 +79,6 @@ public class BaseClass {
 		else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local"))
 		{
 			switch (getProperties().getProperty("browser").toLowerCase())
-		//	switch(browser)
 			{
 			case "chrome":
 				driver.set(ThreadGuard.protect(new ChromeDriver())); break;
