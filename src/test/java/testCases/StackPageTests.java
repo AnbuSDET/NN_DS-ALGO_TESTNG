@@ -180,8 +180,8 @@ public class StackPageTests extends BaseClass{
 		  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
 		  ds.click_DS_PythonEditor_RunBtn();  
 		  ds.validate_Console_Output();        
-		  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
-		  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+		  logger.info("Console output.......     " +ds.ConsoleOutput + ds.PYEditor_Code);
+		  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput) );
 
 	}
 	
