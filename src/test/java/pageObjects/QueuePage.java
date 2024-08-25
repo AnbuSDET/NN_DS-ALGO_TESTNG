@@ -96,12 +96,9 @@ public class QueuePage extends BasePage{
 	public void Click_Getstarted_homePage_Queue()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	    try {
+	   
 			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 	    Hp.clickQueueGetStarted();
 	}	
 	

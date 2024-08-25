@@ -115,14 +115,24 @@ public class HomePage extends BasePage{
 	//------------------Methods---------------		
 		
 	
-	public void Login_HomePage() throws IOException
+	public void Login_HomePage()
 	{
 		SignInPage sp = new SignInPage(BaseClass.getDriver());	
 		GetStartedPage Gp = new GetStartedPage(BaseClass.getDriver());
 		Gp.clickGetStartedSP();
 		clickSigIn();
-		sp.enterUsername(BaseClass.getProperties().getProperty("username"));
-		sp.enterpassword(BaseClass.getProperties().getProperty("password"));		
+		try {
+			sp.enterUsername(BaseClass.getProperties().getProperty("username"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			sp.enterpassword(BaseClass.getProperties().getProperty("password"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 		 sp.clickLogin();		 
 	}
 	
