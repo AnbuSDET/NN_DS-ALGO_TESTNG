@@ -1,5 +1,7 @@
 package testCases;
 
+import java.io.IOException;
+
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,26 +18,27 @@ public class StackPageTests extends BaseClass{
 
 	Logger logger=BaseClass.getLogger();
 	
-	public void Login_HomePage() {
-	    logger.info("User clicks the GetStarted Button at start page and clicks the Sign In.. ");
-	    GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());
-		gsp.clickGetStartedSP();
-		HomePage hp =new HomePage(BaseClass.getDriver());
-		hp.clickSigIn();	
-		logger.info("User login with valid username and password..........");
-		SignInPage sp = new SignInPage(BaseClass.getDriver());
-		 sp.enterUsername("Testing");
-		 sp.enterpassword("Password@143");
+	public void checkValidAndInvalidLoginTest(String user, String pwd) {
+		SignInPage sp= new SignInPage(BaseClass.getDriver());
+		logger.info("Enter the username at login page.............");
+		 sp.enterUsername(user);
+		 sp.enterpassword(pwd);
 		 sp.clickLogin();
-		 StackPage stp=new StackPage(BaseClass.getDriver());
-		stp.click_StGetStarted();
+		 
 	}
 	
 	@Test
 	public void check_StackHomePage()
 	{
-		 Login_HomePage();
-		 StackPage stp=new StackPage(BaseClass.getDriver());
+		HomePage Hp = new HomePage(BaseClass.getDriver());
+		try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		StackPage stp=new StackPage(BaseClass.getDriver());
+		stp.click_StGetStarted();
 		 boolean status = stp.check_StHomePage();
 		 Assert.assertEquals(status, true);
 		 logger.info("HomePage is displayed");
@@ -46,9 +49,15 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_StackOperationspage()
 	{
-		 Login_HomePage();
-		 StackPage stp=new StackPage(BaseClass.getDriver());
-		 stp.click_Operations();
+		HomePage Hp = new HomePage(BaseClass.getDriver());
+		try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		StackPage stp=new StackPage(BaseClass.getDriver());
+		stp.click_StGetStarted();
+		stp.click_Operations();
 		 boolean status=stp.check_StOperationsPage();
 		 Assert.assertEquals(status, true);
 		 logger.info("Stack operations page is displayed.......");
@@ -58,8 +67,14 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_OperationsTryHereBtn()
 	{
-		Login_HomePage();
+		HomePage Hp = new HomePage(BaseClass.getDriver());
+		try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		 StackPage stp=new StackPage(BaseClass.getDriver());
+		 stp.click_StGetStarted();
 		 stp.click_Operations();
 		 stp.click_TryHereBtn();
 		 logger.info("Tryhere button is clicked...........");
@@ -72,8 +87,14 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_StackImplementationspage()
 	{
-		 Login_HomePage();
+		HomePage Hp = new HomePage(BaseClass.getDriver());
+		try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		 StackPage stp=new StackPage(BaseClass.getDriver());
+		 stp.click_StGetStarted();
 		 stp.click_Implementations();
 		 boolean status=stp.check_StImplementationsPage();
 		 Assert.assertEquals(status, true);
@@ -84,8 +105,14 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_ImplementationTryHereBtn()
 	{
-		Login_HomePage();
+		HomePage Hp = new HomePage(BaseClass.getDriver());
+		try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		 StackPage stp=new StackPage(BaseClass.getDriver());
+		 stp.click_StGetStarted();
 		 stp.click_Operations();
 		 stp.click_TryHereBtn();
 		 logger.info("Tryhere button is clicked...........");
@@ -98,8 +125,14 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_StackApplicattionspage()
 	{
-		 Login_HomePage();
+		HomePage Hp = new HomePage(BaseClass.getDriver());
+		try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		 StackPage stp=new StackPage(BaseClass.getDriver());
+		 stp.click_StGetStarted();
 		 stp.click_Applications();
 		 boolean status=stp.check_StApplicationsPage();
 		 Assert.assertEquals(status, true);
@@ -110,8 +143,14 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_ApplicationTryHereBtn()
 	{
-		Login_HomePage();
+		HomePage Hp = new HomePage(BaseClass.getDriver());
+		try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		 StackPage stp=new StackPage(BaseClass.getDriver());
+		 stp.click_StGetStarted();
 		 stp.click_Applications();
 		 stp.click_TryHereBtn();
 		 logger.info("Tryhere button is clicked...........");
@@ -125,8 +164,14 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_PythonEditorValidInput()
 	{
-		Login_HomePage();
+		HomePage Hp = new HomePage(BaseClass.getDriver());
+		try {
+			Hp.Login_HomePage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		 StackPage stp=new StackPage(BaseClass.getDriver());
+		 stp.click_StGetStarted();
 		 stp.click_Operations();
 		 stp.click_TryHereBtn();
 		 logger.info("Tryhere button is clicked...........");
@@ -143,8 +188,14 @@ public class StackPageTests extends BaseClass{
 	 @Test
 	 public void check_PythonEditorInvalidInput()
 	 {
-		 Login_HomePage();
-		 StackPage stp=new StackPage(BaseClass.getDriver());
+		 HomePage Hp = new HomePage(BaseClass.getDriver());
+			try {
+				Hp.Login_HomePage();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			 StackPage stp=new StackPage(BaseClass.getDriver());
+			 stp.click_StGetStarted();
 		 stp.click_Operations();
 		 stp.click_TryHereBtn();
 		 logger.info("Tryhere button is clicked...........");
@@ -160,8 +211,14 @@ public class StackPageTests extends BaseClass{
 	 @Test
 	 public void check_PythonEditorNoInput()
 	 {
-		 Login_HomePage();
-		 StackPage stp=new StackPage(BaseClass.getDriver());
+		 HomePage Hp = new HomePage(BaseClass.getDriver());
+			try {
+				Hp.Login_HomePage();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			StackPage stp=new StackPage(BaseClass.getDriver());
+			stp.click_StGetStarted();
 		 stp.click_Operations();
 		 stp.click_TryHereBtn();
 		 logger.info("Tryhere button is clicked...........");
@@ -175,9 +232,15 @@ public class StackPageTests extends BaseClass{
 	 @Test
 	 public void check_StPracticeQns()
 	 {
-		 Login_HomePage();
-		 StackPage stp=new StackPage(BaseClass.getDriver());
-		 stp.click_Operations();
+		 HomePage Hp = new HomePage(BaseClass.getDriver());
+			try {
+				Hp.Login_HomePage();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			StackPage stp=new StackPage(BaseClass.getDriver());
+			stp.click_StGetStarted();
+			stp.click_Operations();
 		 stp.click_StPracticeQns();
 		boolean status=stp.check_StPracticeQnsPage();
 		Assert.assertEquals(status, true);
