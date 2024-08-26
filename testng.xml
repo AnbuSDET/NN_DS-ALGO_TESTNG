@@ -9,9 +9,11 @@
    
     <test name="SDET Warrior Test">   
       <classes>
+
          <class name="testCases.GetStartedPageTests"/> 
          <class name="testCases.HomePageTests"/>
          <class name="testCases.SignInPageTests"/> 
+
        	 <class name="testCases.RegisterPageTests"/> 
        </classes>
 
