@@ -4,7 +4,8 @@
 
   <listeners>
 		<listener class-name="utilities.ExtentReportManager"></listener>
-   </listeners>
+		<listener class-name="utilities.AllureReportManager"></listener>
+  </listeners>
 	
   <test name="Chrome Browser Test">
    <parameter name="browser" value="chrome"></parameter>
