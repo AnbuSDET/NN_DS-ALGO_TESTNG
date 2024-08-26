@@ -8,7 +8,7 @@
 		<listener class-name="analyzer.MyTransformer"></listener>
   </listeners>
 	
-  <test name="Chrome Browser Test">
+  <test name="Chrome Browser Test1">
      <parameter name="browser" value="chrome"></parameter>
      <parameter name="os" value="Windows11"></parameter>
        <classes>
@@ -19,7 +19,7 @@
   </test> <!-- Test -->
   
   
-  <test name="Chrome Browser Test">
+  <test name="Chrome Browser Test2">
      <parameter name="browser" value="chrome"></parameter>
      <parameter name="os" value="Windows11"></parameter>
        <classes>
