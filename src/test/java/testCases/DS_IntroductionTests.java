@@ -58,15 +58,10 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void Test_LeftPanel_TimeComplexity()
+	void Test_LeftPanel_TimeComplexity() throws IOException
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	   	Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
 		Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();	
@@ -78,17 +73,12 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void Test_DS_TryHere()
+	void Test_DS_TryHere() throws IOException
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-				try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-       Dp.click_GetStartedBtn_DSIroduction();
+		Hp.Login_HomePage();
+	    DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
+        Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();
 		Dp.click_DS_TimeComplexity_TryhereBtn();
         String CurURL= BaseClass.getDriver().getCurrentUrl();	    
@@ -98,22 +88,15 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_PythonEditor_ValidCodes()
+	void DS_PythonEditor_ValidCodes() throws IOException
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	
+	   	Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-		
 		logger.info("Clicking the Try Editor Page   ");
 		Dp.DS_Pyhton_Editor_Page();
-		 logger.info("Entering valid python code..........");
-		  		  
+		logger.info("Entering valid python code..........");
+			  
 		 Dp.Click_DS_PythonEditor_Runbtn_ValidCodes();
 		 Dp.click_DS_PythonEditor_RunBtn();  
 		 Dp.validate_Console_Output();        
@@ -126,15 +109,10 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_PythonEditor_InValidCodes()
+	void DS_PythonEditor_InValidCodes() throws IOException
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	  	Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
 		Dp.DS_Pyhton_Editor_Page();
 		Dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
@@ -146,15 +124,10 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_TimeComplexity_SignOutBtn()
+	void DS_TimeComplexity_SignOutBtn() throws IOException
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	   	Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());				
 		Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();
@@ -166,17 +139,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_PythonEditor_WithoutCodes()
+	void DS_PythonEditor_WithoutCodes() throws IOException
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	    Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-	
 		  Dp.DS_Pyhton_Editor_Page();
 		  Dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
 		  String crntURL = BaseClass.getDriver().getCurrentUrl();
