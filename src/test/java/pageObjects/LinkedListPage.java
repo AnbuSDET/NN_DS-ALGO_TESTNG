@@ -178,6 +178,17 @@ public class LinkedListPage extends BasePage {
 
 		}
 
+		public void click_PracticeQns()
+		{
+			PracticeQns.click();
+		}
+		public boolean check_LLPracticeQns()
+		{
+			String Current_URL=BaseClass.getDriver().getCurrentUrl();
+			 boolean Check_URL = LL_PracticeQns_URL.equals(Current_URL);	
+			 return Check_URL;
+
+		}
 
 		
 		}
