@@ -8,7 +8,8 @@
           
    
     <test name="SDET Warrior Test">   
-      <classes>
+      <classes>        
+
 
          <class name="testCases.GetStartedPageTests"/> 
          <class name="testCases.HomePageTests"/>

@@ -19,7 +19,8 @@ import factory.BaseClass;
 
 
 public class DataStructurePage extends BasePage{
-
+	
+	
 	public DataStructurePage(WebDriver driver) {
 		super(driver);
 		
@@ -151,7 +152,7 @@ public class DataStructurePage extends BasePage{
 	public void Click_DS_PythonEditor_Runbtn_InValidCodes()
 	{
 		
-		 TextareaScroll_1.click();			
+		     TextareaScroll_1.click();			
 	        JavascriptExecutor js=(JavascriptExecutor) BaseClass.getDriver();
 	        js.executeScript("window.scrollTo(0,0)");	    
 	        Textarea_Type2.sendKeys("Print "+PYEditor_Code);	        

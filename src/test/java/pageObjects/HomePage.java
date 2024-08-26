@@ -17,11 +17,11 @@ import factory.BaseClass;
 public class HomePage extends BasePage{
    
 	public static  Properties p;
+
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
-	}
-	
+	}		
 	
 	//-----------WebElements-----------------
 	
@@ -113,19 +113,30 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//h4[normalize-space()='Graph']")
 	private WebElement GraphPage;
 	
-	//------------------Methods---------------	
-	
+	//------------------Methods---------------		
 		
 	
-	public void Login_HomePage() throws IOException
+	public void Login_HomePage()
 	{
 		SignInPage sp = new SignInPage(BaseClass.getDriver());	
 		GetStartedPage Gp = new GetStartedPage(BaseClass.getDriver());
 		Gp.clickGetStartedSP();
 		clickSigIn();
-		sp.enterUsername(BaseClass.getProperties().getProperty("username"));
-		sp.enterpassword(BaseClass.getProperties().getProperty("password"));		
-		sp.clickLogin();		 
+
+		try {
+			sp.enterUsername(BaseClass.getProperties().getProperty("username"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			sp.enterpassword(BaseClass.getProperties().getProperty("password"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		 sp.clickLogin();		 
+
 	}
 	
 	public boolean NumpyNinjaLinkDisplay() {

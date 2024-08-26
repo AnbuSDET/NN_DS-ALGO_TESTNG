@@ -3,6 +3,7 @@ package testCases;
 import java.io.IOException;
 
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,9 +17,9 @@ public class QueuePageTests extends BaseClass{
 	
 	Logger logger = BaseClass.getLogger();	
 	
+	 
 	
-	
-	@Test   
+	@Test   (priority=0)
 	void Test_Queue_GetStarted() throws IOException
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -30,18 +31,20 @@ public class QueuePageTests extends BaseClass{
 	}
 	
 	
-	@Test 
+	@Test  (priority=1)
 	void Test_ImplementationOf_Queue_InPython() throws IOException
 	{		
+		
 	     QueuePage Qp = new QueuePage (BaseClass.getDriver());
-	     Qp.Click_Getstarted_homePage_Queue();
+	     Qp.Click_Getstarted_homePage_Queue();	     
 		 Qp.Click_ImplementaionOfQueue();
+		
 		 String CrtURL = BaseClass.getDriver().getCurrentUrl();
-		  Assert.assertEquals(true, CrtURL.contains("lists"));	    
+		 Assert.assertEquals(true, CrtURL.contains("lists"));	    
 	}
 	
 	
-	@Test
+	@Test  (priority=2)
 	 void Test_Implementation_UsingCollections_Queue()
 	 {
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
@@ -52,7 +55,7 @@ public class QueuePageTests extends BaseClass{
 	 }
 	
 	
-	@Test 
+	@Test  (priority=3)
 	 void Test_ImplementationUsing_Array()
 	 {
 		 logger.info("The user clicks the Implementation using Array link ........" );		  
@@ -64,11 +67,11 @@ public class QueuePageTests extends BaseClass{
 			logger.info("Implementation using Array link Current URL " + CurrentURL);
 	 }
 	
-	@Test 
+	@Test  (priority=4)
 	 void Test_QueueOperations()
 	 {
 		 
-		  QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		    Qp.Click_Getstarted_homePage_Queue();
 			Qp.Click_QueueOperation();
 			String CurrentURL = BaseClass.getDriver().getCurrentUrl();
@@ -77,10 +80,10 @@ public class QueuePageTests extends BaseClass{
 			
 	 }
 	
-	@Test 
+	@Test  (priority=5)
 	 void Test_LEFTPanel_ImplementationOf_Queue_InPython()
 	 {
-		    QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		  QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		    Qp.Click_Getstarted_homePage_Queue();
 		    Qp.Click_ImplementaionOfQueue();
 		    Qp.Click_ImplementaionOfQueue();
@@ -90,7 +93,7 @@ public class QueuePageTests extends BaseClass{
 	 }
 	
 	 
-	@Test 
+	@Test  (priority=6)
 	 void Test_LEFTPanel_Implementation_UsingCollections_Queue()
 	 {
 		 
@@ -104,7 +107,7 @@ public class QueuePageTests extends BaseClass{
 		 
 	 }
 	 
-	@Test 
+	@Test  (priority=7)
 	 void Test_LEFTPanel_ImplementaionUsing_Array()
 	 {
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
@@ -117,7 +120,7 @@ public class QueuePageTests extends BaseClass{
 		 
 	 }
 	 
-	@Test 
+	@Test  (priority=8)
 	 void Test_LEFTPanel_QueueOperations()
 	 {
 		    QueuePage Qp = new QueuePage (BaseClass.getDriver());
@@ -131,7 +134,7 @@ public class QueuePageTests extends BaseClass{
 	 
 	 }
 	 
-	@Test 
+	@Test  (priority=9)
 	 void Test_LEFTPanel_PracticeQuestions()
 	 {
 		 logger.info("Clicking the Practice Questions  from the left panel links........ ");
@@ -144,7 +147,7 @@ public class QueuePageTests extends BaseClass{
 			
 	 }
 	 
-	@Test 
+	@Test  (priority=10)
 	 void Test_TryHere_ImplementationOf_Queue_InPython()
 	 {
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
@@ -156,7 +159,7 @@ public class QueuePageTests extends BaseClass{
 		   Assert.assertEquals(true, CurURL.contains("tryEditor"));
 	 }
 	 
-	@Test 
+	@Test  (priority=11)
 	 void Test_PythonEditor_ImplementationOf_Queue_InPython_ValidCodes()
 	 {		
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
@@ -172,7 +175,7 @@ public class QueuePageTests extends BaseClass{
 		
 	 }
 	 
-	@Test 
+	@Test  (priority=12)
 	 void Test_PythonEditor_ImplementationOf_Queue_InPython_InValidCodes()
 	 {
 		 
@@ -189,7 +192,7 @@ public class QueuePageTests extends BaseClass{
 		 
 	 }
 	 
-	@Test 
+	@Test  (priority=13)
 	 void Test_PythonEditor_ImplementationOf_Queue_InPython_withOutCodes()
 	 {
 		 
@@ -205,11 +208,11 @@ public class QueuePageTests extends BaseClass{
 	 }
 	 
 	 
-	 @Test
+	 @Test  (priority=14)
 	 void Test_TryHere_Implementation_UsingCollections_Queue()
 	 {
 		 
-		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingCollectionOfQueue();		
 		 Qp.Click_Tryhere();		 
@@ -218,11 +221,11 @@ public class QueuePageTests extends BaseClass{
 		 
 	 }
 	 
-	 @Test
+	 @Test  (priority=15)
 	 void Test_PythonEditor_Implementation_UsingCollections_Queue_ValidCodes()
 	 {
 		 
-		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingCollectionOfQueue();
 		 DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
@@ -236,11 +239,11 @@ public class QueuePageTests extends BaseClass{
 	 }
 	 
 	 
-	 @Test
+	 @Test  (priority=16)
 	 void Test_PythonEditor_Implementation_UsingCollections_Queue_InValidCodes()
 	 {
 		 
-		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingCollectionOfQueue();		
 		 Qp.Click_Tryhere();
@@ -253,7 +256,7 @@ public class QueuePageTests extends BaseClass{
 		
 	 }
 	 
-	 @Test
+	 @Test   (priority=17)
 	 void Test_PythonEditor_Implementation_UsingCollections_Queue_WithOutCodes()
 	 {
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
@@ -267,7 +270,7 @@ public class QueuePageTests extends BaseClass{
 		 
 	 }
 	 
-	 @Test
+	 @Test  (priority=18)
 	 void Test_TryHere_Test_ImplementationUsing_Array()
 	 {
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
@@ -279,11 +282,11 @@ public class QueuePageTests extends BaseClass{
 	 }
 	 
 	 
-	 @Test
+	 @Test  (priority=19)
 	 void Test_PythonEditor_ImplementationUsing_Array_ValidCodes()
 	 {
 		 
-		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingArry();		
 		 Qp.Click_Tryhere();
@@ -296,10 +299,10 @@ public class QueuePageTests extends BaseClass{
 		 
 	 }
 	 
-	 @Test
+	 @Test  (priority=20)
 	 void Test_PythonEditor_ImplementationUsing_Array_InValidCodes()
 	 {
-		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingArry();		
 		 Qp.Click_Tryhere();
@@ -312,10 +315,10 @@ public class QueuePageTests extends BaseClass{
 	 }
 	 
 	 
-	 @Test
+	 @Test  (priority=21)
 	 void Test_PythonEditor_ImplementationUsing_Array_WithOutCodes()
 	 {
-		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_ImplemenUsingArry();		
 		 Qp.Click_Tryhere();
@@ -325,10 +328,10 @@ public class QueuePageTests extends BaseClass{
 		 Assert.assertEquals(true, crntURL.contains("tryEditor"));
 	 }
 	 
-	 @Test
+	 @Test (priority=22)
 	 void Test_TryHere_QueueOperations()
 	 {
-		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_QueueOperation();		
 		 Qp.Click_Tryhere();
@@ -337,11 +340,11 @@ public class QueuePageTests extends BaseClass{
 	 }
 	 
 	 
-	 @Test
+	 @Test (priority=23)
 	 void Test_PythonEditor_QueueOperations_ValidCodes()
 	 {
 		 
-		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_QueueOperation();		
 		 Qp.Click_Tryhere();
@@ -353,7 +356,7 @@ public class QueuePageTests extends BaseClass{
 	     Assert.assertEquals(true,Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text) );
 	 }
 	 
-	 @Test
+	 @Test (priority=24)
 	 void Test_PythonEditor_QueueOperations_InValidCodes()
 	 {
 		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
@@ -369,10 +372,10 @@ public class QueuePageTests extends BaseClass{
 		
 	 }
 	 
-	 @Test
+	 @Test (priority=25)
 	 void Test_PythonEditor_QueueOperations_WithOutCodes()
 	 {
-		 QueuePage Qp = new QueuePage (BaseClass.getDriver());
+		QueuePage Qp = new QueuePage (BaseClass.getDriver());
 		 Qp.Click_Getstarted_homePage_Queue();
 		 Qp.Click_QueueOperation();		
 		 Qp.Click_Tryhere();
