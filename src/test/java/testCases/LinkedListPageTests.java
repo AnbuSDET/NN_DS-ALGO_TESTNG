@@ -25,32 +25,23 @@ public class LinkedListPageTests extends BaseClass {
 		 sp.clickLogin();
 		}
 		 @Test(priority=4,groups="regression")
-		 public void check_LinkedListHomePage()
+		 public void check_LinkedListHomePage() throws IOException
 		 {	
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
-				 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
+		     Hp.Login_HomePage();
+			 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			 lp.click_LLGetStarted();
-			boolean status = lp.check_LLHomePage();
+			 boolean status = lp.check_LLHomePage();
 			 Assert.assertEquals(status, true);
 			 logger.info("HomePage is displayed");
 				 
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_IntoductionTab()
+		 public void check_IntoductionTab() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
-			
+		     Hp.Login_HomePage();
 			 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			 lp.click_LLGetStarted();
 			 lp.click_Introduction();
@@ -60,15 +51,10 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_TryHereButton()
+		 public void check_TryHereButton() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
-			
+			 Hp.Login_HomePage();
 			 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			 lp.click_LLGetStarted();
 				lp.click_Introduction();
@@ -80,24 +66,19 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 	
 		 @Test(priority=4,groups="regression")
-		 public void check_PythonEditorValidInput()
+		 public void check_PythonEditorValidInput() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
-				
+			 Hp.Login_HomePage();
 			 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
-			 	DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
-			 	lp.click_LLGetStarted();
-			  lp.click_Introduction();
-				  lp.click_TryHereBtn();
-				  logger.info("Entering valid python code..........");
-				  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
-				  ds.click_DS_PythonEditor_RunBtn();  
-				  ds.validate_Console_Output();     
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 lp.click_LLGetStarted();
+			 lp.click_Introduction();
+			 lp.click_TryHereBtn();
+			 logger.info("Entering valid python code..........");
+			  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+			  ds.click_DS_PythonEditor_RunBtn();  
+			  ds.validate_Console_Output();     
 				
 				  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
 				  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
@@ -105,15 +86,10 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_PythonEditorInvalidInput()
+		 public void check_PythonEditorInvalidInput() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
-			
+			 Hp.Login_HomePage();
 			 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	  
 			 lp.click_LLGetStarted();
@@ -128,15 +104,10 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_PythonEditorNoInput()
+		 public void check_PythonEditorNoInput() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
-			
+			 Hp.Login_HomePage();
 			 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
 			 lp.click_LLGetStarted();
@@ -149,14 +120,10 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_CreatingLinkedListTab()
+		 public void check_CreatingLinkedListTab() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
+			 Hp.Login_HomePage();
 			LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			lp.click_LLGetStarted();
 			logger.info("Clicking the Creating Linked List page link.....");
@@ -169,14 +136,10 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_TypesOfLinkedListTab()
+		 public void check_TypesOfLinkedListTab() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
+			 Hp.Login_HomePage();
 			LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			lp.click_LLGetStarted();
 			logger.info("user clicked types of linkd list link.........");
@@ -189,15 +152,11 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		
 		 @Test(priority=4,groups="regression")
-		 public void check_ImplementingLinkedListTab()
+		 public void check_ImplementingLinkedListTab() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
-			LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
+			 Hp.Login_HomePage();
+			 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			lp.click_LLGetStarted();
 			logger.info("user clicked Implementinglinkedlist link.........");
 			lp.click_ImplementingLinkedList();
@@ -209,15 +168,11 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_Traversal()
+		 public void check_Traversal() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
-			LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
+			 Hp.Login_HomePage();
+			 LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			lp.click_LLGetStarted();
 			logger.info("user clicked Traversal link.........");
 			lp.click_Traversal();
@@ -229,14 +184,10 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		
 		 @Test(priority=4,groups="regression")
-		 public void check_Insertion()
+		 public void check_Insertion() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
+			 Hp.Login_HomePage();
 			LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			lp.click_LLGetStarted();
 			logger.info("user clicked Insertion link.........");
@@ -249,14 +200,10 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_Deletion()
+		 public void check_Deletion() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
+			Hp.Login_HomePage();
 			LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			lp.click_LLGetStarted();
 			logger.info("user clicked Deletion link.........");
@@ -269,14 +216,10 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_LLPracticeQns()
+		 public void check_LLPracticeQns() throws IOException
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
-				try {
-					Hp.Login_HomePage();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}		
+			 Hp.Login_HomePage();
 			LinkedListPage lp=new LinkedListPage(BaseClass.getDriver());
 			lp.click_LLGetStarted();
 			lp.click_Introduction();
