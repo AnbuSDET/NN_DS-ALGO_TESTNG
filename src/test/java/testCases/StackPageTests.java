@@ -31,11 +31,9 @@ public class StackPageTests extends BaseClass{
 	public void check_StackHomePage()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		try {
+	
 			Hp.Login_HomePage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		
 		StackPage stp=new StackPage(BaseClass.getDriver());
 		stp.click_StGetStarted();
@@ -50,11 +48,9 @@ public class StackPageTests extends BaseClass{
 	public void check_StackOperationspage()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		try {
+		
 			Hp.Login_HomePage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		StackPage stp=new StackPage(BaseClass.getDriver());
 		stp.click_StGetStarted();
 		stp.click_Operations();
@@ -68,11 +64,9 @@ public class StackPageTests extends BaseClass{
 	public void check_OperationsTryHereBtn()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		try {
+	
 			Hp.Login_HomePage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -88,11 +82,9 @@ public class StackPageTests extends BaseClass{
 	public void check_StackImplementationspage()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		try {
+		
 			Hp.Login_HomePage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Implementations();
@@ -106,11 +98,9 @@ public class StackPageTests extends BaseClass{
 	public void check_ImplementationTryHereBtn()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		try {
+		
 			Hp.Login_HomePage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -125,12 +115,8 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_StackApplicattionspage()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());
-		try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		HomePage Hp = new HomePage(BaseClass.getDriver());		
+			Hp.Login_HomePage();		
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Applications();
@@ -143,12 +129,8 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_ApplicationTryHereBtn()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());
-		try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		HomePage Hp = new HomePage(BaseClass.getDriver());		
+			Hp.Login_HomePage();		
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Applications();
@@ -165,11 +147,9 @@ public class StackPageTests extends BaseClass{
 	public void check_PythonEditorValidInput()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		try {
+		
 			Hp.Login_HomePage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -189,11 +169,9 @@ public class StackPageTests extends BaseClass{
 	 public void check_PythonEditorInvalidInput()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());
-			try {
+			
 				Hp.Login_HomePage();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			
 			 StackPage stp=new StackPage(BaseClass.getDriver());
 			 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -212,11 +190,9 @@ public class StackPageTests extends BaseClass{
 	 public void check_PythonEditorNoInput()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());
-			try {
+			
 				Hp.Login_HomePage();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			
 			StackPage stp=new StackPage(BaseClass.getDriver());
 			stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -233,11 +209,9 @@ public class StackPageTests extends BaseClass{
 	 public void check_StPracticeQns()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());
-			try {
+			
 				Hp.Login_HomePage();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			
 			StackPage stp=new StackPage(BaseClass.getDriver());
 			stp.click_StGetStarted();
 			stp.click_Operations();

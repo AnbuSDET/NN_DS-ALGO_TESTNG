@@ -5,6 +5,7 @@
   <listeners>
 		<listener class-name="utilities.ExtentReportManager"></listener>
 		<listener class-name="utilities.AllureReportManager"></listener>
+		<listener class-name="analyzer.MyTransformer"></listener>
   </listeners>
 	
   <test name="Chrome Browser Test">

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SDET_Warriors_Test_Suite" >
-
-	<listeners>
+<suite name="SDET_Warriors_Test_Suite" >	
+		
+		<listeners>
 		<listener class-name="utilities.ExtentReportManager"></listener>
+		<listener class-name="analyzer.MyTransformer"></listener>
+		<listener class-name="utilities.AllureReportManager"></listener>
 	</listeners>  
           
    

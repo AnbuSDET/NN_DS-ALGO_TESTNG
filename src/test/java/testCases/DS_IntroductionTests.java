@@ -8,13 +8,12 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import analyzer.RetryAnalyzer;
 import factory.BaseClass;
 import pageObjects.DataStructurePage;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
-
-
 
 
 public class DS_IntroductionTests extends BaseClass {
@@ -25,7 +24,10 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test (priority=0)
-	void Test_DS_TimeComplexityLink() throws IOException
+
+	
+	void Test_DS_TimeComplexityLink()
+
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());			
 	    Hp.Login_HomePage();		
@@ -40,7 +42,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test  (priority=1)
-	void Test_DS_TimeComplexity_Practice_Questions_link() throws IOException
+	void Test_DS_TimeComplexity_Practice_Questions_link() 
 	{
 		
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());	
@@ -58,7 +60,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void Test_LeftPanel_TimeComplexity() throws IOException
+	void Test_LeftPanel_TimeComplexity() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
    	Hp.Login_HomePage();
@@ -72,7 +74,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test  (priority=3)
-	void Test_DS_TryHere() throws IOException
+	void Test_DS_TryHere() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
 		Hp.Login_HomePage();	
@@ -87,7 +89,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test  (priority=4)
-	void DS_PythonEditor_ValidCodes() throws IOException
+	void DS_PythonEditor_ValidCodes() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());	   
 		Hp.Login_HomePage();	
@@ -108,7 +110,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_PythonEditor_InValidCodes() throws IOException
+	void DS_PythonEditor_InValidCodes() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
   	Hp.Login_HomePage();
@@ -123,7 +125,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_TimeComplexity_SignOutBtn() throws IOException
+	void DS_TimeComplexity_SignOutBtn() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
    	Hp.Login_HomePage();
@@ -138,7 +140,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_PythonEditor_WithoutCodes() throws IOException
+	void DS_PythonEditor_WithoutCodes() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
 	    Hp.Login_HomePage();
