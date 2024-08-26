@@ -1,4 +1,4 @@
-package testCases;
+addpackage testCases;
 
 import java.io.IOException;
 
@@ -13,7 +13,6 @@ import pageObjects.HomePage;
 public class ArrayPageTests extends BaseClass{
 	
 	Logger logger = BaseClass.getLogger();	
-
 	
 	
 	@Test

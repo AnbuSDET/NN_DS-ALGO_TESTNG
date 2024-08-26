@@ -7,15 +7,15 @@
 	</listeners>  
           
    
-    <test name="SDET Warrior Test">   
-      <classes>
-
-         <class name="testCases.GetStartedPageTests"/> 
+    <test name="SDET Warrior Test">  
+     <parameter name="browser" value="chrome"></parameter>
+     <parameter name="os" value="Windows11"></parameter>
+     <classes>
+    <!--      <class name="testCases.GetStartedPageTests"/> 
          <class name="testCases.HomePageTests"/>
-         <class name="testCases.SignInPageTests"/> 
-
+         <class name="testCases.SignInPageTests"/> -->
        	 <class name="testCases.RegisterPageTests"/> 
-       </classes>
+      </classes>
 
     </test> <!-- Test -->
     

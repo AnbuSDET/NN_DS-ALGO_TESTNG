@@ -28,15 +28,10 @@ public class StackPageTests extends BaseClass{
 	}
 	
 	@Test
-	public void check_StackHomePage()
+	public void check_StackHomePage() throws IOException
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
+		Hp.Login_HomePage();
 		StackPage stp=new StackPage(BaseClass.getDriver());
 		stp.click_StGetStarted();
 		 boolean status = stp.check_StHomePage();

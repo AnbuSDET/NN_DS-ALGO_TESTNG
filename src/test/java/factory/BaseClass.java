@@ -1,7 +1,5 @@
 package factory;
 
-import java.util.Properties;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,8 +11,8 @@ import java.util.Properties;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ThreadGuard;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -29,18 +27,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import org.openqa.selenium.WebDriver;
+//-------------------FOR CROSS BROWSER SET UP-------------------------
 
 public class BaseClass {
 
-	public static ThreadLocal<WebDriver> driver = new ThreadLocal();
-	public static  Properties p;
+	public static final ThreadLocal<WebDriver> driver = new ThreadLocal();
+	public  static Properties p;
 	public  static Logger logger;
 	
 	@BeforeMethod
-	public static void initializeBrowser() throws IOException
-	 {
-	   
+	@Parameters ("browser")
+	public static void initializeBrowser(String browser) throws IOException
+	{  
+		
 		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote"))
 		{
 			DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -78,14 +77,14 @@ public class BaseClass {
 		
 		else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local"))
 		{
-			switch (getProperties().getProperty("browser").toLowerCase())
+			switch(browser)
 			{
 			case "chrome":
-				driver.set(ThreadGuard.protect(new ChromeDriver())); break;
+				driver.set(ThreadGuard.protect(new ChromeDriver()));System.out.println("Testing in Chrome Browser"); break;
 			case "edge":
-				driver.set(ThreadGuard.protect(new EdgeDriver()));break;
-			case "firefox":
-				driver.set(ThreadGuard.protect(new FirefoxDriver())); break;
+				driver.set(ThreadGuard.protect(new EdgeDriver())); System.out.println("Testing in Edge Browser");break;
+			case "safari":
+				driver.set(ThreadGuard.protect(new SafariDriver()));System.out.println("Testing in Firefox Browser"); break;
 			default:
 				System.out.println("No matching Browser found.......");
 			}
@@ -94,11 +93,10 @@ public class BaseClass {
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		getDriver().get(p.getProperty("appURL"));
-		getDriver().manage().window().maximize();
-		
+		//getDriver().manage().window().maximize();		
 	}
 	
-		
+	
 	@AfterMethod
 	public void tearDown()
 	{
@@ -115,7 +113,7 @@ public class BaseClass {
 	
 	public synchronized static Properties getProperties() throws IOException
 	{
-		FileReader file = new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\config.properties");
+		FileReader file = new FileReader(".\\src\\test\\resources\\config.properties");
 		p = new Properties();
 		p.load(file);
 		return p;
@@ -134,7 +132,7 @@ public class BaseClass {
 		TakesScreenshot takesScreenshot=(TakesScreenshot) BaseClass.getDriver();		
 		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 		
-		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
+		String targetFilePath=".\\screenshots\\" + tname + "_" + timeStamp + ".png";
 		File targetFile=new File(targetFilePath);
 		
 		sourceFile.renameTo(targetFile);
@@ -164,5 +162,4 @@ public class BaseClass {
 	
 	
 }
-
 
