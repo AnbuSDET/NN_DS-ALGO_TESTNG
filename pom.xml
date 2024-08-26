@@ -30,7 +30,7 @@
 	              <parallel>tests</parallel>
 	            <!--  <useUnlimitedThreads>true</useUnlimitedThreads> -->
 	              <suiteXmlFiles>
-					  <suiteXmlFile>CrossBrowser</suiteXmlFile>
+					  <suiteXmlFile>CrossBrowser.xml</suiteXmlFile>
 				  </suiteXmlFiles>
 				  
 				  <properties>
