@@ -33,14 +33,14 @@ import org.openqa.selenium.WebDriver;
 
 public class BaseClass {
 
-	public static final ThreadLocal<WebDriver> driver = new ThreadLocal();
+	public static ThreadLocal<WebDriver> driver = new ThreadLocal();
 	public static  Properties p;
 	public  static Logger logger;
 	
 	@BeforeMethod
 	public static void initializeBrowser() throws IOException
-	{
-	   		
+	 {
+	   
 		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote"))
 		{
 			DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -96,16 +96,14 @@ public class BaseClass {
 		getDriver().get(p.getProperty("appURL"));
 		getDriver().manage().window().maximize();
 		
-	//	return driver;
 	}
 	
-	
-	
+		
 	@AfterMethod
 	public void tearDown()
 	{
-		 driver.get().quit();
-	}
+		 driver.get().quit();		
+    }
 	
 	
 	public static WebDriver getDriver()
