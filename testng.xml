@@ -3,16 +3,16 @@
 <suite name="SDET_Warriors_Test_Suite" >
 
 	<listeners>
+		<listener class-name="analyzer.MyTransformer"></listener>
 		<listener class-name="utilities.ExtentReportManager"></listener>
+		
 	</listeners>  
           
    
     <test name="SDET Warrior Test">   
-      <classes>
+		     <classes>
 		
 		<class name="testCases.DS_IntroductionTests"/> 
-		<class name="testCases.QueuePageTests"/> 
-		<class name="testCases.ArrayPageTests"/>  
 		
 		<!--
           <class name="testCases.GetStartedPageTests"/>  

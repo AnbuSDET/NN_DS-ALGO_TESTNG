@@ -33,7 +33,7 @@ public class DS_IntroductionTests extends BaseClass {
 		 Dp.click_GetStartedBtn_DSIroduction(); 
 		 Dp.click_TimeComplexityBtn();
 		  String CurrentURL =BaseClass.getDriver().getCurrentUrl();
-		  Assert.assertEquals(true, CurrentURL.contains("time"));
+		  Assert.assertEquals(true, CurrentURL.contains("array"));
 		 
 	}
 
