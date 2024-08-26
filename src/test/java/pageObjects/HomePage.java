@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import factory.BaseClass;
 
@@ -121,6 +122,7 @@ public class HomePage extends BasePage{
 		GetStartedPage Gp = new GetStartedPage(BaseClass.getDriver());
 		Gp.clickGetStartedSP();
 		clickSigIn();
+
 		try {
 			sp.enterUsername(BaseClass.getProperties().getProperty("username"));
 		} catch (IOException e) {
@@ -134,6 +136,7 @@ public class HomePage extends BasePage{
 			e.printStackTrace();
 		}		
 		 sp.clickLogin();		 
+
 	}
 	
 	public boolean NumpyNinjaLinkDisplay() {
@@ -272,6 +275,48 @@ public class HomePage extends BasePage{
 		boolean display = GraphPage.isDisplayed();
 	    return display;
 	}
+	
+	public void clickAnyGetStarted(String topic) {
+		switch (topic)
+		{
+		case "DataStructure": clickDataStrucGetStarted();break;
+		case "Array":clickArrayGetStarted();break;
+		case"LinkedList": clickLinkedListGetStarted();break;
+		case "Stack":clickStackGetStarted();break;
+		case "Queue":clickQueueGetStarted();break;
+		case "Tree":clickTreeGetStarted();break;
+		case "Graph":clickGraphGetStarted();break;
+		default: System.out.println("Unable to find this topic....");break;		
+		}
+	}
+	
+	public boolean displayTopicPageOnGetStartedClick(String topic) {
+		boolean status = false;
+		switch (topic)
+		{
+		case "DataStructure":status= checkDS_Intro_PageDisplay();break;
+		case "Array":status = checkArrayPageDisplay();break; 
+		case"LinkedList": status = checkLinkedListPageDisplay();break;
+		case "Stack":status = checkStackPageDisplay();break;
+		case "Queue":status = checkQueuePageDisplay();break;
+		case "Tree":status = checkTreePageDisplay();break;
+		case "Graph":status = checkGraphPageDisplay();break;
+		default: System.out.println("Unable to find the page....");break;
+		}		
+		return status;
+	}
+	
+	public void selectDropdownTopic(String topic) throws InterruptedException {
+	switch(topic) {
+		case "Array":clickArrayDropdown();break;
+		case"LinkedList": clickLinkedListDropdown();break;
+		case "Stack":clickStackDropdown();break;
+		case "Queue":clickQueueDropdown();break;
+		case "Tree":clickTreeDropdown();break;
+		case "Graph":clickGraphDropdown();break;
+		default: System.out.println("Improper selection....");break;
+	    }
+   }
 	
 
 }
