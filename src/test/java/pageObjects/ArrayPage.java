@@ -175,10 +175,11 @@ public class ArrayPage extends BasePage{
 
 	
 
-	  public void ExcelData_PythonEditor(String rownumber) { int index =
-	  Integer.parseInt(rownumber)-1;
+	  public void ExcelData_PythonEditor(String rownumber) 
+	  { 
+		  int index = Integer.parseInt(rownumber)-1;
 	  
-	  //datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
+	  datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
 	  
 	  String ValidCode = datamap.get(index).get("PythonCode");
 	  
@@ -219,7 +220,7 @@ public class ArrayPage extends BasePage{
 	  
 	  int index = Integer.parseInt(rowNum)-1;
 	  
-	//  datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
+	datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
 	  
 	  String Output = datamap.get(index).get("Result");
 	  
@@ -232,8 +233,10 @@ public class ArrayPage extends BasePage{
 	  }
 	  
 	  
-	  public void ExcelData_PythonEditor_AlertValidation(String rowNum) { Alert
-	  alert ; int index = Integer.parseInt(rowNum)-1;
+	  public void ExcelData_PythonEditor_AlertValidation(String rowNum) 
+	  {
+		  Alert	  alert ; 
+		  int index = Integer.parseInt(rowNum)-1;
 	  
 	 datamap=DataReader.data(System.getProperty("user.dir")+"\\testData\\Python_Editor_Data.xlsx","Sheet1");
 	  

@@ -24,8 +24,8 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test 
-	void Test_DS_TimeComplexityLink()throws IOException
+	@Test (priority=0)
+	void Test_DS_TimeComplexityLink()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());			
 	    Hp.Login_HomePage();		
@@ -39,8 +39,8 @@ public class DS_IntroductionTests extends BaseClass {
 
 	
 	
-	@Test
-	void Test_DS_TimeComplexity_Practice_Questions_link() throws IOException
+	@Test  (priority=1)
+	void Test_DS_TimeComplexity_Practice_Questions_link() 
 	{
 		
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());	
@@ -57,16 +57,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=2)
 	void Test_LeftPanel_TimeComplexity()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Hp.Login_HomePage();	
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
 		Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();	
@@ -77,16 +72,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=3)
 	void Test_DS_TryHere()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-				try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Hp.Login_HomePage();	
 	 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
        Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();
@@ -97,16 +87,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=4)
 	void DS_PythonEditor_ValidCodes()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		HomePage Hp = new HomePage(BaseClass.getDriver());	   
+			Hp.Login_HomePage();	
 	
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
 		
@@ -125,16 +110,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=5)
 	void DS_PythonEditor_InValidCodes()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Hp.Login_HomePage();	
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
 		Dp.DS_Pyhton_Editor_Page();
 		Dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
@@ -145,16 +125,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=6)
 	void DS_TimeComplexity_SignOutBtn()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Hp.Login_HomePage();	
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());				
 		Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();
@@ -165,16 +140,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=7)
 	void DS_PythonEditor_WithoutCodes()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	     try {
-			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Hp.Login_HomePage();	
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
 	
 		  Dp.DS_Pyhton_Editor_Page();
