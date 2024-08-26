@@ -10,10 +10,14 @@
     <test name="SDET Warrior Test">   
       <classes>
 		
+		<class name="testCases.DS_IntroductionTests"/> 
+		<class name="testCases.QueuePageTests"/> 
+		<class name="testCases.ArrayPageTests"/>  
 		
+		<!--
           <class name="testCases.GetStartedPageTests"/>  
           <class name="testCases.SignInPageTests"></class> 
-         <class name="testCases.LinkedListPageTests"/>
+         <class name="testCases.LinkedListPageTests"/>-->
        
 
        </classes>

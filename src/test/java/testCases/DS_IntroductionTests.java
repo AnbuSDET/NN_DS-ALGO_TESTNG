@@ -24,7 +24,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test 
+	@Test (priority=0)
 	void Test_DS_TimeComplexityLink()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());			
@@ -39,7 +39,7 @@ public class DS_IntroductionTests extends BaseClass {
 
 	
 	
-	@Test
+	@Test  (priority=1)
 	void Test_DS_TimeComplexity_Practice_Questions_link() 
 	{
 		
@@ -57,7 +57,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=2)
 	void Test_LeftPanel_TimeComplexity()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -72,7 +72,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=3)
 	void Test_DS_TryHere()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
@@ -87,7 +87,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=4)
 	void DS_PythonEditor_ValidCodes()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());	   
@@ -110,7 +110,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=5)
 	void DS_PythonEditor_InValidCodes()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -125,7 +125,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=6)
 	void DS_TimeComplexity_SignOutBtn()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -140,7 +140,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
+	@Test  (priority=7)
 	void DS_PythonEditor_WithoutCodes()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
