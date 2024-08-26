@@ -45,7 +45,7 @@ public class ArrayPageTests extends BaseClass{
 	
 	
 	@Test  (priority=1)
-	public void Test_ArraysUsingList() throws IOException
+	public void Test_ArraysUsingList() 
 	{
 		
 		HomePage Hp = new HomePage(BaseClass.getDriver());
@@ -58,7 +58,7 @@ public class ArrayPageTests extends BaseClass{
 	}
 	
 	@Test  (priority=2)
-	public void Test_BasicOpeartions() throws IOException
+	public void Test_BasicOpeartions() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
 		Hp.Login_HomePage();
