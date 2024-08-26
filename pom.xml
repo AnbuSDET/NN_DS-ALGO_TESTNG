@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   
   <packaging>jar</packaging>
-	<name>CucumberDemo</name>
+	<name>TestNG-Demo</name>
 	<url>http://maven.apache.org</url>
 	
 	<properties>
@@ -33,12 +33,12 @@
 					  <suiteXmlFile>CrossBrowser.xml</suiteXmlFile>
 				  </suiteXmlFiles>
 				  
-				  <properties>
+			<!-- 	  <properties>
 				       <property>
 				          <name>thread-count</name>
 				          <value>3</value>
 				       </property>
-				  </properties>
+				  </properties>  -->
 			   </configuration>
 			  
 	        </plugin>
