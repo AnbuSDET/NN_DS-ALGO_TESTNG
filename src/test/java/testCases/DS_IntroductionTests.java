@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import analyzer.RetryAnalyzer;
 import factory.BaseClass;
 import pageObjects.DataStructurePage;
 import pageObjects.GetStartedPage;
@@ -25,6 +26,7 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test (priority=0)
+	
 	void Test_DS_TimeComplexityLink()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());			
@@ -33,7 +35,7 @@ public class DS_IntroductionTests extends BaseClass {
 		 Dp.click_GetStartedBtn_DSIroduction(); 
 		 Dp.click_TimeComplexityBtn();
 		  String CurrentURL =BaseClass.getDriver().getCurrentUrl();
-		  Assert.assertEquals(true, CurrentURL.contains("array"));
+		  Assert.assertEquals(true, CurrentURL.contains("time"));
 		 
 	}
 

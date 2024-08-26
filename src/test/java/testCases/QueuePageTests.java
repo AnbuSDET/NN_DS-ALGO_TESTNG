@@ -20,7 +20,7 @@ public class QueuePageTests extends BaseClass{
 	 
 	
 	@Test   (priority=0)
-	void Test_Queue_GetStarted() throws IOException
+	void Test_Queue_GetStarted() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
 	    Hp.Login_HomePage();
@@ -32,7 +32,7 @@ public class QueuePageTests extends BaseClass{
 	
 	
 	@Test  (priority=1)
-	void Test_ImplementationOf_Queue_InPython() throws IOException
+	void Test_ImplementationOf_Queue_InPython() 
 	{		
 		
 	     QueuePage Qp = new QueuePage (BaseClass.getDriver());

@@ -13,7 +13,7 @@ import pageObjects.HomePage;
 public class GetStartedPageTests extends BaseClass {
 	Logger logger = BaseClass.getLogger();
 	
-		
+		//changes
 	@Test (priority=1, groups={"smoke","regression"})
 	public void TestGetStartedButton()  {
 		logger.info("Clicking the GetStarted Button.............");
