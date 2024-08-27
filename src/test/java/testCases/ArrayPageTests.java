@@ -4,9 +4,7 @@ import org.testng.annotations.Test;
 
 import analyzer.RetryAnalyzer;
 
-import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
-import org.testng.AssertJUnit;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -42,7 +40,10 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_ArraysInPython_Btn();
 
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurrentURL.contains("python"));
+
+		Assert.assertEquals(CurrentURL, CurrentURL.contains("python"));
+		
+
 	}
 
 	@Test(priority = 1)
@@ -53,8 +54,10 @@ public class ArrayPageTests extends BaseClass {
 		Hp.clickArrayGetStarted();
 		ArrayPage Ap = new ArrayPage(BaseClass.getDriver());
 		Ap.Click_ArraysUsingList_Btn();
-		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurrentURL.contains("using"));
+
+		String CurrentURL = BaseClass.getDriver().getCurrentUrl();	
+		Assert.assertEquals(true, CurrentURL.contains("using"));
+
 	}
 
 	@Test(priority = 2)
@@ -65,7 +68,9 @@ public class ArrayPageTests extends BaseClass {
 		ArrayPage Ap = new ArrayPage(BaseClass.getDriver());
 		Ap.Click_BasicOperations_Btn();
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurrentURL.contains("operations"));
+
+		Assert.assertEquals(true, CurrentURL.contains("operations"));
+
 	}
 
 	@Test(priority = 3)
@@ -76,7 +81,9 @@ public class ArrayPageTests extends BaseClass {
 		ArrayPage Ap = new ArrayPage(BaseClass.getDriver());
 		Ap.Click_ApplicationsOfArray_Btn();
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurrentURL.contains("applications"));
+
+		Assert.assertEquals(true, CurrentURL.contains("applications"));
+
 	}
 
 	// ********* Arrays in Python Page Scenarios
@@ -90,7 +97,9 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_ArraysInPython_Btn();
 		Ap.Click_TryhereBtn();
 		String CurURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurURL.contains("tryEditor"));
+
+		Assert.assertEquals(true, CurURL.contains("tryEditor"));
+
 
 	}
 
@@ -110,7 +119,8 @@ public class ArrayPageTests extends BaseClass {
 
 		logger.info("Console output.......     " + Dp.ConsoleOutput_text + Dp.PYEditor_Code);
 
-		AssertJUnit.assertEquals(true, Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text));
+		Assert.assertEquals(true, Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text));
+
 
 	}
 
@@ -126,7 +136,9 @@ public class ArrayPageTests extends BaseClass {
 		Dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
 		Dp.Validate_OutputConsole_InvalidCodes();
 		logger.info("Alert Message in Python Editor " + Dp.Alertmesg);
-		AssertJUnit.assertEquals(true, Dp.Alertmesg.contains("bad input on line 1"));
+
+		Assert.assertEquals(true, Dp.Alertmesg.contains("bad input on line 1"));
+
 
 	}
 
@@ -141,7 +153,7 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_TryhereBtn();
 		Dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
 		String crntURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, crntURL.contains("tryEditor"));
+		Assert.assertEquals(true, crntURL.contains("tryEditor"));
 	}
 
 	// Arrays using list page Scenarios
@@ -155,7 +167,9 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_ArraysUsingList_Btn();
 		Ap.Click_TryhereBtn();
 		String CurURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurURL.contains("tryEditor"));
+
+		Assert.assertEquals(true, CurURL.contains("tryEditor"));
+
 
 	}
 
@@ -175,7 +189,9 @@ public class ArrayPageTests extends BaseClass {
 
 		logger.info("Console output.......     " + Dp.ConsoleOutput_text + Dp.PYEditor_Code);
 
-		AssertJUnit.assertEquals(true, Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text));
+
+		Assert.assertEquals(true, Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text));
+
 
 	}
 
@@ -191,7 +207,9 @@ public class ArrayPageTests extends BaseClass {
 		Dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
 		Dp.Validate_OutputConsole_InvalidCodes();
 		logger.info("Alert Message in Python Editor " + Dp.Alertmesg);
-		AssertJUnit.assertEquals(true, Dp.Alertmesg.contains("bad input on line 1"));
+
+		Assert.assertEquals(true, Dp.Alertmesg.contains("bad input on line 1"));
+
 
 	}
 
@@ -206,7 +224,7 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_TryhereBtn();
 		Dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
 		String crntURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, crntURL.contains("tryEditor"));
+		Assert.assertEquals(true, crntURL.contains("tryEditor"));
 	}
 
 	// Basic Operations Page Scenarios
@@ -220,7 +238,9 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_BasicOperations_Btn();
 		Ap.Click_TryhereBtn();
 		String CurURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurURL.contains("tryEditor"));
+
+		Assert.assertEquals(true, CurURL.contains("tryEditor"));
+
 
 	}
 
@@ -240,7 +260,8 @@ public class ArrayPageTests extends BaseClass {
 
 		logger.info("Console output.......     " + Dp.ConsoleOutput_text + Dp.PYEditor_Code);
 
-		AssertJUnit.assertEquals(true, Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text));
+
+		Assert.assertEquals(true, Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text));
 
 	}
 
@@ -256,7 +277,9 @@ public class ArrayPageTests extends BaseClass {
 		Dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
 		Dp.Validate_OutputConsole_InvalidCodes();
 		logger.info("Alert Message in Python Editor " + Dp.Alertmesg);
-		AssertJUnit.assertEquals(true, Dp.Alertmesg.contains("bad input on line 1"));
+
+		Assert.assertEquals(true, Dp.Alertmesg.contains("bad input on line 1"));
+
 
 	}
 
@@ -271,7 +294,7 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_TryhereBtn();
 		Dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
 		String crntURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, crntURL.contains("tryEditor"));
+		Assert.assertEquals(true, crntURL.contains("tryEditor"));
 	}
 
 	// Applications of array Page Scenarios
@@ -285,7 +308,8 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_ApplicationsOfArray_Btn();
 		Ap.Click_TryhereBtn();
 		String CurURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurURL.contains("tryEditor"));
+
+		Assert.assertEquals(true, CurURL.contains("tryEditor"));
 
 	}
 
@@ -305,7 +329,9 @@ public class ArrayPageTests extends BaseClass {
 
 		logger.info("Console output.......     " + Dp.ConsoleOutput_text + Dp.PYEditor_Code);
 
-		AssertJUnit.assertEquals(true, Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text));
+
+		Assert.assertEquals(true, Dp.PYEditor_Code.contains(Dp.ConsoleOutput_text));
+
 
 	}
 
@@ -321,7 +347,8 @@ public class ArrayPageTests extends BaseClass {
 		Dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
 		Dp.Validate_OutputConsole_InvalidCodes();
 		logger.info("Alert Message in Python Editor " + Dp.Alertmesg);
-		AssertJUnit.assertEquals(true, Dp.Alertmesg.contains("bad input on line 1"));
+
+		Assert.assertEquals(true, Dp.Alertmesg.contains("bad input on line 1"));
 
 	}
 
@@ -336,7 +363,7 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_TryhereBtn();
 		Dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
 		String crntURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, crntURL.contains("tryEditor"));
+		Assert.assertEquals(true, crntURL.contains("tryEditor"));
 	}
 
 	// ******* Left Panel links Scenarios
@@ -350,7 +377,9 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_ArraysInPython_Btn();
 		Ap.Click_LeftPanel_ArraysInPyhton_Btn();
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurrentURL.contains("python"));
+
+		Assert.assertEquals(true, CurrentURL.contains("python"));
+
 
 	}
 
@@ -363,7 +392,9 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_ArraysInPython_Btn();
 		Ap.Click_LeftPanel_ArraysUsingList_Btn();
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurrentURL.contains("using"));
+
+		Assert.assertEquals(true, CurrentURL.contains("using"));
+
 	}
 
 	@Test(priority = 22)
@@ -375,7 +406,9 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_ArraysInPython_Btn();
 		Ap.Click_LeftPanel_BasicOpeartionsInList_Btn();
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurrentURL.contains("operations"));
+
+		Assert.assertEquals(true, CurrentURL.contains("operations"));
+
 	}
 
 	@Test(priority = 23)
@@ -387,7 +420,9 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_ArraysInPython_Btn();
 		Ap.Click_LeftPanel_ApplicationsOFArray_Btn();
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurrentURL.contains("applications"));
+
+		Assert.assertEquals(true, CurrentURL.contains("applications"));
+
 	}
 
 	@Test(priority = 24)
@@ -399,15 +434,18 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_ArraysInPython_Btn();
 		Ap.Click_PracticeQuestion_Btn();
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-		AssertJUnit.assertEquals(true, CurrentURL.contains("practice"));
 
-	}
+		Assert.assertEquals(true, CurrentURL.contains("practice"));
+
+	}	
+
 
 	/// Python Editor Search the array -> Valid and Invalid -->
 
 	@Parameters({ "1" })
 	@Test(priority = 25)
 	public void Test_searchTheArray_PythonEditor_ValidCodes(@Optional("1") String Rownumber) {
+
 		HomePage Hp = new HomePage(BaseClass.getDriver());
 		Hp.Login_HomePage();
 		Hp.clickArrayGetStarted();
@@ -427,6 +465,7 @@ public class ArrayPageTests extends BaseClass {
 	@Parameters({ "2" })
 	@Test(priority = 26)
 	public void Test_searchTheArray_PythonEditor_InValidCodes(@Optional("2") String Rownumber) {
+
 		HomePage Hp = new HomePage(BaseClass.getDriver());
 		Hp.Login_HomePage();
 		Hp.clickArrayGetStarted();
@@ -483,8 +522,10 @@ public class ArrayPageTests extends BaseClass {
 
 	}
 
-	// ******** Python Editor Find Numbers with Even number of digits -> Valid and
-	// Invalid
+
+	// ******** Python Editor Find Numbers with Even number of digits -> Valid and  Invalid
+	
+
 
 	@Parameters({ "5" })
 	@Test(priority = 29)
