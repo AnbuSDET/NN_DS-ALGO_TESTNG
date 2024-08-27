@@ -30,7 +30,7 @@ public class TreePageTests extends BaseClass {
 	    Hp.Login_HomePage();
 	    Hp.clickTreeGetStarted();
 	    TreePage Tp = new TreePage (BaseClass.getDriver());
-	  
+	    Tp.check_TreeHomePagelink();
 		 boolean status = Tp.check_TreeHomePagelink();
 		 Assert.assertEquals(status, true);
 		 logger.info("treeHomePage is displayed");
