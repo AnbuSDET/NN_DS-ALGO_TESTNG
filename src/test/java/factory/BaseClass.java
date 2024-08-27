@@ -30,7 +30,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BaseClass {
 
 	private static final ThreadLocal<WebDriver> driver = new ThreadLocal();
-	private  static Properties p;
+	private  static Properties property;
 	private static Logger logger;
 	
 	
@@ -77,7 +77,7 @@ public class BaseClass {
 				    
 					getDriver().manage().deleteAllCookies();
 					getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-					getDriver().get(p.getProperty("appURL"));
+					getDriver().get(property.getProperty("appURL"));
 					//getDriver().manage().window().maximize();
 			    }			
 			
@@ -118,9 +118,9 @@ public class BaseClass {
 	public synchronized static Properties getProperties() throws IOException
 	{
 		FileReader file = new FileReader(System.getProperty("user.dir")+".\\src\\test\\resources\\config.properties");
-		p = new Properties();
-		p.load(file);
-		return p;
+		property = new Properties();
+		property.load(file);
+		return property;
 	}
 	
 	public static Logger getLogger()

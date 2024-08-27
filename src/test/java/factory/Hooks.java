@@ -9,7 +9,7 @@ import org.testng.annotations.Parameters;
 
 public class Hooks extends BaseClass{
 		ThreadLocal<WebDriver> driver;
-		Properties properties;
+		Properties property;
 
 		@BeforeMethod
 		@Parameters ("browser")
