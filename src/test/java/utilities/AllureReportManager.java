@@ -65,18 +65,18 @@ import org.openqa.selenium.OutputType;
 			System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
 			Object testClass = iTestResult.getInstance();
 			System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
-//			if (driver instanceof WebDriver) {
-//				System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
-//				saveScreenshotPNG(driver);
-//			}
-			String imgPath;
-			try {
-				imgPath = new factory.BaseClass().captureScreen(iTestResult.getName());
-				Allure.addAttachment("pageScreenshot", imgPath);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			if (driver instanceof WebDriver) {
+				System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
+				saveScreenshotPNG(driver);
 			}
+//			String imgPath;
+//			try {
+//				imgPath = new factory.BaseClass().captureScreen(iTestResult.getName());
+//				Allure.addAttachment("pageScreenshot", imgPath);
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 			
 			// Save a log on allure.
 			saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");		

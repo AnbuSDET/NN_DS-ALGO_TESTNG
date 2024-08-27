@@ -8,13 +8,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.DataStructurePage;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 import pageObjects.LinkedListPage;
 import pageObjects.SignInPage;
 
-public class LinkedListPageTests extends BaseClass {
+public class LinkedListPageTests extends Hooks {
 	Logger logger=BaseClass.getLogger();
 	 
 	public void checkValidAndInvalidLoginTest(String user, String pwd) {

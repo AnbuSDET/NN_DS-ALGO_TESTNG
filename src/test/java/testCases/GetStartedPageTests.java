@@ -7,10 +7,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 
-public class GetStartedPageTests extends BaseClass {
+public class GetStartedPageTests extends Hooks {
 	Logger logger = BaseClass.getLogger();
 	
 		//changes

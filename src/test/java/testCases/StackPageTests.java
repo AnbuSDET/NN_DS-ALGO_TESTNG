@@ -1,20 +1,17 @@
 package testCases;
 
-import java.io.IOException;
-
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.DataStructurePage;
-import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 import pageObjects.LinkedListPage;
 import pageObjects.SignInPage;
 import pageObjects.StackPage;
 
-public class StackPageTests extends BaseClass{
+public class StackPageTests extends Hooks{
 
 	Logger logger=BaseClass.getLogger();
 	
@@ -31,10 +28,12 @@ public class StackPageTests extends BaseClass{
 	public void check_StackHomePage()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
+
 	
 			Hp.Login_HomePage();
 		
 		
+
 		StackPage stp=new StackPage(BaseClass.getDriver());
 		stp.click_StGetStarted();
 		 boolean status = stp.check_StHomePage();
@@ -64,9 +63,9 @@ public class StackPageTests extends BaseClass{
 	public void check_OperationsTryHereBtn()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-	
-			Hp.Login_HomePage();
-		
+
+		Hp.Login_HomePage();
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -97,10 +96,10 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_ImplementationTryHereBtn()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());
-		
-			Hp.Login_HomePage();
-		
+
+		 HomePage Hp = new HomePage(BaseClass.getDriver());
+		 Hp.Login_HomePage();
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -116,7 +115,9 @@ public class StackPageTests extends BaseClass{
 	public void check_StackApplicattionspage()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-			Hp.Login_HomePage();		
+
+		Hp.Login_HomePage();		
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Applications();
@@ -129,8 +130,10 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_ApplicationTryHereBtn()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());		
-			Hp.Login_HomePage();		
+
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		 Hp.Login_HomePage();		
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Applications();
@@ -146,10 +149,10 @@ public class StackPageTests extends BaseClass{
 	@Test
 	public void check_PythonEditorValidInput()
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());
-		
-			Hp.Login_HomePage();
-		
+
+		 HomePage Hp = new HomePage(BaseClass.getDriver());
+		 Hp.Login_HomePage();
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -168,21 +171,21 @@ public class StackPageTests extends BaseClass{
 	 @Test
 	 public void check_PythonEditorInvalidInput()
 	 {
-		 HomePage Hp = new HomePage(BaseClass.getDriver());
-			
-				Hp.Login_HomePage();
-			
+
+		     HomePage Hp = new HomePage(BaseClass.getDriver());
+			 Hp.Login_HomePage();
+
 			 StackPage stp=new StackPage(BaseClass.getDriver());
 			 stp.click_StGetStarted();
-		 stp.click_Operations();
-		 stp.click_TryHereBtn();
-		 logger.info("Tryhere button is clicked...........");
-		 logger.info("User Entering invalid pythod code on the editor ..... ");
-		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());  
-		 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
-		 ds.Validate_OutputConsole_InvalidCodes();
-		 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
-	     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+		     stp.click_Operations();
+			 stp.click_TryHereBtn();
+			 logger.info("Tryhere button is clicked...........");
+			 logger.info("User Entering invalid pythod code on the editor ..... ");
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());  
+			 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+			 ds.Validate_OutputConsole_InvalidCodes();
+			 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+		     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
 	        
 	 }
 	 
@@ -190,11 +193,11 @@ public class StackPageTests extends BaseClass{
 	 public void check_PythonEditorNoInput()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());
-			
-				Hp.Login_HomePage();
-			
-			StackPage stp=new StackPage(BaseClass.getDriver());
-			stp.click_StGetStarted();
+
+		 Hp.Login_HomePage();
+		 StackPage stp=new StackPage(BaseClass.getDriver());
+		 stp.click_StGetStarted();
+
 		 stp.click_Operations();
 		 stp.click_TryHereBtn();
 		 logger.info("Tryhere button is clicked...........");
@@ -208,6 +211,7 @@ public class StackPageTests extends BaseClass{
 	 @Test
 	 public void check_StPracticeQns()
 	 {
+
 		 HomePage Hp = new HomePage(BaseClass.getDriver());
 			
 				Hp.Login_HomePage();
@@ -221,6 +225,7 @@ public class StackPageTests extends BaseClass{
 		logger.info("redirected to practice qn page............");
 			
 		 
+
 	 }
 	
 }

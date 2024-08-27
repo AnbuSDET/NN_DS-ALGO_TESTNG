@@ -72,13 +72,11 @@ public class GraphPage extends BasePage {
 	}
 
 	public void click_GraphRepresentationsLink() {
-		// TODO Auto-generated method stub
 		GraphRepresentationBtn.click();
 	}
 
 	public boolean check_GraphRepresentationsLink() {
 
-		// TODO Auto-generated method stub
 		String Current_URL=BaseClass.getDriver().getCurrentUrl();
 		 boolean Check_URL = GraphRepersentations_Page_URL.equals(Current_URL);	
 		 return Check_URL;

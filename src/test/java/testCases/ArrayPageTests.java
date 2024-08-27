@@ -1,21 +1,13 @@
 package testCases;
 
-import org.testng.annotations.Test;
-
-import analyzer.RetryAnalyzer;
 
 import org.testng.annotations.Test;
-import java.io.IOException;
+import org.testng.AssertJUnit;
 import java.util.HashMap;
 import java.util.List;
-
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.Alert;
-import org.testng.Assert;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
 import factory.BaseClass;
 import pageObjects.ArrayPage;
 import pageObjects.DataStructurePage;
@@ -55,6 +47,7 @@ public class ArrayPageTests extends BaseClass {
 		ArrayPage Ap = new ArrayPage(BaseClass.getDriver());
 		Ap.Click_ArraysUsingList_Btn();
 
+
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();	
 		Assert.assertEquals(true, CurrentURL.contains("using"));
 
@@ -62,6 +55,7 @@ public class ArrayPageTests extends BaseClass {
 
 	@Test(priority = 2)
 	public void Test_BasicOpeartions() {
+
 		HomePage Hp = new HomePage(BaseClass.getDriver());
 		Hp.Login_HomePage();
 		Hp.clickArrayGetStarted();
@@ -69,20 +63,22 @@ public class ArrayPageTests extends BaseClass {
 		Ap.Click_BasicOperations_Btn();
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
 
+
 		Assert.assertEquals(true, CurrentURL.contains("operations"));
 
 	}
 
 	@Test(priority = 3)
 	public void Test_ApplicationsOfArray() {
+
 		HomePage Hp = new HomePage(BaseClass.getDriver());
 		Hp.Login_HomePage();
 		Hp.clickArrayGetStarted();
 		ArrayPage Ap = new ArrayPage(BaseClass.getDriver());
 		Ap.Click_ApplicationsOfArray_Btn();
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
-
 		Assert.assertEquals(true, CurrentURL.contains("applications"));
+
 
 	}
 
@@ -689,4 +685,6 @@ public class ArrayPageTests extends BaseClass {
 
 	}
 
+
+	 
 }

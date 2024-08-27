@@ -1,10 +1,10 @@
+
 package testCases;
 
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.DataStructurePage;
 import pageObjects.HomePage;
 import pageObjects.LinkedListPage;
@@ -12,7 +12,9 @@ import pageObjects.QueuePage;
 import pageObjects.SignInPage;
 import pageObjects.TreePage;
 
-public class TreePageTests extends BaseClass {
+
+public class TreePageTests extends Hooks {
+
 	Logger logger = BaseClass.getLogger();
 	public void checkValidAndInvalidLoginTest(String user, String pwd) {
 		SignInPage sp= new SignInPage(BaseClass.getDriver());
@@ -22,22 +24,28 @@ public class TreePageTests extends BaseClass {
 		 sp.clickLogin();
 		}
 	//TreeGetStarted
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	public void check_TreeHomePagelink()
 	{
 		
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
 	    Hp.Login_HomePage();
 	    Hp.clickTreeGetStarted();
-	    TreePage Tp = new TreePage (BaseClass.getDriver());
+	    TreePage Tp = new TreePage (BaseClass.getDriver()); 
+
 	    Tp.check_TreeHomePagelink();
+
 		 boolean status = Tp.check_TreeHomePagelink();
 		 Assert.assertEquals(status, true);
 		 logger.info("treeHomePage is displayed");
 		
 	}
 	//OverviewofTree
-	 @Test(priority=1,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void check_Overview_of_TreePage()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -53,7 +61,9 @@ public class TreePageTests extends BaseClass {
 		    logger.info("Overviewoftrees is displayed");
 	 }
 	//TryHereButton
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void check_TryHereButton() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -69,7 +79,9 @@ public class TreePageTests extends BaseClass {
 			 logger.info("TryEditor page is displayed");
 	 }
 	 //PythonEditorValidInput
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void check_PythonEditorValidInput() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -90,7 +102,9 @@ public class TreePageTests extends BaseClass {
 			  
 	 }
 	 //PythonEditorInvalidInput
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void check_PythonEditorInvalidInput() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -109,7 +123,9 @@ public class TreePageTests extends BaseClass {
 	        
 	 }
 	// PythonEditorNoInput
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void check_PythonEditorNoInput() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -129,7 +145,9 @@ public class TreePageTests extends BaseClass {
 	 }
 	 //terminologies
 
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void check_terminologiesPage()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -147,7 +165,9 @@ public class TreePageTests extends BaseClass {
 	 }
 	 
 	//types_of_trees
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void check_types_of_treesPage(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -164,7 +184,9 @@ public class TreePageTests extends BaseClass {
 	 
 	 } 
 	//tree-traversals
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void click_tree_traversalsLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -181,7 +203,9 @@ public class TreePageTests extends BaseClass {
 	 
 	 } 
 		//traversals-illustration
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void click_traversals_illustrationLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -198,7 +222,9 @@ public class TreePageTests extends BaseClass {
 	 
 	 } 
 		//binary-trees 
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void click_binary_treesLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -215,7 +241,9 @@ public class TreePageTests extends BaseClass {
 	 } 
 	 
 		//types-of-binary-trees
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void click_types_of_binary_treesLink() {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -231,7 +259,9 @@ public class TreePageTests extends BaseClass {
 	 
 	 } 
 	//implementation-in-python
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void click_implementation_in_pythonLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -247,7 +277,9 @@ public class TreePageTests extends BaseClass {
 	 
 	 } 
 	//Binary Tree Traversals
-		 @Test(priority=4,groups="regression")
+
+		 @Test(groups="regression")
+
 		 public void click_BinaryTreeTraversalsLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -263,7 +295,9 @@ public class TreePageTests extends BaseClass {
 		 
 		 } 
 		//Implementation of Binary Trees
-		 @Test(priority=4,groups="regression")
+
+		 @Test(groups="regression")
+
 		 public void click_ImplementationofBinaryTreesLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -278,7 +312,9 @@ public class TreePageTests extends BaseClass {
 		 
 		 } 
 		//Applications of Binary trees
-		 @Test(priority=4,groups="regression")
+
+		 @Test(groups="regression")
+
 		 public void click_ApplicationsofBinarytreesLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -293,7 +329,9 @@ public class TreePageTests extends BaseClass {
 		 
 		 }  
 		//Binary Search Trees
-		 @Test(priority=4,groups="regression")
+
+		 @Test(groups="regression")
+
 		 public void click_BinarySearchTreesLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -308,7 +346,9 @@ public class TreePageTests extends BaseClass {
 		 
 		 }  
 		//ImplementationOfBST
-		 @Test(priority=4,groups="regression")
+
+		 @Test(groups="regression")
+
 		 public void click_ImplementationOfBSTLink() {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -323,7 +363,9 @@ public class TreePageTests extends BaseClass {
 		 
 		 }
 		//PracticeQns
-		 @Test(priority=4,groups="regression")
+
+		 @Test(groups="regression")
+
 		 public void click_PracticeQnsLink()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
