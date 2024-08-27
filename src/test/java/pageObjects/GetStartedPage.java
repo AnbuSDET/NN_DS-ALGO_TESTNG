@@ -1,8 +1,12 @@
 package pageObjects;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import factory.BaseClass;
 
 public class GetStartedPage extends BasePage {
 
@@ -32,9 +36,9 @@ public class GetStartedPage extends BasePage {
 	}
 	
 	public boolean checkStartPageDisplay() {
-		boolean display = NumpyNinjaCopyrightLink.isDisplayed();
+	   boolean display = NumpyNinjaCopyrightLink.isDisplayed();
 		return display;
-	
 	}
-
+	
 }
+

@@ -1,3 +1,4 @@
+
 package pageObjects;
 
 import java.util.List;
@@ -85,10 +86,10 @@ public class TreePage extends BasePage{
 	String BinarySearchTrees_URL="https://dsportalapp.herokuapp.com/tree/binary-search-trees/";
 	String ImplementationOfBST_URL="https://dsportalapp.herokuapp.com/tree/implementation-of-bst/";
 	String TreePracticeQns_URL="https://dsportalapp.herokuapp.com/tree/practice";
-
+	String Online_Editor_Console_URL="https://dsportalapp.herokuapp.com/tryEditor";
 	//----------------------------------------Methods------------------------
 	
-	public void click_Getstarted() {
+	public void click_TreeGetstarted() {
 		TreeGetStrdBtn.click();
 	}
 	public boolean check_TreeHomePagelink() {
@@ -99,6 +100,11 @@ public class TreePage extends BasePage{
 	
 	public void clickTryHerebutton() {
 		TryHereBtn.click();
+	}
+	public boolean check_TryEditorPage() {
+		String Current_URL=BaseClass.getDriver().getCurrentUrl();
+		 boolean Check_URL = Online_Editor_Console_URL.equals(Current_URL);	
+		 return Check_URL;
 	}
 
 	public void click_OverviewofTreeLink() {
@@ -256,5 +262,6 @@ public class TreePage extends BasePage{
 			 boolean Check_URL = TreePracticeQns_URL.equals(Current_URL);	
 			 return Check_URL;			
 		}
+		
 		
 }

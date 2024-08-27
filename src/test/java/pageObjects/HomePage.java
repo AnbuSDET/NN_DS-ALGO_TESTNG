@@ -1,27 +1,21 @@
 package pageObjects;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
-
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
 import factory.BaseClass;
 
 public class HomePage extends BasePage{
    
 	public static  Properties p;
+
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
-	}
-	
+	}		
 	
 	//-----------WebElements-----------------
 	
@@ -113,19 +107,29 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//h4[normalize-space()='Graph']")
 	private WebElement GraphPage;
 	
-	//------------------Methods---------------	
-	
+	//------------------Methods---------------		
 		
 	
-	public void Login_HomePage() throws IOException
+	public void Login_HomePage() 
 	{
 		SignInPage sp = new SignInPage(BaseClass.getDriver());	
 		GetStartedPage Gp = new GetStartedPage(BaseClass.getDriver());
 		Gp.clickGetStartedSP();
 		clickSigIn();
-		sp.enterUsername(BaseClass.getProperties().getProperty("username"));
-		sp.enterpassword(BaseClass.getProperties().getProperty("password"));		
-		sp.clickLogin();		 
+
+		try {
+			sp.enterUsername(BaseClass.getProperties().getProperty("username"));
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		try {
+			sp.enterpassword(BaseClass.getProperties().getProperty("password"));
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}		
+		 sp.clickLogin();		
 	}
 	
 	public boolean NumpyNinjaLinkDisplay() {
@@ -134,7 +138,7 @@ public class HomePage extends BasePage{
 	}
 	
 	public void clickNumpyNinjaLink() {
-		NumpyNinjaLink.click();
+		 NumpyNinjaLink.click();
 	}
 	
 	public void clickSigIn() {
@@ -177,7 +181,7 @@ public class HomePage extends BasePage{
 	
 	public void clickArrayGetStarted()  {
 		ArrayGetStartedBtn.click();
-			}
+	}
 	
 	public void clickLinkedListGetStarted() {
 		LinkedListGetStartedBtn.click();
@@ -295,9 +299,13 @@ public class HomePage extends BasePage{
 		return status;
 	}
 	
-	public void selectDropdownTopic(String topic) throws InterruptedException {
+	public void selectDropdownTopic(String topic) {
 	switch(topic) {
-		case "Array":clickArrayDropdown();break;
+		case "Array":try {
+			clickArrayDropdown();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}break;
 		case"LinkedList": clickLinkedListDropdown();break;
 		case "Stack":clickStackDropdown();break;
 		case "Queue":clickQueueDropdown();break;

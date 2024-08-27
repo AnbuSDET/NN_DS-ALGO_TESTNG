@@ -8,13 +8,12 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import analyzer.RetryAnalyzer;
 import factory.BaseClass;
 import pageObjects.DataStructurePage;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
-
-
 
 
 public class DS_IntroductionTests extends BaseClass {
@@ -24,8 +23,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test 
-	void Test_DS_TimeComplexityLink()throws IOException
+	@Test (priority=0)
+
+	
+	void Test_DS_TimeComplexityLink()
+
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());			
 	    Hp.Login_HomePage();		
@@ -39,8 +41,8 @@ public class DS_IntroductionTests extends BaseClass {
 
 	
 	
-	@Test
-	void Test_DS_TimeComplexity_Practice_Questions_link() throws IOException
+	@Test  (priority=1)
+	void Test_DS_TimeComplexity_Practice_Questions_link() 
 	{
 		
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());	
@@ -58,10 +60,10 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void Test_LeftPanel_TimeComplexity() throws IOException
+	void Test_LeftPanel_TimeComplexity() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	   	Hp.Login_HomePage();
+   	Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
 		Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();	
@@ -71,14 +73,13 @@ public class DS_IntroductionTests extends BaseClass {
 	}	
 	
 	
-	
-	@Test
-	void Test_DS_TryHere() throws IOException
+	@Test  (priority=3)
+	void Test_DS_TryHere() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		Hp.Login_HomePage();
-	    DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
-        Dp.click_GetStartedBtn_DSIroduction();
+		Hp.Login_HomePage();	
+	 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
+     Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();
 		Dp.click_DS_TimeComplexity_TryhereBtn();
         String CurURL= BaseClass.getDriver().getCurrentUrl();	    
@@ -87,11 +88,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	
-	@Test
-	void DS_PythonEditor_ValidCodes() throws IOException
+	@Test  (priority=4)
+	void DS_PythonEditor_ValidCodes() 
 	{
-		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	   	Hp.Login_HomePage();
+		HomePage Hp = new HomePage(BaseClass.getDriver());	   
+		Hp.Login_HomePage();	
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
 		logger.info("Clicking the Try Editor Page   ");
 		Dp.DS_Pyhton_Editor_Page();
@@ -109,10 +110,10 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_PythonEditor_InValidCodes() throws IOException
+	void DS_PythonEditor_InValidCodes() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	  	Hp.Login_HomePage();
+  	Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());		
 		Dp.DS_Pyhton_Editor_Page();
 		Dp.Click_DS_PythonEditor_Runbtn_InValidCodes();
@@ -124,10 +125,10 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_TimeComplexity_SignOutBtn() throws IOException
+	void DS_TimeComplexity_SignOutBtn() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	   	Hp.Login_HomePage();
+   	Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());				
 		Dp.click_GetStartedBtn_DSIroduction();
 		Dp.click_TimeComplexityBtn();
@@ -139,11 +140,11 @@ public class DS_IntroductionTests extends BaseClass {
 	
 	
 	@Test
-	void DS_PythonEditor_WithoutCodes() throws IOException
+	void DS_PythonEditor_WithoutCodes() 
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
 	    Hp.Login_HomePage();
-		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
+  		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
 		  Dp.DS_Pyhton_Editor_Page();
 		  Dp.Click_DS_PythonEditor_Runbtn_WithoutCodes();
 		  String crntURL = BaseClass.getDriver().getCurrentUrl();

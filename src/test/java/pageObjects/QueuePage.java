@@ -1,24 +1,23 @@
 package pageObjects;
 
-import java.io.IOException;
-
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
-
 import factory.BaseClass;
 
 public class QueuePage extends BasePage{
 
-	Logger logger = BaseClass.getLogger();	
+	Logger logger = BaseClass.getLogger();		
 	
-	public QueuePage(WebDriver driver) {
-		super(driver);
-		// TODO Auto-generated constructor stub
-	}
-	public DataStructurePage dp = new DataStructurePage(BaseClass.getDriver());
+	  public QueuePage(WebDriver driver) {
+		  super(driver); 
+		  
+	   } 
+	  
+	  public DataStructurePage dp = new	  DataStructurePage(BaseClass.getDriver());	 	
+	
 
 	// Page Objects
 	
@@ -52,7 +51,9 @@ public class QueuePage extends BasePage{
 	
 
 	public void Click_ImplementaionOfQueue()
-	{
+	{		
+		JavascriptExecutor jse = (JavascriptExecutor)BaseClass.getDriver();	
+		jse.executeScript("window.scrollBy(0,1000)"); 
 		ImpofQueue_Btn.click();
 	}
 	
@@ -91,12 +92,9 @@ public class QueuePage extends BasePage{
 	public void Click_Getstarted_homePage_Queue()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
-	    try {
+	   
 			Hp.Login_HomePage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 	    Hp.clickQueueGetStarted();
 	}	
 	

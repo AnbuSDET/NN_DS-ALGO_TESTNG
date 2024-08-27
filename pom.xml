@@ -33,6 +33,10 @@
 					  <suiteXmlFile>CrossBrowser.xml</suiteXmlFile>
 				  </suiteXmlFiles>
 				  
+					 <properties>
+	  					  <myproperty>${browser}</myproperty>
+	                 </properties>
+				  
 			   </configuration>
 			  
 	        </plugin>

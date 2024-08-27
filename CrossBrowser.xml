@@ -5,6 +5,7 @@
   <listeners>
 		<listener class-name="utilities.ExtentReportManager"></listener>
 		<listener class-name="utilities.AllureReportManager"></listener>
+		<listener class-name="analyzer.MyTransformer"></listener>
   </listeners>
 	
   <test name="Chrome Browser Test1">
@@ -14,31 +15,32 @@
 	      <class name="testCases.GetStartedPageTests"/>
 	      <class name="testCases.RegisterPageTests"/>
 	      <class name="testCases.HomePageTests"/>
+	      <class name="testCases.TreePageTests"/>
       </classes>
   </test> <!-- Test -->
   
   
-  <test name="Chrome Browser Test2">
-     <parameter name="browser" value="chrome"></parameter>
+  <test name="Edge Browser Test">
+     <parameter name="browser" value="edge"></parameter>
      <parameter name="os" value="Windows11"></parameter>
        <classes>
          <class name="testCases.StackPageTests"/>
          <class name="testCases.LinkedListPageTests"/>
 	     <class name="testCases.DS_IntroductionTests"/>
+	     <class name="testCases.GraphPageTests"/>
     </classes>
   </test> <!-- Test -->
   
   
-  <test name="Edge Browser Test">
-    <parameter name="browser" value="edge"></parameter>
+  <test name="Chrome Browser Test2">
+    <parameter name="browser" value="chrome"></parameter>
     <parameter name="os" value="Windows11"></parameter>
    	    <classes>
    	       <class name="testCases.SignInPageTests"/>
    	       <class name="testCases.ArrayPageTests"/>
-	       <class name="testCases.QueuePageTests"/>
+	       <class name="testCases.QueuePageTests"/> 
 	    </classes>
-   </test> <!-- Test --> 
-   
+   </test> <!-- Test -->    
  
      
 </suite> <!-- Suite -->

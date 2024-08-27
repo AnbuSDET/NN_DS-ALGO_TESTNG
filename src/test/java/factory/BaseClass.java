@@ -27,58 +27,67 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-//-------------------FOR CROSS BROWSER SET UP-------------------------
-
 public class BaseClass {
 
-	public static final ThreadLocal<WebDriver> driver = new ThreadLocal();
-	public  static Properties p;
-	public  static Logger logger;
+	private static final ThreadLocal<WebDriver> driver = new ThreadLocal();
+	private  static Properties p;
+	private static Logger logger;
 	
-	@BeforeMethod
-	@Parameters ("browser")
+	
 	public static void initializeBrowser(String browser) throws IOException
 	{  
-		
-		if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote"))
-		{
-			DesiredCapabilities capabilities = new DesiredCapabilities();
+		if (browser.isEmpty()) {
+			if (getProperties().getProperty("execution_env").equalsIgnoreCase("remote"))
+					{
+						DesiredCapabilities capabilities = new DesiredCapabilities();
+						
+						//------------------------os setup-------------------------
+						if (getProperties().getProperty("os").equalsIgnoreCase("windows"))
+							capabilities.setPlatform(Platform.WIN11);
+						else if (getProperties().getProperty("os").equalsIgnoreCase("mac"))
+							capabilities.setPlatform(Platform.MAC);
+						else System.out.println("No Matching OS Found......");
+										
+						//-----------------browser setup----------------------------
+					
+						switch (getProperties().getProperty("browser").toLowerCase())
+						{   
+						case "chrome": capabilities.setBrowserName("chrome");break;
+						case "edge":capabilities.setBrowserName("edge");break;
+						default:System.out.println("No matching Browser found.......");
+						}
+						
+						driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities));
+						
+					 }
 			
-			//------------------------os setup-------------------------
-			if (getProperties().getProperty("os").equalsIgnoreCase("windows"))
-				{
-					capabilities.setPlatform(Platform.WIN11);
-				}
-			else if (getProperties().getProperty("os").equalsIgnoreCase("mac"))
-				{
-					capabilities.setPlatform(Platform.MAC);
-				}
-			else 
-				{
-					System.out.println("No Matching OS Found......");
-				}			
+			 else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local"))
+				   {  
+				 	  switch(getProperties().getProperty("browser").toLowerCase())
+						{  
+						case "chrome":
+							driver.set(ThreadGuard.protect(new ChromeDriver()));System.out.println("Testing in Chrome Browser"); break;
+						case "edge":
+							driver.set(ThreadGuard.protect(new EdgeDriver())); System.out.println("Testing in Edge Browser");break;
+						case "safari":
+							driver.set(ThreadGuard.protect(new SafariDriver()));System.out.println("Testing in Firefox Browser"); break;
+						default:
+							System.out.println("No matching Browser found.......");
+						}
+				    
+					getDriver().manage().deleteAllCookies();
+					getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+					getDriver().get(p.getProperty("appURL"));
+					//getDriver().manage().window().maximize();
+			    }			
 			
-			//-----------------browser setup----------------------------
-		
-			switch (getProperties().getProperty("browser").toLowerCase())
-			{
-			case "chrome":
-				capabilities.setBrowserName("chrome");break;
-			case "edge":
-				capabilities.setBrowserName("edge");break;
-			default:
-				System.out.println("No matching Browser found.......");
-			}
-			
-			driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),capabilities));
-			
-		}
+		 }
 	
 		
-		else if (getProperties().getProperty("execution_env").equalsIgnoreCase("local"))
-		{
+		else
+		{ 
 			switch(browser)
-			{
+			{  
 			case "chrome":
 				driver.set(ThreadGuard.protect(new ChromeDriver()));System.out.println("Testing in Chrome Browser"); break;
 			case "edge":
@@ -87,21 +96,16 @@ public class BaseClass {
 				driver.set(ThreadGuard.protect(new SafariDriver()));System.out.println("Testing in Firefox Browser"); break;
 			default:
 				System.out.println("No matching Browser found.......");
-			}
+			}			
+		
+			getDriver().manage().deleteAllCookies();
+			getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			System.out.println("Im am here");
+			BaseClass.getDriver().get(getProperties().getProperty("appURL"));
+			//getDriver().manage().window().maximize();
 		}
 		
-		getDriver().manage().deleteAllCookies();
-		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		getDriver().get(p.getProperty("appURL"));
-		//getDriver().manage().window().maximize();		
 	}
-	
-	
-	@AfterMethod
-	public void tearDown()
-	{
-		 driver.get().quit();		
-    }
 	
 	
 	public static WebDriver getDriver()
@@ -113,7 +117,7 @@ public class BaseClass {
 	
 	public synchronized static Properties getProperties() throws IOException
 	{
-		FileReader file = new FileReader(".\\src\\test\\resources\\config.properties");
+		FileReader file = new FileReader(System.getProperty("user.dir")+".\\src\\test\\resources\\config.properties");
 		p = new Properties();
 		p.load(file);
 		return p;
@@ -132,7 +136,7 @@ public class BaseClass {
 		TakesScreenshot takesScreenshot=(TakesScreenshot) BaseClass.getDriver();		
 		File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
 		
-		String targetFilePath=".\\screenshots\\" + tname + "_" + timeStamp + ".png";
+		String targetFilePath=System.getProperty("user.dir")+"\\screenshots\\" + tname + "_" + timeStamp + ".png";
 		File targetFile=new File(targetFilePath);
 		
 		sourceFile.renameTo(targetFile);

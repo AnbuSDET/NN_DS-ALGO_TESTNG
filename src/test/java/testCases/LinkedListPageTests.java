@@ -8,13 +8,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.DataStructurePage;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 import pageObjects.LinkedListPage;
 import pageObjects.SignInPage;
 
-public class LinkedListPageTests extends BaseClass {
+public class LinkedListPageTests extends Hooks {
 	Logger logger=BaseClass.getLogger();
 	 
 	public void checkValidAndInvalidLoginTest(String user, String pwd) {
@@ -25,7 +26,7 @@ public class LinkedListPageTests extends BaseClass {
 		 sp.clickLogin();
 		}
 		 @Test(priority=4,groups="regression")
-		 public void check_LinkedListHomePage() throws IOException
+		 public void check_LinkedListHomePage() 
 		 {	
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -38,7 +39,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_IntoductionTab() throws IOException
+		 public void check_IntoductionTab()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -51,7 +52,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_TryHereButton() throws IOException
+		 public void check_TryHereButton() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();
@@ -66,7 +67,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 	
 		 @Test(priority=4,groups="regression")
-		 public void check_PythonEditorValidInput() throws IOException
+		 public void check_PythonEditorValidInput() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();
@@ -86,7 +87,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_PythonEditorInvalidInput() throws IOException
+		 public void check_PythonEditorInvalidInput() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();
@@ -104,7 +105,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_PythonEditorNoInput() throws IOException
+		 public void check_PythonEditorNoInput() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();
@@ -120,7 +121,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_CreatingLinkedListTab() throws IOException
+		 public void check_CreatingLinkedListTab() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();
@@ -136,7 +137,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_TypesOfLinkedListTab() throws IOException
+		 public void check_TypesOfLinkedListTab() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();
@@ -152,7 +153,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		
 		 @Test(priority=4,groups="regression")
-		 public void check_ImplementingLinkedListTab() throws IOException
+		 public void check_ImplementingLinkedListTab() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();
@@ -168,7 +169,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_Traversal() throws IOException
+		 public void check_Traversal() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();
@@ -184,7 +185,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		
 		 @Test(priority=4,groups="regression")
-		 public void check_Insertion() throws IOException
+		 public void check_Insertion() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();
@@ -200,7 +201,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_Deletion() throws IOException
+		 public void check_Deletion() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			Hp.Login_HomePage();
@@ -216,7 +217,7 @@ public class LinkedListPageTests extends BaseClass {
 		 }
 		 
 		 @Test(priority=4,groups="regression")
-		 public void check_LLPracticeQns() throws IOException
+		 public void check_LLPracticeQns() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 			 Hp.Login_HomePage();

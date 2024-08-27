@@ -1,25 +1,17 @@
 package pageObjects;
 
-
 import org.openqa.selenium.Alert;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import factory.BaseClass;
 
 
 public class DataStructurePage extends BasePage{
-
+	
+	
 	public DataStructurePage(WebDriver driver) {
 		super(driver);
 		
@@ -151,7 +143,7 @@ public class DataStructurePage extends BasePage{
 	public void Click_DS_PythonEditor_Runbtn_InValidCodes()
 	{
 		
-		 TextareaScroll_1.click();			
+		     TextareaScroll_1.click();			
 	        JavascriptExecutor js=(JavascriptExecutor) BaseClass.getDriver();
 	        js.executeScript("window.scrollTo(0,0)");	    
 	        Textarea_Type2.sendKeys("Print "+PYEditor_Code);	        
