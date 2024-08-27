@@ -28,7 +28,12 @@ public class StackPageTests extends Hooks{
 	public void check_StackHomePage()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
-		Hp.Login_HomePage();
+
+	
+			Hp.Login_HomePage();
+		
+		
+
 		StackPage stp=new StackPage(BaseClass.getDriver());
 		stp.click_StGetStarted();
 		 boolean status = stp.check_StHomePage();
@@ -58,7 +63,9 @@ public class StackPageTests extends Hooks{
 	public void check_OperationsTryHereBtn()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());
+
 		Hp.Login_HomePage();
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -89,8 +96,10 @@ public class StackPageTests extends Hooks{
 	@Test
 	public void check_ImplementationTryHereBtn()
 	{
+
 		 HomePage Hp = new HomePage(BaseClass.getDriver());
 		 Hp.Login_HomePage();
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -106,7 +115,9 @@ public class StackPageTests extends Hooks{
 	public void check_StackApplicattionspage()
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
+
 		Hp.Login_HomePage();		
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Applications();
@@ -119,8 +130,10 @@ public class StackPageTests extends Hooks{
 	@Test
 	public void check_ApplicationTryHereBtn()
 	{
+
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		 Hp.Login_HomePage();		
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Applications();
@@ -136,8 +149,10 @@ public class StackPageTests extends Hooks{
 	@Test
 	public void check_PythonEditorValidInput()
 	{
+
 		 HomePage Hp = new HomePage(BaseClass.getDriver());
 		 Hp.Login_HomePage();
+
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
 		 stp.click_Operations();
@@ -156,8 +171,10 @@ public class StackPageTests extends Hooks{
 	 @Test
 	 public void check_PythonEditorInvalidInput()
 	 {
+
 		     HomePage Hp = new HomePage(BaseClass.getDriver());
 			 Hp.Login_HomePage();
+
 			 StackPage stp=new StackPage(BaseClass.getDriver());
 			 stp.click_StGetStarted();
 		     stp.click_Operations();
@@ -176,9 +193,11 @@ public class StackPageTests extends Hooks{
 	 public void check_PythonEditorNoInput()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());
+
 		 Hp.Login_HomePage();
 		 StackPage stp=new StackPage(BaseClass.getDriver());
 		 stp.click_StGetStarted();
+
 		 stp.click_Operations();
 		 stp.click_TryHereBtn();
 		 logger.info("Tryhere button is clicked...........");
@@ -192,16 +211,21 @@ public class StackPageTests extends Hooks{
 	 @Test
 	 public void check_StPracticeQns()
 	 {
-		  HomePage Hp = new HomePage(BaseClass.getDriver());
-		  Hp.Login_HomePage();
-		  StackPage stp=new StackPage(BaseClass.getDriver());
-		  stp.click_StGetStarted();
-		  stp.click_Operations();
-		  stp.click_StPracticeQns();
-		  boolean status=stp.check_StPracticeQnsPage();
-		  Assert.assertEquals(status, true);
-		  logger.info("redirected to practice qn page............");
-				 
+
+		 HomePage Hp = new HomePage(BaseClass.getDriver());
+			
+				Hp.Login_HomePage();
+			
+			StackPage stp=new StackPage(BaseClass.getDriver());
+			stp.click_StGetStarted();
+			stp.click_Operations();
+		 stp.click_StPracticeQns();
+		boolean status=stp.check_StPracticeQnsPage();
+		Assert.assertEquals(status, true);
+		logger.info("redirected to practice qn page............");
+			
+		 
+
 	 }
 	
 }

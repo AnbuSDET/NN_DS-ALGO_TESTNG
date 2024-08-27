@@ -129,7 +129,10 @@ public class HomePage extends BasePage{
 			
 			e.printStackTrace();
 		}		
-		 sp.clickLogin();		
+
+		 sp.clickLogin();	 
+
+
 	}
 	
 	public boolean NumpyNinjaLinkDisplay() {
