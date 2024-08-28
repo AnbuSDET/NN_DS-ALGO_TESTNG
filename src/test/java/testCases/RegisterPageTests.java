@@ -91,7 +91,7 @@ public class RegisterPageTests extends Hooks {
 	  }
 	
 	
-	@Test (dataProvider="RegisterWithInvalidData", dataProviderClass=DataProviders.class, priority=5, groups="regression")
+	@Test (dataProvider="RegisterWithInvalidData", dataProviderClass=DataProviders.class, priority=5, groups={"regression","Register"})
 	public void checkRegisterWithImproperPassword(String user, String pwd, String pwdConfirm, String ErrMsg) {
 		logger.info("Verify the Error message thrown while registering new user with improper username OR passwords............");
 		GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());

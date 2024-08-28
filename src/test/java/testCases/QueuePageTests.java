@@ -1,12 +1,8 @@
 package testCases;
 
-import java.io.IOException;
-
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import factory.BaseClass;
 import factory.Hooks;
 import pageObjects.DataStructurePage;

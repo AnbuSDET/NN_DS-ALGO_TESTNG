@@ -18,16 +18,10 @@ public class DataStructurePage extends BasePage{
 	}
 
 	WebDriver driver;
-	
-	
 	public String PYEditor_Code = "'Numpy Ninja'";	
-	
 	public String ConsoleOutput_text="";
 	public String Alertmesg ="";
-	
-	 
 		
-	
 	
 	//-------------WebElements--------------
 	
@@ -59,11 +53,9 @@ public class DataStructurePage extends BasePage{
 	@FindBy (xpath="//div[@role='alert']")
 	public WebElement DS_LogoutMessage;	
 	
-	
 	@FindBy(xpath="//*[@value='Submit']")
 	public WebElement PythonEditor_submit_Btn;
-	
-	
+		
 	@FindBy(css=".CodeMirror-scroll")
 	WebElement TextareaScroll_1;
 	
