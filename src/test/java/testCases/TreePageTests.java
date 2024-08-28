@@ -4,13 +4,10 @@ package testCases;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import factory.BaseClass;
 import factory.Hooks;
 import pageObjects.DataStructurePage;
 import pageObjects.HomePage;
-import pageObjects.LinkedListPage;
-import pageObjects.QueuePage;
 import pageObjects.SignInPage;
 import pageObjects.TreePage;
 

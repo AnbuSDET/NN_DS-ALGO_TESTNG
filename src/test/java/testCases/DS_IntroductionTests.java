@@ -1,42 +1,27 @@
 package testCases;
 
-import java.io.IOException;
-
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import analyzer.RetryAnalyzer;
 import factory.BaseClass;
 import pageObjects.DataStructurePage;
-import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
-import pageObjects.SignInPage;
-
 
 public class DS_IntroductionTests extends BaseClass {
 	
 	
 	Logger logger = BaseClass.getLogger();	
-	
-	
-	
+		
 	@Test (priority=0)
-
-	
 	void Test_DS_TimeComplexityLink()
-
 	{
 		HomePage Hp = new HomePage(BaseClass.getDriver());			
 	    Hp.Login_HomePage();		
 		 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
 		 Dp.click_GetStartedBtn_DSIroduction(); 
 		 Dp.click_TimeComplexityBtn();
-		  String CurrentURL =BaseClass.getDriver().getCurrentUrl();
-		  Assert.assertEquals(true, CurrentURL.contains("time"));
-		 
+    	 String CurrentURL =BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, CurrentURL.contains("time"));
 	}
 
 	

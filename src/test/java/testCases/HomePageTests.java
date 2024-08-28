@@ -1,6 +1,5 @@
 package testCases;
 
-import java.io.IOException;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -78,7 +77,7 @@ public class HomePageTests extends Hooks{
 			Assert.assertTrue(status);				
 		   }
 		
-		@Test (priority=6, groups ="regression")
+		@Test (priority=6, groups ={"regression","NumpyNinja"})
 		public void clickNumpyNinjaLinkFromHomePagesBeforeSignIn() {
 			logger.info("Clicking NumpyNinja link from Home page without signing in....");
 			GetStartedPage sp = new GetStartedPage(BaseClass.getDriver());
@@ -86,11 +85,11 @@ public class HomePageTests extends Hooks{
 			logger.info("The Start page should be displayed.............");
 			HomePage hp = new HomePage(BaseClass.getDriver());
 			hp.clickNumpyNinjaLink();
-			boolean status = sp.checkStartPageDisplay();
+			boolean status = sp.copyrightDisplay();
 			Assert.assertTrue(status);				
 		}
 		
-		@Test (priority=7, groups ="regression")
+		@Test (priority=7, groups ={"regression","NumpyNinja"})
 		public void clickNumpyNinjaLinkFromHomePagesAfterSignIn() {
 			logger.info("Clicking NumpyNinja link from Home page AFTER signing in....");
 			HomePage hp = new HomePage(BaseClass.getDriver());

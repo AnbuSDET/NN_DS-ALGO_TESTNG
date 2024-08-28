@@ -1,17 +1,13 @@
 package utilities;
 
-	import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
-
-import java.io.IOException;
-
 import org.openqa.selenium.OutputType;
-	import org.openqa.selenium.TakesScreenshot;
-	import org.openqa.selenium.WebDriver;
-	import org.testng.ITestContext;
-	import org.testng.ITestListener;
-	import org.testng.ITestResult;
-	import factory.BaseClass;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import factory.BaseClass;
 
 	public class AllureReportManager implements ITestListener{
 		
@@ -22,9 +18,9 @@ import org.openqa.selenium.OutputType;
 		}
 
 		// Text attachments for Allure
-		@Attachment(value = "Page screenshot", type = "image/png")
+		@Attachment(value = "PageScreenshot", type = "image/png")
 		public byte[] saveScreenshotPNG(WebDriver driver) {
-			return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		return ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
 		}
 
 		// Text attachments for Allure
@@ -68,13 +64,12 @@ import org.openqa.selenium.OutputType;
 			if (driver instanceof WebDriver) {
 				System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
 				saveScreenshotPNG(driver);
-			}
+				}
 //			String imgPath;
 //			try {
 //				imgPath = new factory.BaseClass().captureScreen(iTestResult.getName());
-//				Allure.addAttachment("pageScreenshot", imgPath);
+//				Allure.addAttachment(imgPath, imgPath);
 //			} catch (IOException e) {
-//				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
 			

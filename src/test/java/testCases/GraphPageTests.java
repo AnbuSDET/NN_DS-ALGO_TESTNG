@@ -3,13 +3,11 @@ package testCases;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import factory.BaseClass;
 import pageObjects.DataStructurePage;
 import pageObjects.GraphPage;
 import pageObjects.HomePage;
 import pageObjects.SignInPage;
-import pageObjects.TreePage;
 
 public class GraphPageTests extends BaseClass{
 	Logger logger = BaseClass.getLogger();

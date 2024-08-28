@@ -1,16 +1,10 @@
 package testCases;
-
-import java.io.IOException;
-
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import factory.BaseClass;
 import factory.Hooks;
 import pageObjects.DataStructurePage;
-import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 import pageObjects.LinkedListPage;
 import pageObjects.SignInPage;

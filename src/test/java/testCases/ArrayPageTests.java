@@ -1,9 +1,7 @@
 package testCases;
 
-
 import org.testng.annotations.Test;
 import org.testng.Assert;
-import org.testng.AssertJUnit;
 import java.util.HashMap;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
@@ -644,9 +642,7 @@ public class ArrayPageTests extends BaseClass {
 		Assert.assertEquals(true, ConsoleResult.contains(Output));
 	}
 
-	// Testing the Submit button with valid codes in Find Numbers with Even number
-	// of digits question page Python Editor
-
+	// Testing the Submit button with valid codes in Find Numbers with Even number of digits question page Python Editor
 	@Parameters({ "11" })
 	@Test(priority = 35)
 	public void Test_evenNumbers_PythonEditor_ValidCodes_SubmitBtn(@Optional("11") String Rownumber) {

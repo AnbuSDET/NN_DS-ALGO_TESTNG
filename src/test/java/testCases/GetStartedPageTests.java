@@ -1,11 +1,8 @@
 package testCases;
 
 import org.apache.logging.log4j.Logger;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import factory.BaseClass;
 import factory.Hooks;
 import pageObjects.GetStartedPage;

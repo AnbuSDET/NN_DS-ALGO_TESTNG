@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="SDET_Warriors_Test_Suite" >			
+<suite name="SDET_Warriors_Test_Suite" >
 
 	<listeners>
 		<listener class-name="utilities.ExtentReportManager"></listener>
 		<listener class-name="analyzer.MyTransformer"></listener>
 		<listener class-name="utilities.AllureReportManager"></listener>
-	</listeners>     
-   
-   
+	</listeners> 
+	
+	 
    <test name="SDET Warrior Test">  
-	     <parameter name="browser" value=""></parameter>
+	     <parameter name="browser" value="chrome"></parameter>
 	     <parameter name="os" value="Windows11"></parameter>
 	     <classes>
-	          <class name="testCases.GetStartedPageTests"/>
-		      <class name="testCases.HomePageTests"/>
+	          <class name="testCases.RegisterPageTests"/>
+		     <!--  <class name="testCases.HomePageTests"/>
 		      <class name="testCases.SignInPageTests"/> 
 		      <class name="testCases.RegisterPageTests"/>
 		      <class name="testCases.DS_IntroductionTests"/> 
@@ -23,7 +23,7 @@
 		      <class name="testCases.StackPageTests"/>
 	          <class name="testCases.QueuePageTests"/> 
 	          <class name="testCases.TreePageTests"/> 
-	          <class name="testCases.GraphPageTests"/> 
+	          <class name="testCases.GraphPageTests"/> -->
 		  </classes>
     </test> <!-- Test -->
     
