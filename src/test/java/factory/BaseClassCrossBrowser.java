@@ -35,7 +35,7 @@ public class BaseClassCrossBrowser {
 	public  static Properties p;
 	public  static Logger logger;
 	
-	@BeforeMethod
+	
 	@Parameters ("browser")
 	public static void initializeBrowser(String browser) throws IOException
 	{
@@ -98,7 +98,7 @@ public class BaseClassCrossBrowser {
 	}
 	
 	
-	@AfterMethod
+	
 	public void tearDown()
 	{
 		 driver.get().quit();		
