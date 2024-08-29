@@ -6,17 +6,6 @@
 		<listener class-name="utilities.ExtentReportManager"></listener>
 		<listener class-name="analyzer.MyTransformer"></listener>
 		<listener class-name="utilities.AllureReportManager"></listener>
-<<<<<<< HEAD
-	</listeners>  
-          
-   
-    <test name="SDET Warrior Test">  
-	     <parameter name="browser" value=""></parameter>
-	     <parameter name="os" value="Windows11"></parameter>
-	     <classes>
-	          <class name="testCases.GetStartedPageTests"/>
-		      <class name="testCases.HomePageTests"/>
-=======
 	</listeners> 
 	
 	 
@@ -26,7 +15,6 @@
 	     <classes>
 	          <class name="testCases.RegisterPageTests"/>
 		     <!--  <class name="testCases.HomePageTests"/>
->>>>>>> main
 		      <class name="testCases.SignInPageTests"/> 
 		      <class name="testCases.RegisterPageTests"/>
 		      <class name="testCases.DS_IntroductionTests"/> 
@@ -34,11 +22,8 @@
 		      <class name="testCases.LinkedListPageTests"/>
 		      <class name="testCases.StackPageTests"/>
 	          <class name="testCases.QueuePageTests"/> 
-<<<<<<< HEAD
-=======
 	          <class name="testCases.TreePageTests"/> 
 	          <class name="testCases.GraphPageTests"/> -->
->>>>>>> main
 		  </classes>
     </test> <!-- Test -->
     
