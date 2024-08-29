@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+
 public class GetStartedPage extends BasePage {
 
 	public GetStartedPage(WebDriver driver) {
@@ -32,9 +33,9 @@ public class GetStartedPage extends BasePage {
 	}
 	
 	public boolean checkStartPageDisplay() {
-		boolean display = NumpyNinjaCopyrightLink.isDisplayed();
+	   boolean display = NumpyNinjaCopyrightLink.isDisplayed();
 		return display;
-	
 	}
-
+	
 }
+

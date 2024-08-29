@@ -34,7 +34,7 @@ public class GraphPage extends BasePage {
 	String Graph_Page_URL="https://dsportalapp.herokuapp.com/graph/graph/";
 
 	String GraphRepersentations_Page_URL="https://dsportalapp.herokuapp.com/graph/graph-representations/"	;
-	
+	String Online_Editor_Console_URL="https://dsportalapp.herokuapp.com/tryEditor";
 	
 	
 	//----------Methods--------------
@@ -59,7 +59,11 @@ public class GraphPage extends BasePage {
 	public void clickTryHereBtn() {
 		TryHereBtn.click();
 	}
-	
+	public boolean check_TryEditorPage() {
+		String Current_URL=BaseClass.getDriver().getCurrentUrl();
+		 boolean Check_URL = Online_Editor_Console_URL.equals(Current_URL);	
+		 return Check_URL;
+	}
 	public boolean check_GraphPage()
 	{
 		String Current_URL=BaseClass.getDriver().getCurrentUrl();
@@ -68,13 +72,11 @@ public class GraphPage extends BasePage {
 	}
 
 	public void click_GraphRepresentationsLink() {
-		// TODO Auto-generated method stub
 		GraphRepresentationBtn.click();
 	}
 
 	public boolean check_GraphRepresentationsLink() {
 
-		// TODO Auto-generated method stub
 		String Current_URL=BaseClass.getDriver().getCurrentUrl();
 		 boolean Check_URL = GraphRepersentations_Page_URL.equals(Current_URL);	
 		 return Check_URL;

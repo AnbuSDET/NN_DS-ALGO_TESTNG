@@ -1,19 +1,27 @@
 
 package testCases;
 
+import java.io.IOException;
+
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 import utilities.DataProviders;
 
+<<<<<<< HEAD
 public class RegisterPageTests extends BaseClass {
 
+=======
+public class RegisterPageTests extends Hooks {
+	
+>>>>>>> main
 	Logger logger = BaseClass.getLogger();
 
 	@Test(priority = 1, groups = { "smoke", "regression" })
@@ -44,6 +52,7 @@ public class RegisterPageTests extends BaseClass {
 
 	@Test(priority = 3)
 	public void RegisterNewUserWithExistingPwd() {
+<<<<<<< HEAD
 		logger.info("Register a new user with Valid Details.............");
 		GetStartedPage sp = new GetStartedPage(BaseClass.getDriver());
 		sp.clickGetStartedSP();
@@ -76,6 +85,51 @@ public class RegisterPageTests extends BaseClass {
 	}
 
 	@Test(dataProvider = "RegisterWithInvalidData", dataProviderClass = DataProviders.class, priority = 5, groups = "regression")
+=======
+		  logger.info("Register a new user with Valid Details.............");
+		  GetStartedPage sp = new GetStartedPage(BaseClass.getDriver());
+		  sp.clickGetStartedSP();
+		  HomePage hp = new HomePage(BaseClass.getDriver());
+		  hp.clickRegisterLink();
+		  RegisterPage rp = new RegisterPage(BaseClass.getDriver());
+		  String user = BaseClass.randomeString();
+		  rp.enterUsername(user);
+		  try {
+			rp.enterPassword(BaseClass.getProperties().getProperty("password"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  try {
+			rp.enterPasswordConfirm(BaseClass.getProperties().getProperty("password"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  rp.clickRegister();
+		  logger.info("Check 'New Account Created' message at home page....");
+		  boolean status = hp.checkNewAccCreatedMsg();
+		  Assert.assertTrue(status);  
+	  }
+	
+	@Test (priority=4, groups="regression")
+	public void checkMovingToLoginPageFromRegisterPage() {
+		  logger.info("Login and move to Register page...."); 
+		  GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());
+		  gsp.clickGetStartedSP();
+		  HomePage hp = new HomePage(BaseClass.getDriver());
+		  hp.clickRegisterLink();
+		  logger.info("User clicks the Login link at the bottom of Register page...."); 
+		  RegisterPage rp = new RegisterPage(BaseClass.getDriver());
+		  rp.clickLoginLinkRP();	
+		  SignInPage sp = new SignInPage(BaseClass.getDriver());
+		  boolean display = sp.loginBtnDisplay();
+		  Assert.assertTrue(display);
+	  }
+	
+	
+	@Test (dataProvider="RegisterWithInvalidData", dataProviderClass=DataProviders.class, priority=5, groups={"regression","Register"})
+>>>>>>> main
 	public void checkRegisterWithImproperPassword(String user, String pwd, String pwdConfirm, String ErrMsg) {
 		logger.info(
 				"Verify the Error message thrown while registering new user with improper username OR passwords............");

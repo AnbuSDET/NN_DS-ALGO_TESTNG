@@ -1,8 +1,7 @@
+
 package pageObjects;
 
 import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -261,6 +260,8 @@ public class TreePage extends BasePage{
 			 boolean Check_URL = TreePracticeQns_URL.equals(Current_URL);	
 			 return Check_URL;			
 		}
+	
+		
 		
 		
 }

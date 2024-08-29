@@ -1,19 +1,17 @@
 package testCases;
 
-import java.io.IOException;
-
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+<<<<<<< HEAD
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
+=======
+>>>>>>> main
 import org.testng.annotations.Test;
-
-import analyzer.RetryAnalyzer;
 import factory.BaseClass;
 import pageObjects.DataStructurePage;
-import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
+<<<<<<< HEAD
 import pageObjects.SignInPage;
 
 public class DS_IntroductionTests extends BaseClass {
@@ -24,9 +22,18 @@ public class DS_IntroductionTests extends BaseClass {
 
 	@Test(priority = 0)
 
-	void Test_DS_TimeComplexityLink()
+=======
 
+public class DS_IntroductionTests extends BaseClass {
+	
+	
+	Logger logger = BaseClass.getLogger();	
+		
+	@Test (priority=0)
+>>>>>>> main
+	void Test_DS_TimeComplexityLink()
 	{
+<<<<<<< HEAD
 		HomePage Hp = new HomePage(BaseClass.getDriver());
 		Hp.Login_HomePage();
 		DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
@@ -35,6 +42,15 @@ public class DS_IntroductionTests extends BaseClass {
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
 		Assert.assertEquals(true, CurrentURL.contains("time"));
 
+=======
+		HomePage Hp = new HomePage(BaseClass.getDriver());			
+	    Hp.Login_HomePage();		
+		 DataStructurePage Dp = new DataStructurePage(BaseClass.getDriver());
+		 Dp.click_GetStartedBtn_DSIroduction(); 
+		 Dp.click_TimeComplexityBtn();
+    	 String CurrentURL =BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, CurrentURL.contains("time"));
+>>>>>>> main
 	}
 
 	@Test(priority = 1)
