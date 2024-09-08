@@ -1,14 +1,10 @@
 package pageObjects;
 
-import java.io.IOException;
-
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
-
 import factory.BaseClass;
 
 public class QueuePage extends BasePage{

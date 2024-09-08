@@ -1,18 +1,15 @@
 package testCases;
 
-import java.io.IOException;
-
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.DataStructurePage;
 import pageObjects.HomePage;
 import pageObjects.QueuePage;
 
-public class QueuePageTests extends BaseClass{
+public class QueuePageTests extends Hooks{
 	
 	
 	Logger logger = BaseClass.getLogger();	

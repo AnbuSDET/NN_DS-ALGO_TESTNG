@@ -1,18 +1,19 @@
+
 package testCases;
 
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.DataStructurePage;
 import pageObjects.HomePage;
-import pageObjects.LinkedListPage;
-import pageObjects.QueuePage;
 import pageObjects.SignInPage;
 import pageObjects.TreePage;
 
-public class TreePageTests extends BaseClass {
+
+public class TreePageTests extends Hooks {
+
 	Logger logger = BaseClass.getLogger();
 	public void checkValidAndInvalidLoginTest(String user, String pwd) {
 		SignInPage sp= new SignInPage(BaseClass.getDriver());
@@ -22,6 +23,7 @@ public class TreePageTests extends BaseClass {
 		 sp.clickLogin();
 		}
 	//TreeGetStarted
+
 	 @Test(priority=1,groups="regression")
 	public void check_TreeHomePagelink()
 	{
@@ -29,15 +31,16 @@ public class TreePageTests extends BaseClass {
 		HomePage Hp = new HomePage(BaseClass.getDriver());		
 	    Hp.Login_HomePage();
 	    Hp.clickTreeGetStarted();
-	    TreePage Tp = new TreePage (BaseClass.getDriver());
-	    Tp.check_TreeHomePagelink();
-		 boolean status = Tp.check_TreeHomePagelink();
+	    TreePage Tp = new TreePage (BaseClass.getDriver()); 
+    Tp.check_TreeHomePagelink();
+    boolean status = Tp.check_TreeHomePagelink();
 		 Assert.assertEquals(status, true);
 		 logger.info("treeHomePage is displayed");
 		
 	}
+  
 	//OverviewofTree
-	 @Test(priority=2,groups="regression")
+  	 @Test(priority=2,groups="regression")
 	 public void check_Overview_of_TreePage()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -52,6 +55,7 @@ public class TreePageTests extends BaseClass {
 		    Assert.assertEquals(status, true);
 		    logger.info("Overviewoftrees is displayed");
 	 }
+  
 	//TryHereButton
 	 @Test(priority=3,groups="regression")
 	 public void check_TryHereButton() 
@@ -69,7 +73,9 @@ public class TreePageTests extends BaseClass {
 			 logger.info("TryEditor page is displayed");
 	 }
 	 //PythonEditorValidInput
-	 @Test(priority=4,groups="regression")
+
+	 @Test(groups="regression")
+
 	 public void check_PythonEditorValidInput() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -84,14 +90,14 @@ public class TreePageTests extends BaseClass {
 		  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
 		  ds.click_DS_PythonEditor_RunBtn();  
 		  ds.validate_Console_Output();     
-			
 			  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
 			  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
 			  
 	 }
+  
 	 //PythonEditorInvalidInput
-	 @Test(priority=5,groups="regression")
-	 public void check_PythonEditorInvalidInput() 
+ @Test(priority=5,groups="regression")
+   public void check_PythonEditorInvalidInput() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -109,6 +115,7 @@ public class TreePageTests extends BaseClass {
 	        
 	 }
 	// PythonEditorNoInput
+
 	 @Test(priority=6,groups="regression")
 	 public void check_PythonEditorNoInput() 
 	 {
@@ -127,6 +134,7 @@ public class TreePageTests extends BaseClass {
 		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
 	
 	 }
+  
 	 //terminologies
 
 	 @Test(priority=7,groups="regression")
@@ -220,8 +228,8 @@ public class TreePageTests extends BaseClass {
 	 
 	 
 	//types_of_trees
-	 @Test(priority=12,groups="regression")
-	 public void check_types_of_treesPage(){
+ @Test(priority=12,groups="regression")
+ public void check_types_of_treesPage(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
 	     TreePage Tp = new TreePage (BaseClass.getDriver());
@@ -311,9 +319,11 @@ public class TreePageTests extends BaseClass {
 		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
 	
 	 }
+  
 	//tree-traversals
+
 	 @Test(priority=17,groups="regression")
-	 public void click_tree_traversalsLink(){
+ public void click_tree_traversalsLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
 	     TreePage Tp = new TreePage (BaseClass.getDriver());
@@ -405,9 +415,10 @@ public class TreePageTests extends BaseClass {
 		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
 	
 	 }
+  
 		//traversals-illustration
 	 @Test(priority=22,groups="regression")
-	 public void click_traversals_illustrationLink(){
+ public void click_traversals_illustrationLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
 	     TreePage Tp = new TreePage (BaseClass.getDriver());
@@ -498,8 +509,9 @@ public class TreePageTests extends BaseClass {
 		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
 	
 	 }
+  
 		//binary-trees 
-	 @Test(priority=27,groups="regression")
+ @Test(priority=27,groups="regression")
 	 public void click_binary_treesLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -513,6 +525,7 @@ public class TreePageTests extends BaseClass {
 		Assert.assertEquals(Check_URL, true);
 		logger.info("binary-trees  page displayed......"); 
 	 
+
 	 } //TryHereButton
 	 @Test(priority=28,groups="regression")
 	 public void check_TryHereButton5() 
@@ -533,6 +546,32 @@ public class TreePageTests extends BaseClass {
 	 @Test(priority=29,groups="regression")
 	 public void check_PythonEditorValidInput5() 
 	 {
+
+	 } 
+	 
+		//types-of-binary-trees
+  @Test(groups="regression")
+	 public void click_types_of_binary_treesLink() {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+	     Tp.click_TreeGetstarted();
+	     Tp.click_types_of_binary_treesLink();
+	      logger.info("user clicked  types-of-binary-trees Link .........");
+		    Tp.check_types_of_binary_treesPage();
+      	logger.info("Redirecting to types-of-binary-trees  page..............");
+		 boolean Check_URL=Tp.check_types_of_binary_treesPage();
+		Assert.assertEquals(Check_URL, true);
+		logger.info("types-of-binary-trees  page displayed......"); 
+	 
+	 } 
+  
+	//implementation-in-python
+
+	 @Test(groups="regression")
+
+	 public void click_implementation_in_pythonLink(){
+
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		 Hp.Login_HomePage();
 		 TreePage Tp = new TreePage (BaseClass.getDriver());
@@ -775,6 +814,7 @@ public class TreePageTests extends BaseClass {
 	 }
 
 	//Binary Tree Traversals
+
 		 @Test(priority=44,groups="regression")
 		 public void click_BinaryTreeTraversalsLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -865,7 +905,9 @@ public class TreePageTests extends BaseClass {
 			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
 		
 		 }
+  
 		//Implementation of Binary Trees
+
 		 @Test(priority=49,groups="regression")
 		 public void click_ImplementationofBinaryTreesLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -955,9 +997,11 @@ public class TreePageTests extends BaseClass {
 			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
 		
 		 }
+  
 		//Applications of Binary trees
+
 		 @Test(priority=54,groups="regression")
-		 public void click_ApplicationsofBinarytreesLink(){
+	 public void click_ApplicationsofBinarytreesLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
 		     TreePage Tp = new TreePage (BaseClass.getDriver());
@@ -1045,7 +1089,9 @@ public class TreePageTests extends BaseClass {
 			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
 		
 		 }
+  
 		//Binary Search Trees
+
 		 @Test(priority=59,groups="regression")
 		 public void click_BinarySearchTreesLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1135,7 +1181,10 @@ public class TreePageTests extends BaseClass {
 			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
 		
 		 } 
+  
 		//ImplementationOfBST
+
+  
 		 @Test(priority=64,groups="regression")
 		 public void click_ImplementationOfBSTLink() {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1225,7 +1274,9 @@ public class TreePageTests extends BaseClass {
 			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
 		
 		 } 
+  
 		//PracticeQns
+
 		 @Test(priority=69,groups="regression")
 		 public void click_PracticeQnsLink()
 		 {

@@ -33,12 +33,10 @@
 					  <suiteXmlFile>CrossBrowser.xml</suiteXmlFile>
 				  </suiteXmlFiles>
 				  
-			<!-- 	  <properties>
-				       <property>
-				          <name>thread-count</name>
-				          <value>3</value>
-				       </property>
-				  </properties>  -->
+					 <properties>
+	  					  <myproperty>${browser}</myproperty>
+	                 </properties>
+				  
 			   </configuration>
 			  
 	        </plugin>
