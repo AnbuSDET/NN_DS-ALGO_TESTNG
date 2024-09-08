@@ -142,9 +142,82 @@ public class TreePageTests extends BaseClass {
       	logger.info("Redirecting to Terminologies page..............");
 		 boolean Check_URL=Tp. check_terminologiesPage();
 		Assert.assertEquals(Check_URL, true);
-		logger.info("Terminologies page displayed......"); 
+		logger.info("Terminologies page displayed......"); }
+	//TryHereButton
+		 @Test(priority=4,groups="regression")
+		 public void check_TryHereButton1() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			    Tp.click_TreeGetstarted();
+			    Tp.click_terminologiesLink();
+			    Tp.check_terminologiesPage();
+			    Tp.clickTryHerebutton();
+			    boolean status=Tp.check_TryEditorPage();
+				 Assert.assertEquals(status, true);
+				 logger.info("TryEditor page is displayed");
+		 }
+		 //PythonEditorValidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorValidInput1() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+			 Hp.Login_HomePage();
+			 TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			    Tp.click_terminologiesLink();
+			    Tp.check_terminologiesPage();
+			    Tp.clickTryHerebutton();
+			 logger.info("Entering valid python code..........");
+			  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+			  ds.click_DS_PythonEditor_RunBtn();  
+			  ds.validate_Console_Output();     
+				
+				  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+				  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+				  
+		 }
+		 //PythonEditorInvalidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorInvalidInput1() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			    Tp.click_terminologiesLink();
+			    Tp.check_terminologiesPage();			    Tp.clickTryHerebutton();
+			 logger.info("User Entering invalid pythod code on the editor ..... ");
+			 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+			 ds.Validate_OutputConsole_InvalidCodes();
+			 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+		     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+		        
+		 }
+		// PythonEditorNoInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorNoInput1() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			    Tp.click_TreeGetstarted();
+			    Tp.click_terminologiesLink();
+			    logger.info("user clicked terminologies link.........");
+			    Tp.check_terminologiesPage();
+			    logger.info("Redirecting to terminologies page..............");
+			    Tp.clickTryHerebutton();
+			 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+			 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+		
+		 }
 	 
-	 }
 	 
 	//types_of_trees
 	 @Test(priority=4,groups="regression")
@@ -162,7 +235,82 @@ public class TreePageTests extends BaseClass {
 		Assert.assertEquals(Check_URL, true);
 		logger.info("Typesoftree page displayed......"); 
 	 
-	 } 
+	 } //TryHereButton
+	 @Test(priority=4,groups="regression")
+	 public void check_TryHereButton2() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_types_of_treesLink();
+		    Tp.check_types_of_treesPage();
+		    Tp.clickTryHerebutton();
+		    boolean status=Tp.check_TryEditorPage();
+			 Assert.assertEquals(status, true);
+			 logger.info("TryEditor page is displayed");
+	 }
+	 //PythonEditorValidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorValidInput2() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		 Hp.Login_HomePage();
+		 TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_types_of_treesLink();
+		    Tp.check_types_of_treesPage();
+
+		    Tp.clickTryHerebutton();
+		 logger.info("Entering valid python code..........");
+		  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		  ds.click_DS_PythonEditor_RunBtn();  
+		  ds.validate_Console_Output();     
+			
+			  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+			  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+			  
+	 }
+	 //PythonEditorInvalidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorInvalidInput2() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_types_of_treesLink();
+		    Tp.check_types_of_treesPage();
+		    Tp.clickTryHerebutton();
+		 logger.info("User Entering invalid python code on the editor ..... ");
+		 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 ds.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+	     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+	        
+	 }
+	// PythonEditorNoInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorNoInput2() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_types_of_treesLink();
+		    logger.info("user clicked types_of_trees link.........");
+		    Tp.check_types_of_treesPage();
+		    logger.info("Redirecting to types_of_trees page..............");
+		    Tp.clickTryHerebutton();
+		 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+	
+	 }
 	//tree-traversals
 	 @Test(priority=4,groups="regression")
 	 public void click_tree_traversalsLink(){
@@ -179,7 +327,84 @@ public class TreePageTests extends BaseClass {
 		Assert.assertEquals(Check_URL, true);
 		logger.info("treetraversals page displayed......"); 
 	 
-	 } 
+	 }  //TryHereButton
+	 @Test(priority=4,groups="regression")
+	 public void check_TryHereButton3() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_tree_traversalsLink();
+		    Tp.check_tree_traversalsPage();
+		    Tp.clickTryHerebutton();
+		    boolean status=Tp.check_TryEditorPage();
+			 Assert.assertEquals(status, true);
+			 logger.info("TryEditor page is displayed");
+	 }
+	 //PythonEditorValidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorValidInput3() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		 Hp.Login_HomePage();
+		 TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_tree_traversalsLink();
+		    Tp.check_tree_traversalsPage();
+
+
+		    Tp.clickTryHerebutton();
+		 logger.info("Entering valid python code..........");
+		  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		  ds.click_DS_PythonEditor_RunBtn();  
+		  ds.validate_Console_Output();     
+			
+			  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+			  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+			  
+	 }
+	 //PythonEditorInvalidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorInvalidInput3() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_tree_traversalsLink();
+		    Tp.check_tree_traversalsPage();
+
+		    Tp.clickTryHerebutton();
+		 logger.info("User Entering invalid python code on the editor ..... ");
+		 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 ds.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+	     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+	        
+	 }
+	// PythonEditorNoInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorNoInput3() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_tree_traversalsLink();
+		    logger.info("user clicked tree-traversals link.........");
+		    Tp.check_tree_traversalsPage();
+		    logger.info("Redirecting to tree-traversals page..............");
+		    Tp.clickTryHerebutton();
+		 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+	
+	 }
 		//traversals-illustration
 	 @Test(priority=4,groups="regression")
 	 public void click_traversals_illustrationLink(){
@@ -196,7 +421,83 @@ public class TreePageTests extends BaseClass {
 		Assert.assertEquals(Check_URL, true);
 		logger.info("traversals_illustration page displayed......"); 
 	 
-	 } 
+	 }  //TryHereButton
+	 @Test(priority=4,groups="regression")
+	 public void check_TryHereButton4() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_traversals_illustrationLink();
+		    Tp.check_traversals_illustrationPage();
+		    Tp.clickTryHerebutton();
+		    boolean status=Tp.check_TryEditorPage();
+			 Assert.assertEquals(status, true);
+			 logger.info("TryEditor page is displayed");
+	 }
+	 //PythonEditorValidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorValidInput4() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		 Hp.Login_HomePage();
+		 TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		   Tp.click_traversals_illustrationLink();
+		    Tp.check_traversals_illustrationPage();
+            Tp.clickTryHerebutton();
+		 logger.info("Entering valid python code..........");
+		  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		  ds.click_DS_PythonEditor_RunBtn();  
+		  ds.validate_Console_Output();     
+			
+			  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+			  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+			  
+	 }
+	 //PythonEditorInvalidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorInvalidInput4() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		   Tp.click_traversals_illustrationLink();
+		    Tp.check_traversals_illustrationPage();
+
+		    Tp.clickTryHerebutton();
+		 logger.info("User Entering invalid python code on the editor ..... ");
+		 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 ds.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+	     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+	        
+	 }
+	// PythonEditorNoInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorNoInput4() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_traversals_illustrationLink();
+		   
+		    logger.info("user clicked traversals-illustration link.........");
+		    Tp.check_traversals_illustrationPage();
+		    logger.info("Redirecting to traversals-illustration page..............");
+		    Tp.clickTryHerebutton();
+		 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+	
+	 }
 		//binary-trees 
 	 @Test(priority=4,groups="regression")
 	 public void click_binary_treesLink(){
@@ -212,7 +513,82 @@ public class TreePageTests extends BaseClass {
 		Assert.assertEquals(Check_URL, true);
 		logger.info("binary-trees  page displayed......"); 
 	 
-	 } 
+	 } //TryHereButton
+	 @Test(priority=4,groups="regression")
+	 public void check_TryHereButton5() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_binary_treesLink();
+		    Tp.check_binary_treesPage();
+		    Tp.clickTryHerebutton();
+		    boolean status=Tp.check_TryEditorPage();
+			 Assert.assertEquals(status, true);
+			 logger.info("TryEditor page is displayed");
+	 }
+	 //PythonEditorValidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorValidInput5() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		 Hp.Login_HomePage();
+		 TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_binary_treesLink();
+		    Tp.check_binary_treesPage();
+            Tp.clickTryHerebutton();
+		 logger.info("Entering valid python code..........");
+		  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		  ds.click_DS_PythonEditor_RunBtn();  
+		  ds.validate_Console_Output();     
+			
+			  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+			  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+			  
+	 }
+	 //PythonEditorInvalidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorInvalidInput5() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_binary_treesLink();
+		    Tp.check_binary_treesPage();
+
+		    Tp.clickTryHerebutton();
+		 logger.info("User Entering invalid python code on the editor ..... ");
+		 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 ds.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+	     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+	        
+	 }
+	// PythonEditorNoInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorNoInput5() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_binary_treesLink();		   
+		    logger.info("user clicked binary-trees  link.........");
+		    Tp.check_binary_treesPage();
+		    logger.info("Redirecting to binary-trees page..............");
+		    Tp.clickTryHerebutton();
+		 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+	
+	 }
 	 
 		//types-of-binary-trees
 	 @Test(priority=4,groups="regression")
@@ -229,7 +605,83 @@ public class TreePageTests extends BaseClass {
 		Assert.assertEquals(Check_URL, true);
 		logger.info("types-of-binary-trees  page displayed......"); 
 	 
-	 } 
+	 } //TryHereButton
+	 @Test(priority=4,groups="regression")
+	 public void check_TryHereButton6() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_types_of_binary_treesLink();
+		    Tp.check_types_of_binary_treesPage();
+		    Tp.clickTryHerebutton();
+		    boolean status=Tp.check_TryEditorPage();
+			 Assert.assertEquals(status, true);
+			 logger.info("TryEditor page is displayed");
+	 }
+	 //PythonEditorValidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorValidInput6() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		 Hp.Login_HomePage();
+		 TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_types_of_binary_treesLink();
+		    Tp.check_types_of_binary_treesPage();
+            Tp.clickTryHerebutton();
+		 logger.info("Entering valid python code..........");
+		  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		  ds.click_DS_PythonEditor_RunBtn();  
+		  ds.validate_Console_Output();     
+			
+			  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+			  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+			  
+	 }
+	 //PythonEditorInvalidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorInvalidInput6()
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_types_of_binary_treesLink();
+		    Tp.check_types_of_binary_treesPage();
+
+		    Tp.clickTryHerebutton();
+		 logger.info("User Entering invalid python code on the editor ..... ");
+		 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 ds.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+	     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+	        
+	 }
+	// PythonEditorNoInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorNoInput6() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_types_of_binary_treesLink();		   
+		    logger.info("user clicked types-of-binary-trees  link.........");
+		    Tp. check_types_of_binary_treesPage();
+		    logger.info("Redirecting to types-of-binary-trees page..............");
+		    Tp.clickTryHerebutton();
+		 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+	
+	 }
+	 
 	//implementation-in-python
 	 @Test(priority=4,groups="regression")
 	 public void click_implementation_in_pythonLink(){
@@ -245,7 +697,83 @@ public class TreePageTests extends BaseClass {
 		Assert.assertEquals(Check_URL, true);
 		logger.info("implementation-in-python  page displayed......"); 
 	 
-	 } 
+	 } //TryHereButton
+	 @Test(priority=4,groups="regression")
+	 public void check_TryHereButton7() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_implementation_in_pythonLink();
+		    Tp.check_implementation_in_pythonPage();
+		    Tp.clickTryHerebutton();
+		    boolean status=Tp.check_TryEditorPage();
+			 Assert.assertEquals(status, true);
+			 logger.info("TryEditor page is displayed");
+	 }
+	 //PythonEditorValidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorValidInput7() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		 Hp.Login_HomePage();
+		 TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_implementation_in_pythonLink();
+		    Tp.check_implementation_in_pythonPage();
+            Tp.clickTryHerebutton();
+		 logger.info("Entering valid python code..........");
+		  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+		  ds.click_DS_PythonEditor_RunBtn();  
+		  ds.validate_Console_Output();     
+			
+			  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+			  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+			  
+	 }
+	 //PythonEditorInvalidInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorInvalidInput7()
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		 Tp.click_TreeGetstarted();
+		    Tp.click_implementation_in_pythonLink();
+		    Tp.check_implementation_in_pythonPage();
+
+		    Tp.clickTryHerebutton();
+		 logger.info("User Entering invalid python code on the editor ..... ");
+		 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+		 ds.Validate_OutputConsole_InvalidCodes();
+		 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+	     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+	        
+	 }
+	// PythonEditorNoInput
+	 @Test(priority=4,groups="regression")
+	 public void check_PythonEditorNoInput7() 
+	 {
+		 HomePage Hp = new HomePage(BaseClass.getDriver());		
+	     Hp.Login_HomePage();
+	     TreePage Tp = new TreePage (BaseClass.getDriver());
+		 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+		    Tp.click_TreeGetstarted();
+		    Tp.click_implementation_in_pythonLink();		   
+		    logger.info("user clicked implementation-in-python  link.........");
+		    Tp. check_implementation_in_pythonPage();
+		    logger.info("Redirecting to implementation-in-python page..............");
+		    Tp.clickTryHerebutton();
+		 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+		 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+		 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+	
+	 }
+
 	//Binary Tree Traversals
 		 @Test(priority=4,groups="regression")
 		 public void click_BinaryTreeTraversalsLink(){
@@ -261,7 +789,82 @@ public class TreePageTests extends BaseClass {
 			Assert.assertEquals(Check_URL, true);
 			logger.info("Binary Tree Traversals page displayed......"); 
 		 
-		 } 
+		 } //TryHereButton
+		 @Test(priority=4,groups="regression")
+		 public void check_TryHereButton8() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			    Tp.click_BinaryTreeTraversalsLink();
+			    Tp.check_BinaryTreeTraversalsPage();
+			    Tp.clickTryHerebutton();
+			    boolean status=Tp.check_TryEditorPage();
+				 Assert.assertEquals(status, true);
+				 logger.info("TryEditor page is displayed");
+		 }
+		 //PythonEditorValidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorValidInput8() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+			 Hp.Login_HomePage();
+			 TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			 Tp.click_BinaryTreeTraversalsLink();
+			    Tp.check_BinaryTreeTraversalsPage();
+	            Tp.clickTryHerebutton();
+			 logger.info("Entering valid python code..........");
+			  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+			  ds.click_DS_PythonEditor_RunBtn();  
+			  ds.validate_Console_Output();     
+				
+				  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+				  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+				  
+		 }
+		 //PythonEditorInvalidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorInvalidInput8()
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			 Tp.click_BinaryTreeTraversalsLink();
+			    Tp.check_BinaryTreeTraversalsPage();
+
+			    Tp.clickTryHerebutton();
+			 logger.info("User Entering invalid python code on the editor ..... ");
+			 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+			 ds.Validate_OutputConsole_InvalidCodes();
+			 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+		     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+		        
+		 }
+		// PythonEditorNoInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorNoInput8() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			    Tp.click_TreeGetstarted();
+			    Tp.click_BinaryTreeTraversalsLink();		   
+			    logger.info("user clicked Binary Tree Traversals link.........");
+			    Tp. check_BinaryTreeTraversalsPage();
+			    logger.info("Redirecting to Binary Tree Traversals page..............");
+			    Tp.clickTryHerebutton();
+			 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+			 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+		
+		 }
 		//Implementation of Binary Trees
 		 @Test(priority=4,groups="regression")
 		 public void click_ImplementationofBinaryTreesLink(){
@@ -276,7 +879,82 @@ public class TreePageTests extends BaseClass {
 			Assert.assertEquals(Check_URL, true);
 			logger.info("Implementation of Binary Trees page displayed......"); 
 		 
-		 } 
+		 } //TryHereButton
+		 @Test(priority=4,groups="regression")
+		 public void check_TryHereButton9() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			    Tp.click_ImplementationofBinaryTreesLink();
+			    Tp.check_ImplementationofBinaryTreesPage();
+			    Tp.clickTryHerebutton();
+			    boolean status=Tp.check_TryEditorPage();
+				 Assert.assertEquals(status, true);
+				 logger.info("TryEditor page is displayed");
+		 }
+		 //PythonEditorValidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorValidInput9() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+			 Hp.Login_HomePage();
+			 TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			  Tp.click_ImplementationofBinaryTreesLink();
+			    Tp.check_ImplementationofBinaryTreesPage();
+	            Tp.clickTryHerebutton();
+			 logger.info("Entering valid python code..........");
+			  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+			  ds.click_DS_PythonEditor_RunBtn();  
+			  ds.validate_Console_Output();     
+				
+				  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+				  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+				  
+		 }
+		 //PythonEditorInvalidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorInvalidInput9()
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			  Tp.click_ImplementationofBinaryTreesLink();
+			    Tp.check_ImplementationofBinaryTreesPage();
+
+			    Tp.clickTryHerebutton();
+			 logger.info("User Entering invalid python code on the editor ..... ");
+			 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+			 ds.Validate_OutputConsole_InvalidCodes();
+			 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+		     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+		        
+		 }
+		// PythonEditorNoInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorNoInput9()
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			    Tp.click_TreeGetstarted();
+			    Tp.click_ImplementationofBinaryTreesLink();		   
+			    logger.info("user clicked Implementation of Binary Trees link.........");
+			    Tp. check_ImplementationofBinaryTreesPage();
+			    logger.info("Redirecting to Implementation of Binary Treespage..............");
+			    Tp.clickTryHerebutton();
+			 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+			 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+		
+		 }
 		//Applications of Binary trees
 		 @Test(priority=4,groups="regression")
 		 public void click_ApplicationsofBinarytreesLink(){
@@ -291,7 +969,82 @@ public class TreePageTests extends BaseClass {
 			Assert.assertEquals(Check_URL, true);
 			logger.info("Applications of Binary trees page displayed......"); 
 		 
-		 }  
+		 }  //TryHereButton
+		 @Test(priority=4,groups="regression")
+		 public void check_TryHereButton10() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			    Tp.click_ApplicationsofBinarytreesLink();
+			    Tp.check_ApplicationsofBinarytreesPage();
+			    Tp.clickTryHerebutton();
+			    boolean status=Tp.check_TryEditorPage();
+				 Assert.assertEquals(status, true);
+				 logger.info("TryEditor page is displayed");
+		 }
+		 //PythonEditorValidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorValidInput10() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+			 Hp.Login_HomePage();
+			 TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			  Tp.click_ApplicationsofBinarytreesLink();
+			    Tp.check_ApplicationsofBinarytreesPage();
+	            Tp.clickTryHerebutton();
+			 logger.info("Entering valid python code..........");
+			  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+			  ds.click_DS_PythonEditor_RunBtn();  
+			  ds.validate_Console_Output();     
+				
+				  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+				  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+				  
+		 }
+		 //PythonEditorInvalidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorInvalidInput10()
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			  Tp.click_ApplicationsofBinarytreesLink();
+			    Tp.check_ApplicationsofBinarytreesPage();
+
+			    Tp.clickTryHerebutton();
+			 logger.info("User Entering invalid python code on the editor ..... ");
+			 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+			 ds.Validate_OutputConsole_InvalidCodes();
+			 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+		     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));
+		        
+		 }
+		// PythonEditorNoInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorNoInput10()
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			    Tp.click_TreeGetstarted();
+			    Tp.click_ApplicationsofBinarytreesLink();		   
+			    logger.info("user clicked Applications of Binary treeslink.........");
+			    Tp. check_ApplicationsofBinarytreesPage();
+			    logger.info("Redirecting to Applications of Binary treesTreespage..............");
+			    Tp.clickTryHerebutton();
+			 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+			 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+		
+		 }
 		//Binary Search Trees
 		 @Test(priority=4,groups="regression")
 		 public void click_BinarySearchTreesLink(){
@@ -306,7 +1059,82 @@ public class TreePageTests extends BaseClass {
 			Assert.assertEquals(Check_URL, true);
 			logger.info("Binary Search Trees page displayed......"); 
 		 
-		 }  
+		 } //TryHereButton
+		 @Test(priority=4,groups="regression")
+		 public void check_TryHereButton11() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			    Tp.click_BinarySearchTreesLink();
+			    Tp.check_BinarySearchTreesPage();
+			    Tp.clickTryHerebutton();
+			    boolean status=Tp.check_TryEditorPage();
+				 Assert.assertEquals(status, true);
+				 logger.info("TryEditor page is displayed");
+		 }
+		 //PythonEditorValidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorValidInput11() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+			 Hp.Login_HomePage();
+			 TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			 Tp.click_BinarySearchTreesLink();
+			    Tp.check_BinarySearchTreesPage();
+	            Tp.clickTryHerebutton();
+			 logger.info("Entering valid python code..........");
+			  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+			  ds.click_DS_PythonEditor_RunBtn();  
+			  ds.validate_Console_Output();     
+				
+				  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+				  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+				  
+		 }
+		 //PythonEditorInvalidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorInvalidInput11()
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			 Tp.click_BinarySearchTreesLink();
+			    Tp.check_BinarySearchTreesPage();
+
+			    Tp.clickTryHerebutton();
+			 logger.info("User Entering invalid python code on the editor ..... ");
+			 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+			 ds.Validate_OutputConsole_InvalidCodes();
+			 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+		     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));}
+		        
+		 
+		// PythonEditorNoInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorNoInput11()
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			    Tp.click_TreeGetstarted();
+			    Tp.click_BinarySearchTreesLink();		   
+			    logger.info("user clicked Binary Search Trees link.........");
+			    Tp. check_BinarySearchTreesPage();
+			    logger.info("Redirecting to Binary Search trees Treespage..............");
+			    Tp.clickTryHerebutton();
+			 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+			 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+		
+		 } 
 		//ImplementationOfBST
 		 @Test(priority=4,groups="regression")
 		 public void click_ImplementationOfBSTLink() {
@@ -321,7 +1149,82 @@ public class TreePageTests extends BaseClass {
 			Assert.assertEquals(Check_URL, true);
 			logger.info("ImplementationOfBST page displayed......"); 
 		 
+		 }//TryHereButton
+		 @Test(priority=4,groups="regression")
+		 public void check_TryHereButton12() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			  Tp.click_ImplementationOfBSTLink();
+			    Tp.check_ImplementationOfBSTPage();
+			    Tp.clickTryHerebutton();
+			    boolean status=Tp.check_TryEditorPage();
+				 Assert.assertEquals(status, true);
+				 logger.info("TryEditor page is displayed");
 		 }
+		 //PythonEditorValidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorValidInput12() 
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+			 Hp.Login_HomePage();
+			 TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			 Tp.click_ImplementationOfBSTLink();
+			    Tp.check_ImplementationOfBSTPage();
+	            Tp.clickTryHerebutton();
+			 logger.info("Entering valid python code..........");
+			  ds.Click_DS_PythonEditor_Runbtn_ValidCodes();
+			  ds.click_DS_PythonEditor_RunBtn();  
+			  ds.validate_Console_Output();     
+				
+				  logger.info("Console output.......     " +ds.ConsoleOutput_text + ds.PYEditor_Code);
+				  Assert.assertEquals(true,ds.PYEditor_Code.contains(ds.ConsoleOutput_text) );
+				  
+		 }
+		 //PythonEditorInvalidInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorInvalidInput12()
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			 Tp.click_TreeGetstarted();
+			 Tp.click_ImplementationOfBSTLink();
+			    Tp.check_ImplementationOfBSTPage();
+
+			    Tp.clickTryHerebutton();
+			 logger.info("User Entering invalid python code on the editor ..... ");
+			 ds.Click_DS_PythonEditor_Runbtn_InValidCodes();
+			 ds.Validate_OutputConsole_InvalidCodes();
+			 logger.info("Alert Message in Python Editor " + ds.Alertmesg);		
+		     Assert.assertEquals(true, ds.Alertmesg.contains("bad input on line 1"));}
+		        
+		 
+		// PythonEditorNoInput
+		 @Test(priority=4,groups="regression")
+		 public void check_PythonEditorNoInput12()
+		 {
+			 HomePage Hp = new HomePage(BaseClass.getDriver());		
+		     Hp.Login_HomePage();
+		     TreePage Tp = new TreePage (BaseClass.getDriver());
+			 DataStructurePage ds = new DataStructurePage(BaseClass.getDriver());	
+			    Tp.click_TreeGetstarted();
+			    Tp.click_ImplementationOfBSTLink();		   
+			    logger.info("user clicked ImplementationOfBST link.........");
+			    Tp. check_ImplementationOfBSTPage();
+			    logger.info("Redirecting to ImplementationOfBST Treespage..............");
+			    Tp.clickTryHerebutton();
+			 ds.Click_DS_PythonEditor_Runbtn_WithoutCodes();
+			 String Current_URL = BaseClass.getDriver().getCurrentUrl();
+			 Assert.assertEquals(true, Current_URL.contains("tryEditor"));
+		
+		 } 
 		//PracticeQns
 		 @Test(priority=4,groups="regression")
 		 public void click_PracticeQnsLink()
