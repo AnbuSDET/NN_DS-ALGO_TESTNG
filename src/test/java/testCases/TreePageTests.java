@@ -500,7 +500,7 @@ public class TreePageTests extends BaseClass {
 	 }
 		//binary-trees 
 	 @Test(priority=27,groups="regression")
-	 public void click_binary_treesLink(){
+	 public void click_binary_treesLink_BT(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
 	     TreePage Tp = new TreePage (BaseClass.getDriver());
@@ -684,7 +684,7 @@ public class TreePageTests extends BaseClass {
 	 
 	//implementation-in-python
 	 @Test(priority=39,groups="regression")
-	 public void click_implementation_in_pythonLink(){
+	 public void click_implementation_in_pythonLink_IIP(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
 	     TreePage Tp = new TreePage (BaseClass.getDriver());
