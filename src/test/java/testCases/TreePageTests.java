@@ -22,7 +22,7 @@ public class TreePageTests extends BaseClass {
 		 sp.clickLogin();
 		}
 	//TreeGetStarted
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=1,groups="regression")
 	public void check_TreeHomePagelink()
 	{
 		
@@ -37,7 +37,7 @@ public class TreePageTests extends BaseClass {
 		
 	}
 	//OverviewofTree
-	 @Test(priority=1,groups="regression")
+	 @Test(priority=2,groups="regression")
 	 public void check_Overview_of_TreePage()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -53,7 +53,7 @@ public class TreePageTests extends BaseClass {
 		    logger.info("Overviewoftrees is displayed");
 	 }
 	//TryHereButton
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=3,groups="regression")
 	 public void check_TryHereButton() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -90,7 +90,7 @@ public class TreePageTests extends BaseClass {
 			  
 	 }
 	 //PythonEditorInvalidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=5,groups="regression")
 	 public void check_PythonEditorInvalidInput() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -109,7 +109,7 @@ public class TreePageTests extends BaseClass {
 	        
 	 }
 	// PythonEditorNoInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=6,groups="regression")
 	 public void check_PythonEditorNoInput() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -129,7 +129,7 @@ public class TreePageTests extends BaseClass {
 	 }
 	 //terminologies
 
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=7,groups="regression")
 	 public void check_terminologiesPage()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -144,7 +144,7 @@ public class TreePageTests extends BaseClass {
 		Assert.assertEquals(Check_URL, true);
 		logger.info("Terminologies page displayed......"); }
 	//TryHereButton
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=8,groups="regression")
 		 public void check_TryHereButton1() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -160,7 +160,7 @@ public class TreePageTests extends BaseClass {
 				 logger.info("TryEditor page is displayed");
 		 }
 		 //PythonEditorValidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=9,groups="regression")
 		 public void check_PythonEditorValidInput1() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -181,7 +181,7 @@ public class TreePageTests extends BaseClass {
 				  
 		 }
 		 //PythonEditorInvalidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=10,groups="regression")
 		 public void check_PythonEditorInvalidInput1() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -199,7 +199,7 @@ public class TreePageTests extends BaseClass {
 		        
 		 }
 		// PythonEditorNoInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=11,groups="regression")
 		 public void check_PythonEditorNoInput1() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -220,7 +220,7 @@ public class TreePageTests extends BaseClass {
 	 
 	 
 	//types_of_trees
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=12,groups="regression")
 	 public void check_types_of_treesPage(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -236,7 +236,7 @@ public class TreePageTests extends BaseClass {
 		logger.info("Typesoftree page displayed......"); 
 	 
 	 } //TryHereButton
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=13,groups="regression")
 	 public void check_TryHereButton2() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -252,7 +252,7 @@ public class TreePageTests extends BaseClass {
 			 logger.info("TryEditor page is displayed");
 	 }
 	 //PythonEditorValidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=14,groups="regression")
 	 public void check_PythonEditorValidInput2() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -274,7 +274,7 @@ public class TreePageTests extends BaseClass {
 			  
 	 }
 	 //PythonEditorInvalidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=15,groups="regression")
 	 public void check_PythonEditorInvalidInput2() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -293,7 +293,7 @@ public class TreePageTests extends BaseClass {
 	        
 	 }
 	// PythonEditorNoInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=16,groups="regression")
 	 public void check_PythonEditorNoInput2() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -312,7 +312,7 @@ public class TreePageTests extends BaseClass {
 	
 	 }
 	//tree-traversals
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=17,groups="regression")
 	 public void click_tree_traversalsLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -328,7 +328,7 @@ public class TreePageTests extends BaseClass {
 		logger.info("treetraversals page displayed......"); 
 	 
 	 }  //TryHereButton
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=18,groups="regression")
 	 public void check_TryHereButton3() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -344,7 +344,7 @@ public class TreePageTests extends BaseClass {
 			 logger.info("TryEditor page is displayed");
 	 }
 	 //PythonEditorValidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=19,groups="regression")
 	 public void check_PythonEditorValidInput3() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -367,7 +367,7 @@ public class TreePageTests extends BaseClass {
 			  
 	 }
 	 //PythonEditorInvalidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=20,groups="regression")
 	 public void check_PythonEditorInvalidInput3() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -387,7 +387,7 @@ public class TreePageTests extends BaseClass {
 	        
 	 }
 	// PythonEditorNoInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=21,groups="regression")
 	 public void check_PythonEditorNoInput3() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -406,7 +406,7 @@ public class TreePageTests extends BaseClass {
 	
 	 }
 		//traversals-illustration
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=22,groups="regression")
 	 public void click_traversals_illustrationLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -422,7 +422,7 @@ public class TreePageTests extends BaseClass {
 		logger.info("traversals_illustration page displayed......"); 
 	 
 	 }  //TryHereButton
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=23,groups="regression")
 	 public void check_TryHereButton4() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -438,7 +438,7 @@ public class TreePageTests extends BaseClass {
 			 logger.info("TryEditor page is displayed");
 	 }
 	 //PythonEditorValidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=24,groups="regression")
 	 public void check_PythonEditorValidInput4() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -459,7 +459,7 @@ public class TreePageTests extends BaseClass {
 			  
 	 }
 	 //PythonEditorInvalidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=25,groups="regression")
 	 public void check_PythonEditorInvalidInput4() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -479,7 +479,7 @@ public class TreePageTests extends BaseClass {
 	        
 	 }
 	// PythonEditorNoInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=26,groups="regression")
 	 public void check_PythonEditorNoInput4() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -499,7 +499,7 @@ public class TreePageTests extends BaseClass {
 	
 	 }
 		//binary-trees 
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=27,groups="regression")
 	 public void click_binary_treesLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -514,7 +514,7 @@ public class TreePageTests extends BaseClass {
 		logger.info("binary-trees  page displayed......"); 
 	 
 	 } //TryHereButton
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=28,groups="regression")
 	 public void check_TryHereButton5() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -530,7 +530,7 @@ public class TreePageTests extends BaseClass {
 			 logger.info("TryEditor page is displayed");
 	 }
 	 //PythonEditorValidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=29,groups="regression")
 	 public void check_PythonEditorValidInput5() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -551,7 +551,7 @@ public class TreePageTests extends BaseClass {
 			  
 	 }
 	 //PythonEditorInvalidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=30,groups="regression")
 	 public void check_PythonEditorInvalidInput5() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -571,7 +571,7 @@ public class TreePageTests extends BaseClass {
 	        
 	 }
 	// PythonEditorNoInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=35,groups="regression")
 	 public void check_PythonEditorNoInput5() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -591,7 +591,7 @@ public class TreePageTests extends BaseClass {
 	 }
 	 
 		//types-of-binary-trees
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=36,groups="regression")
 	 public void click_types_of_binary_treesLink() {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -606,7 +606,7 @@ public class TreePageTests extends BaseClass {
 		logger.info("types-of-binary-trees  page displayed......"); 
 	 
 	 } //TryHereButton
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=37,groups="regression")
 	 public void check_TryHereButton6() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -622,7 +622,7 @@ public class TreePageTests extends BaseClass {
 			 logger.info("TryEditor page is displayed");
 	 }
 	 //PythonEditorValidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=36,groups="regression")
 	 public void check_PythonEditorValidInput6() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -643,7 +643,7 @@ public class TreePageTests extends BaseClass {
 			  
 	 }
 	 //PythonEditorInvalidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=37,groups="regression")
 	 public void check_PythonEditorInvalidInput6()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -663,7 +663,7 @@ public class TreePageTests extends BaseClass {
 	        
 	 }
 	// PythonEditorNoInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=38,groups="regression")
 	 public void check_PythonEditorNoInput6() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -683,7 +683,7 @@ public class TreePageTests extends BaseClass {
 	 }
 	 
 	//implementation-in-python
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=39,groups="regression")
 	 public void click_implementation_in_pythonLink(){
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
 	     Hp.Login_HomePage();
@@ -698,7 +698,7 @@ public class TreePageTests extends BaseClass {
 		logger.info("implementation-in-python  page displayed......"); 
 	 
 	 } //TryHereButton
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=40,groups="regression")
 	 public void check_TryHereButton7() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -714,7 +714,7 @@ public class TreePageTests extends BaseClass {
 			 logger.info("TryEditor page is displayed");
 	 }
 	 //PythonEditorValidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=41,groups="regression")
 	 public void check_PythonEditorValidInput7() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -735,7 +735,7 @@ public class TreePageTests extends BaseClass {
 			  
 	 }
 	 //PythonEditorInvalidInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=42,groups="regression")
 	 public void check_PythonEditorInvalidInput7()
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -755,7 +755,7 @@ public class TreePageTests extends BaseClass {
 	        
 	 }
 	// PythonEditorNoInput
-	 @Test(priority=4,groups="regression")
+	 @Test(priority=43,groups="regression")
 	 public void check_PythonEditorNoInput7() 
 	 {
 		 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -775,7 +775,7 @@ public class TreePageTests extends BaseClass {
 	 }
 
 	//Binary Tree Traversals
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=44,groups="regression")
 		 public void click_BinaryTreeTraversalsLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -790,7 +790,7 @@ public class TreePageTests extends BaseClass {
 			logger.info("Binary Tree Traversals page displayed......"); 
 		 
 		 } //TryHereButton
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=45,groups="regression")
 		 public void check_TryHereButton8() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -806,7 +806,7 @@ public class TreePageTests extends BaseClass {
 				 logger.info("TryEditor page is displayed");
 		 }
 		 //PythonEditorValidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=46,groups="regression")
 		 public void check_PythonEditorValidInput8() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -827,7 +827,7 @@ public class TreePageTests extends BaseClass {
 				  
 		 }
 		 //PythonEditorInvalidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=47,groups="regression")
 		 public void check_PythonEditorInvalidInput8()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -847,7 +847,7 @@ public class TreePageTests extends BaseClass {
 		        
 		 }
 		// PythonEditorNoInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=48,groups="regression")
 		 public void check_PythonEditorNoInput8() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -866,7 +866,7 @@ public class TreePageTests extends BaseClass {
 		
 		 }
 		//Implementation of Binary Trees
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=49,groups="regression")
 		 public void click_ImplementationofBinaryTreesLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -880,7 +880,7 @@ public class TreePageTests extends BaseClass {
 			logger.info("Implementation of Binary Trees page displayed......"); 
 		 
 		 } //TryHereButton
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=50,groups="regression")
 		 public void check_TryHereButton9() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -896,7 +896,7 @@ public class TreePageTests extends BaseClass {
 				 logger.info("TryEditor page is displayed");
 		 }
 		 //PythonEditorValidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=51,groups="regression")
 		 public void check_PythonEditorValidInput9() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -917,7 +917,7 @@ public class TreePageTests extends BaseClass {
 				  
 		 }
 		 //PythonEditorInvalidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=52,groups="regression")
 		 public void check_PythonEditorInvalidInput9()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -937,7 +937,7 @@ public class TreePageTests extends BaseClass {
 		        
 		 }
 		// PythonEditorNoInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=53,groups="regression")
 		 public void check_PythonEditorNoInput9()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -956,7 +956,7 @@ public class TreePageTests extends BaseClass {
 		
 		 }
 		//Applications of Binary trees
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=54,groups="regression")
 		 public void click_ApplicationsofBinarytreesLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -970,7 +970,7 @@ public class TreePageTests extends BaseClass {
 			logger.info("Applications of Binary trees page displayed......"); 
 		 
 		 }  //TryHereButton
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=55,groups="regression")
 		 public void check_TryHereButton10() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -986,7 +986,7 @@ public class TreePageTests extends BaseClass {
 				 logger.info("TryEditor page is displayed");
 		 }
 		 //PythonEditorValidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=56,groups="regression")
 		 public void check_PythonEditorValidInput10() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1007,7 +1007,7 @@ public class TreePageTests extends BaseClass {
 				  
 		 }
 		 //PythonEditorInvalidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=57,groups="regression")
 		 public void check_PythonEditorInvalidInput10()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1027,7 +1027,7 @@ public class TreePageTests extends BaseClass {
 		        
 		 }
 		// PythonEditorNoInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=58,groups="regression")
 		 public void check_PythonEditorNoInput10()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1046,7 +1046,7 @@ public class TreePageTests extends BaseClass {
 		
 		 }
 		//Binary Search Trees
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=59,groups="regression")
 		 public void click_BinarySearchTreesLink(){
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -1060,7 +1060,7 @@ public class TreePageTests extends BaseClass {
 			logger.info("Binary Search Trees page displayed......"); 
 		 
 		 } //TryHereButton
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=60,groups="regression")
 		 public void check_TryHereButton11() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1076,7 +1076,7 @@ public class TreePageTests extends BaseClass {
 				 logger.info("TryEditor page is displayed");
 		 }
 		 //PythonEditorValidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=61,groups="regression")
 		 public void check_PythonEditorValidInput11() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1097,7 +1097,7 @@ public class TreePageTests extends BaseClass {
 				  
 		 }
 		 //PythonEditorInvalidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=62,groups="regression")
 		 public void check_PythonEditorInvalidInput11()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1117,7 +1117,7 @@ public class TreePageTests extends BaseClass {
 		        
 		 
 		// PythonEditorNoInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=63,groups="regression")
 		 public void check_PythonEditorNoInput11()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1136,7 +1136,7 @@ public class TreePageTests extends BaseClass {
 		
 		 } 
 		//ImplementationOfBST
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=64,groups="regression")
 		 public void click_ImplementationOfBSTLink() {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
 		     Hp.Login_HomePage();
@@ -1150,7 +1150,7 @@ public class TreePageTests extends BaseClass {
 			logger.info("ImplementationOfBST page displayed......"); 
 		 
 		 }//TryHereButton
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=65,groups="regression")
 		 public void check_TryHereButton12() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1166,7 +1166,7 @@ public class TreePageTests extends BaseClass {
 				 logger.info("TryEditor page is displayed");
 		 }
 		 //PythonEditorValidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=66,groups="regression")
 		 public void check_PythonEditorValidInput12() 
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1187,7 +1187,7 @@ public class TreePageTests extends BaseClass {
 				  
 		 }
 		 //PythonEditorInvalidInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=67,groups="regression")
 		 public void check_PythonEditorInvalidInput12()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1207,7 +1207,7 @@ public class TreePageTests extends BaseClass {
 		        
 		 
 		// PythonEditorNoInput
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=68,groups="regression")
 		 public void check_PythonEditorNoInput12()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
@@ -1226,7 +1226,7 @@ public class TreePageTests extends BaseClass {
 		
 		 } 
 		//PracticeQns
-		 @Test(priority=4,groups="regression")
+		 @Test(priority=69,groups="regression")
 		 public void click_PracticeQnsLink()
 		 {
 			 HomePage Hp = new HomePage(BaseClass.getDriver());		
