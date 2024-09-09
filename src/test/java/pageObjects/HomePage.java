@@ -1,17 +1,11 @@
 package pageObjects;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
-
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
-
 import factory.BaseClass;
 
 public class HomePage extends BasePage{
@@ -135,7 +129,9 @@ public class HomePage extends BasePage{
 			
 			e.printStackTrace();
 		}		
-		 sp.clickLogin();		 
+
+		 sp.clickLogin();	 
+
 
 	}
 	
@@ -145,7 +141,7 @@ public class HomePage extends BasePage{
 	}
 	
 	public void clickNumpyNinjaLink() {
-		NumpyNinjaLink.click();
+		 NumpyNinjaLink.click();
 	}
 	
 	public void clickSigIn() {
@@ -188,7 +184,7 @@ public class HomePage extends BasePage{
 	
 	public void clickArrayGetStarted()  {
 		ArrayGetStartedBtn.click();
-			}
+	}
 	
 	public void clickLinkedListGetStarted() {
 		LinkedListGetStartedBtn.click();
@@ -306,9 +302,13 @@ public class HomePage extends BasePage{
 		return status;
 	}
 	
-	public void selectDropdownTopic(String topic) throws InterruptedException {
+	public void selectDropdownTopic(String topic) {
 	switch(topic) {
-		case "Array":clickArrayDropdown();break;
+		case "Array":try {
+			clickArrayDropdown();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}break;
 		case"LinkedList": clickLinkedListDropdown();break;
 		case "Stack":clickStackDropdown();break;
 		case "Queue":clickQueueDropdown();break;

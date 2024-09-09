@@ -1,18 +1,21 @@
 
 package testCases;
 
+import java.io.IOException;
+
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 import utilities.DataProviders;
 
-public class RegisterPageTests extends BaseClass {
+public class RegisterPageTests extends Hooks {
 	
 	Logger logger = BaseClass.getLogger();
 	
@@ -54,8 +57,18 @@ public class RegisterPageTests extends BaseClass {
 		  RegisterPage rp = new RegisterPage(BaseClass.getDriver());
 		  String user = BaseClass.randomeString();
 		  rp.enterUsername(user);
-		  rp.enterPassword(p.getProperty("password"));
-		  rp.enterPasswordConfirm(p.getProperty("password"));
+		  try {
+			rp.enterPassword(BaseClass.getProperties().getProperty("password"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		  try {
+			rp.enterPasswordConfirm(BaseClass.getProperties().getProperty("password"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		  rp.clickRegister();
 		  logger.info("Check 'New Account Created' message at home page....");
 		  boolean status = hp.checkNewAccCreatedMsg();
@@ -78,7 +91,7 @@ public class RegisterPageTests extends BaseClass {
 	  }
 	
 	
-	@Test (dataProvider="RegisterWithInvalidData", dataProviderClass=DataProviders.class, priority=5, groups="regression")
+	@Test (dataProvider="RegisterWithInvalidData", dataProviderClass=DataProviders.class, priority=5, groups={"regression","Register"})
 	public void checkRegisterWithImproperPassword(String user, String pwd, String pwdConfirm, String ErrMsg) {
 		logger.info("Verify the Error message thrown while registering new user with improper username OR passwords............");
 		GetStartedPage gsp = new GetStartedPage(BaseClass.getDriver());

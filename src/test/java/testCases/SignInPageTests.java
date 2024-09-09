@@ -6,13 +6,14 @@ import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.GetStartedPage;
 import pageObjects.HomePage;
 import pageObjects.RegisterPage;
 import pageObjects.SignInPage;
 import utilities.DataProviders;
 
-public class SignInPageTests extends BaseClass {
+public class SignInPageTests extends Hooks {
 	
 	Logger logger = BaseClass.getLogger();		
 
@@ -87,7 +88,7 @@ public class SignInPageTests extends BaseClass {
 		 hp.Login_HomePage();
 		 
 		 String NameDisplayed = hp.getUsernameAtLinkHomepage();
-			  if(NameDisplayed.equalsIgnoreCase(p.getProperty("username"))) {
+			  if(NameDisplayed.equalsIgnoreCase(BaseClass.getProperties().getProperty("username"))) {
 					  Assert.assertTrue(true);
 					  System.out.println("Username displayed");
 				  }

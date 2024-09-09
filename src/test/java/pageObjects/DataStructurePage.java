@@ -1,20 +1,11 @@
 package pageObjects;
 
-
 import org.openqa.selenium.Alert;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import factory.BaseClass;
 
 
@@ -27,16 +18,10 @@ public class DataStructurePage extends BasePage{
 	}
 
 	WebDriver driver;
-	
-	
 	public String PYEditor_Code = "'Numpy Ninja'";	
-	
 	public String ConsoleOutput_text="";
 	public String Alertmesg ="";
-	
-	 
 		
-	
 	
 	//-------------WebElements--------------
 	
@@ -68,11 +53,9 @@ public class DataStructurePage extends BasePage{
 	@FindBy (xpath="//div[@role='alert']")
 	public WebElement DS_LogoutMessage;	
 	
-	
 	@FindBy(xpath="//*[@value='Submit']")
 	public WebElement PythonEditor_submit_Btn;
-	
-	
+		
 	@FindBy(css=".CodeMirror-scroll")
 	WebElement TextareaScroll_1;
 	
