@@ -1,6 +1,11 @@
 package utilities;
 
+import io.qameta.allure.Allure;
+import java.io.ByteArrayInputStream;
 import io.qameta.allure.Attachment;
+
+import java.io.IOException;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -19,8 +24,8 @@ import factory.BaseClass;
 
 		// Text attachments for Allure
 		@Attachment(value = "PageScreenshot", type = "image/png")
-		public byte[] saveScreenshotPNG(WebDriver driver) {
-		return ((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+		public void saveScreenshotPNG(WebDriver driver) {	
+			Allure.addAttachment("attachment", new ByteArrayInputStream(((TakesScreenshot) BaseClass.getDriver()).getScreenshotAs(OutputType.BYTES)));
 		}
 
 		// Text attachments for Allure
@@ -35,11 +40,6 @@ import factory.BaseClass;
 			return html;
 		}
 
-//		@Override
-//		public void onStart(ITestContext iTestContext) {
-//			System.out.println("I am in onStart method " + iTestContext.getName());
-//			iTestContext.setAttribute("WebDriver", factory.BaseClass.getDriver());
-//		}
 
 		@Override
 		public void onFinish(ITestContext iTestContext) {
@@ -57,24 +57,13 @@ import factory.BaseClass;
 		}
 
 		@Override
-		public void onTestFailure(ITestResult iTestResult) {
-			System.out.println("I am in onTestFailure method " + getTestMethodName(iTestResult) + " failed");
-			Object testClass = iTestResult.getInstance();
-			System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
-			if (driver instanceof WebDriver) {
-				System.out.println("Screenshot captured for test case:" + getTestMethodName(iTestResult));
+		public void onTestFailure(ITestResult iTestResult)  {
+			
+			if (iTestResult.getStatus() == ITestResult.FAILURE)
+				{
 				saveScreenshotPNG(driver);
 				}
-//			String imgPath;
-//			try {
-//				imgPath = new factory.BaseClass().captureScreen(iTestResult.getName());
-//				Allure.addAttachment(imgPath, imgPath);
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
 			
-			// Save a log on allure.
-			saveTextLog(getTestMethodName(iTestResult) + " failed and screenshot taken!");		
 		}
 
 		@Override
