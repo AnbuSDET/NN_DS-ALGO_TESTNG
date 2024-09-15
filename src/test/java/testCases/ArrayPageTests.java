@@ -6,26 +6,31 @@ import java.util.HashMap;
 import java.util.List;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.ArrayPage;
 import pageObjects.DataStructurePage;
 import pageObjects.HomePage;
 import utilities.DataReader;
 
-public class ArrayPageTests extends BaseClass {
+public class ArrayPageTests extends Hooks {
 
 	Logger logger = BaseClass.getLogger();
 	String AlertMessage = "";
 
 	List<HashMap<String, String>> datamap = DataReader.data(".\\testData\\Python_Editor_Data.xlsx", "Sheet1");;
 
+	
+	
+	
 	@Test(priority = 0)
 	public void Test_ArraysInPython() {
 		HomePage Hp = new HomePage(BaseClass.getDriver());
 
-		Hp.Login_HomePage();
+		Hp.Login_HomePage();		
 
 		Hp.clickArrayGetStarted();
 		ArrayPage Ap = new ArrayPage(BaseClass.getDriver());
@@ -33,7 +38,7 @@ public class ArrayPageTests extends BaseClass {
 
 		String CurrentURL = BaseClass.getDriver().getCurrentUrl();
 
-		Assert.assertEquals(CurrentURL, CurrentURL.contains("python"));
+		Assert.assertEquals(CurrentURL, CurrentURL.contains("arrays-in-python"));
 		
 
 	}

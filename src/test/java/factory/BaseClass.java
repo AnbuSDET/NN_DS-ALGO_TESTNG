@@ -68,6 +68,7 @@ public class BaseClass {
 						case "safari":
 							driver.set(ThreadGuard.protect(new SafariDriver())); break;
 						default:
+							
 							System.out.println("No matching Browser found.......");
 						}
 				    

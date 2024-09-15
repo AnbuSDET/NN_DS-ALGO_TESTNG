@@ -8,12 +8,13 @@ import org.testng.annotations.BeforeTest;
 
 import org.testng.annotations.Test;
 import factory.BaseClass;
+import factory.Hooks;
 import pageObjects.DataStructurePage;
 import pageObjects.HomePage;
 
 import pageObjects.SignInPage;
 
-public class DS_IntroductionTests extends BaseClass {
+public class DS_IntroductionTests extends Hooks {
 
 	Logger logger = BaseClass.getLogger();
 	

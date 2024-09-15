@@ -10,11 +10,10 @@
 	
 	 
    <test name="SDET Warrior Test">  
-	     <parameter name="browser" value="chrome"></parameter>
-	     <parameter name="os" value="Windows11"></parameter>
+	     <parameter name="browser" value=""></parameter>	     
 	     <classes>
-	          <class name="testCases.RegisterPageTests"/>
-		     <!--  <class name="testCases.HomePageTests"/>
+	          <class name="testCases.ArrayPageTests"/>
+		     <class name="testCases.HomePageTests"/>
 		      <class name="testCases.SignInPageTests"/> 
 		      <class name="testCases.RegisterPageTests"/>
 		      <class name="testCases.DS_IntroductionTests"/> 
@@ -23,7 +22,7 @@
 		      <class name="testCases.StackPageTests"/>
 	          <class name="testCases.QueuePageTests"/> 
 	          <class name="testCases.TreePageTests"/> 
-	          <class name="testCases.GraphPageTests"/> -->
+	          <class name="testCases.GraphPageTests"/> 
 		  </classes>
     </test> <!-- Test -->
     
